@@ -1,0 +1,1748 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     55882,       1740]
+NotebookOptionsPosition[     50834,       1576]
+NotebookOutlinePosition[     51201,       1592]
+CellTagsIndexPosition[     51158,       1589]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Electrodynamic boundary conditions", "Title",
+ CellChangeTimes->{{3.719729052738551*^9, 3.7197290554527063`*^9}, 
+   3.7203716037581797`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Principles : ", "Section",
+ CellChangeTimes->{{3.7204115711454926`*^9, 3.7204115757130623`*^9}}],
+
+Cell["\<\
+ Loop construction for the tangential component
+Pillbox construction  (Gauss law) for the normal component.\
+\>", "Text",
+ CellChangeTimes->{{3.719737180371425*^9, 3.7197373081587343`*^9}, 
+   3.7203716037581797`*^9, {3.720411565827911*^9, 3.7204115674479356`*^9}},
+ FontWeight->"Bold",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["The Gauss Law - based BC", "Text",
+ CellChangeTimes->{{3.719729092617832*^9, 3.719729149487085*^9}, {
+  3.7197295123838415`*^9, 3.7197295129298725`*^9}}],
+
+Cell["Cheng p .87 - Gauss law", "Text",
+ CellChangeTimes->{{3.719729499787121*^9, 3.7197295594835353`*^9}, 
+   3.719732826510399*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    UnderscriptBox["\[ContourIntegral]", "S"], 
+    RowBox[{"D", "\[CenterDot]", "ds"}]}], "=", "Q"}], ",", " ", 
+  RowBox[{
+   RowBox[{
+    UnderscriptBox["\[ContourIntegral]", "S"], 
+    RowBox[{"E", "\[CenterDot]", "ds"}]}], "=", 
+   FractionBox["Q", 
+    SubscriptBox["\[Epsilon]", "0"]]}]}]], "Text",
+ CellChangeTimes->{{3.7197325786372213`*^9, 3.71973258542861*^9}, {
+   3.719732754761295*^9, 3.719732837302016*^9}, {3.719732874457141*^9, 
+   3.719732912532319*^9}, {3.7197345809677477`*^9, 3.7197346150106945`*^9}, 
+   3.7203715716971254`*^9, 3.7203716037581797`*^9}],
+
+Cell["Cheng p .116 - Electrostatic BC", "Text",
+ CellChangeTimes->{{3.7197295343620987`*^9, 3.7197295623536997`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Tangential Electrostatic Component ", "Subsection",
+ CellChangeTimes->{{3.719734185109106*^9, 3.7197341931725674`*^9}, {
+   3.719734817349268*^9, 3.719734823434616*^9}, 3.7197352504600406`*^9, 
+   3.71973604542551*^9, {3.719740543883807*^9, 3.7197405612698016`*^9}, 
+   3.720371585643149*^9},
+ FontWeight->"Bold",
+ Background->RGBColor[0.94, 0.88, 0.94]],
+
+Cell["\<\
+Loop construction, E is a conservative field : side edges go to zero.\
+\>", "Text",
+ CellChangeTimes->{{3.719734200762001*^9, 3.7197342044372115`*^9}, {
+  3.719734273160142*^9, 3.719734284812809*^9}, {3.7197344835541763`*^9, 
+  3.7197345001001225`*^9}, {3.7197370381532907`*^9, 3.719737040328415*^9}, {
+  3.7197372398218255`*^9, 3.719737242332969*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["E", "t"], " ", "is", " ", 
+  SubscriptBox["E", "tangential"]}]], "Text",
+ CellChangeTimes->{{3.7203715816761427`*^9, 3.7203716037581797`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    UnderscriptBox["\[ContourIntegral]", "ABCDA"], 
+    RowBox[{"E", "\[CenterDot]", "dl"}]}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["E", "1"], "\[CapitalDelta]w"}], "+", 
+     RowBox[{
+      SubscriptBox["E", "2"], 
+      RowBox[{"(", 
+       RowBox[{"-", "\[CapitalDelta]w"}], ")"}]}]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["E", 
+         RowBox[{"1", "t"}]], "-", 
+        SubscriptBox["E", 
+         RowBox[{"2", "t"}]]}], ")"}], "\[CapitalDelta]w"}], "=", 
+     RowBox[{"0", "  ", "-", " ", 
+      RowBox[{"conservative", " ", "field"}]}]}]}]}], ",", " ", 
+  RowBox[{
+   RowBox[{"hence", " ", 
+    SubscriptBox["E", 
+     RowBox[{"1", "t"}]]}], "=", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["E", 
+      RowBox[{"2", "t"}]], "."}], ":", " ", 
+    StyleBox[
+     RowBox[{"continuity", " ", "condition", " ", "for", " ", 
+      SubscriptBox[
+       StyleBox["E",
+        Background->RGBColor[1, 0.5, 0]], "t"]}],
+     Background->RGBColor[1, 0.5, 0]]}]}]}]], "Text",
+ CellChangeTimes->{{3.719734064420203*^9, 3.7197340759128604`*^9}, {
+   3.7197341373493743`*^9, 3.7197342664517584`*^9}, {3.719734479443941*^9, 
+   3.7197344805190024`*^9}, {3.719735629689731*^9, 3.7197356376971893`*^9}, 
+   3.719735670600071*^9, {3.7197403395231185`*^9, 3.719740347055549*^9}, 
+   3.72037160376818*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "The", " ", "tangential", " ", "component", " ", "of", " ", "the", " ", 
+   "electrostatic", " ", "field", " ", "is", " ", 
+   RowBox[{"continuous", ".", " ", "In"}], " ", "terms", " ", "of", " ", 
+   "D"}], ",", " ", 
+  RowBox[{
+   FractionBox[
+    SubscriptBox["D", 
+     RowBox[{"1", "t"}]], 
+    SubscriptBox["\[Epsilon]", "1"]], "=", 
+   RowBox[{
+    FractionBox[
+     SubscriptBox["D", 
+      RowBox[{"2", "t"}]], 
+     SubscriptBox["\[Epsilon]", "2"]], "."}]}]}]], "Text",
+ CellChangeTimes->{{3.7197343069450746`*^9, 3.7197344155382857`*^9}, 
+   3.72037160376818*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Normal Electrostatic Component", "Subsection",
+ CellChangeTimes->{{3.719734853641344*^9, 3.7197348595486813`*^9}, {
+   3.719734893420619*^9, 3.719734942293414*^9}, {3.7197352092406826`*^9, 
+   3.7197352597055693`*^9}, {3.719736016905879*^9, 3.719736019513028*^9}, {
+   3.719740568220199*^9, 3.719740572170425*^9}, 3.72037160376818*^9},
+ FontWeight->"Bold",
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell["\<\
+Pillbox condition with sides going to zero. Gauss Law applied to D.\
+\>", "Text",
+ CellChangeTimes->{{3.719734945683608*^9, 3.7197349809696264`*^9}, {
+   3.7197350874407167`*^9, 3.7197350902578773`*^9}, 3.719735278234629*^9, {
+   3.7197370219353633`*^9, 3.719737024665519*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[Rho]", "S"], " ", "is", " ", "the", " ", "surface", " ", 
+  RowBox[{"charge", ".", " ", "Assumed"}], " ", "uniform", " ", 
+  RowBox[{"(", 
+   RowBox[{"small", " ", "pillbox"}], ")"}]}]], "Text",
+ CellChangeTimes->{3.72037160376818*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["D", "n"], " ", "is", " ", 
+  RowBox[{
+   SubscriptBox["D", "normal"], " ", ".", " "}]}]], "Text",
+ CellChangeTimes->{3.72037160376818*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[Rho]", "S"], "\[CapitalDelta]S"}], "=", 
+  RowBox[{
+   RowBox[{
+    UnderscriptBox["\[ContourIntegral]", "S"], 
+    RowBox[{"D", "\[CenterDot]", "ds"}]}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["D", "1"], ".", 
+        SubscriptBox["a", "n2"]}], "+", 
+       RowBox[{
+        SubscriptBox["D", "2"], ".", 
+        SubscriptBox["a", "n1"]}]}], ")"}], "\[CapitalDelta]S"}], "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["D", "1"], "-", 
+       SubscriptBox["D", "2"]}], ")"}], 
+     SubscriptBox["a", "n2"], "\[CapitalDelta]S"}]}]}]}]], "Text",
+ CellChangeTimes->{{3.71973499728356*^9, 3.719735006498087*^9}, {
+   3.7197350935160637`*^9, 3.7197351648071413`*^9}, {3.7197354027617517`*^9, 
+   3.7197354160645123`*^9}, 3.7203716037781796`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Hence", "        ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["D", "1"], "-", 
+      SubscriptBox["D", "2"]}], ")"}], ".", 
+    SubscriptBox["a", "n2"]}]}], "=", 
+  SubscriptBox["\[Rho]", "S"]}]], "Text",
+ CellChangeTimes->{{3.719735421660833*^9, 3.7197354241959777`*^9}, {
+   3.719735469642577*^9, 3.719735503806531*^9}, 3.7203716037781796`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"or", "                ", 
+    SubscriptBox["D", 
+     RowBox[{"1", "n"}]]}], "-", 
+   SubscriptBox["D", 
+    RowBox[{"2", "n"}]]}], "=", 
+  SubscriptBox["\[Rho]", "S"]}]], "Text",
+ CellChangeTimes->{{3.71973551882839*^9, 3.7197355342472725`*^9}, 
+   3.7203716037781796`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"In", " ", "terms", " ", "of", " ", 
+   RowBox[{"E", ":", "              ", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[Epsilon]", "1"], 
+      SubscriptBox["E", 
+       RowBox[{"1", "n"}]]}], "-", 
+     RowBox[{
+      SubscriptBox["\[Epsilon]", "2"], 
+      SubscriptBox["E", 
+       RowBox[{"2", "n"}]]}]}]}]}], "=", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Rho]", "S"], "            ", 
+    StyleBox["jump",
+     Background->RGBColor[1, 0.5, 0]], 
+    StyleBox[" ",
+     Background->RGBColor[1, 0.5, 0]], 
+    StyleBox["condition",
+     Background->RGBColor[1, 0.5, 0]]}], 
+   StyleBox["+",
+    Background->RGBColor[1, 0.5, 0]], 
+   StyleBox[" ",
+    Background->RGBColor[1, 0.5, 0]], 
+   StyleBox[
+    RowBox[{"linear", " ", "relation", " ", "for", " ", 
+     SubscriptBox[
+      StyleBox["E",
+       Background->RGBColor[1, 0.5, 0]], "n"]}],
+    Background->RGBColor[1, 0.5, 0]]}]}]], "Text",
+ CellChangeTimes->{{3.719735537717471*^9, 3.7197355834290853`*^9}, {
+   3.719735720723938*^9, 3.7197357446303053`*^9}, {3.71974030214198*^9, 
+   3.7197403147737026`*^9}, {3.7197404497414227`*^9, 3.719740455511752*^9}, 
+   3.7203716037781796`*^9}],
+
+Cell["Cheng p .262 - Boundary Conditions for Magnetostatic Fields", "Text",
+ CellChangeTimes->{{3.719729763683215*^9, 3.719729812290995*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Normal Magnetostatic Component", "Subsection",
+ CellChangeTimes->{{3.7197369498922424`*^9, 3.7197369532664356`*^9}, {
+   3.71974053483729*^9, 3.7197405371414213`*^9}, {3.719740580148881*^9, 
+   3.719740582451013*^9}, 3.7203716037781796`*^9},
+ FontWeight->"Bold",
+ Background->RGBColor[0.94, 0.88, 0.94]],
+
+Cell["B is divergenceless, Gauss' s law applied", "Text",
+ CellChangeTimes->{{3.7197406616595435`*^9, 3.7197406844528475`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Del]", ".", "B"}], "=", "0"}], ";", "   ", 
+  StyleBox[
+   RowBox[{"continuity", " ", "condition", " ", "for", " ", 
+    SubscriptBox[
+     StyleBox["B",
+      Background->RGBColor[1, 0.5, 0]], "n"]}],
+   Background->RGBColor[1, 0.5, 0]]}]], "Text",
+ CellChangeTimes->{{3.7197370049253902`*^9, 3.7197370089646215`*^9}, {
+   3.7197370671519494`*^9, 3.719737085088975*^9}, {3.71973714041614*^9, 
+   3.7197371629784307`*^9}, {3.7197400757650323`*^9, 
+   3.7197400826044235`*^9}, {3.7197401322872653`*^9, 3.719740133325324*^9}, 
+   3.7203716037781796`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"for", " ", 
+   RowBox[{"H", ":", " ", 
+    RowBox[{
+     SubscriptBox["\[Mu]", "1"], 
+     SubscriptBox["H", 
+      RowBox[{"1", "n"}]]}]}]}], "=", 
+  RowBox[{
+   SubscriptBox["\[Mu]", "2"], 
+   RowBox[{
+    SubscriptBox["H", 
+     RowBox[{"2", "n"}]], ":", " ", 
+    StyleBox[
+     RowBox[{"linear", " ", "relation", " ", "for", " ", 
+      SubscriptBox["H", "n"]}],
+     Background->RGBColor[1, 0.5, 0]]}]}]}]], "Text",
+ CellChangeTimes->{{3.719740155030566*^9, 3.7197402220694003`*^9}, {
+   3.7197402583154736`*^9, 3.7197402669019647`*^9}, {3.7197404350215807`*^9, 
+   3.719740440548897*^9}, 3.7203716037881794`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tangent Magnetostatic Component", "Subsection",
+ CellChangeTimes->{{3.7197405170092697`*^9, 3.7197405313390894`*^9}, {
+   3.7197405863542366`*^9, 3.7197405900594482`*^9}, 3.7203716037881794`*^9},
+ FontWeight->"Bold",
+ Background->RGBColor[0.94, 0.88, 0.94]],
+
+Cell[TextData[{
+ "Loop construction, swirl in H generates current. side edges go to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"zero", ".", "  "}], TraditionalForm]]]
+}], "Text",
+ CellChangeTimes->{{3.71974075566792*^9, 3.719740787966768*^9}, {
+  3.7197426126941366`*^9, 3.7197426648871217`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["J", 
+   RowBox[{"sn", " "}]], " ", "is", "  ", "the", " ", "surface", " ", 
+  "current", " ", "density", " ", "in", " ", "the", " ", "normal", " ", 
+  RowBox[{"direction", "."}]}]], "Text",
+ CellChangeTimes->{{3.7197426613899217`*^9, 3.719742668512329*^9}, 
+   3.7203716037881794`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["H", 
+      RowBox[{"1", "t"}]], "-", 
+     SubscriptBox["H", 
+      RowBox[{"2", "t"}]]}], ")"}], "\[CapitalDelta]w"}], "=", 
+  RowBox[{
+   RowBox[{
+    UnderscriptBox["\[ContourIntegral]", "ABCDA"], 
+    RowBox[{"H", "\[CenterDot]", "dl"}]}], "=", 
+   RowBox[{"I", "=", 
+    RowBox[{
+     SubscriptBox["J", "sn"], " ", "\[CapitalDelta]w"}]}]}]}]], "Text",
+ CellChangeTimes->{{3.7197406336119394`*^9, 3.719740645795636*^9}, 
+   3.719740691037224*^9, 3.7197408991391263`*^9, {3.719742573315884*^9, 
+   3.7197426056547337`*^9}, {3.719742723016446*^9, 3.719742744212659*^9}, 
+   3.7203716037881794`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["H", 
+    RowBox[{"1", "t"}]], "-", 
+   SubscriptBox["H", 
+    RowBox[{"2", "t"}]]}], "=", 
+  RowBox[{
+   SubscriptBox["J", "sn"], "      ", 
+   StyleBox["Jump",
+    Background->RGBColor[1, 0.5, 0]], 
+   StyleBox[" ",
+    Background->RGBColor[1, 0.5, 0]], 
+   StyleBox["condition",
+    Background->RGBColor[1, 0.5, 0]], 
+   StyleBox[" ",
+    Background->RGBColor[1, 0.5, 0]], 
+   StyleBox["in",
+    Background->RGBColor[1, 0.5, 0]], 
+   StyleBox[" ",
+    Background->RGBColor[1, 0.5, 0]], 
+   StyleBox[
+    SubscriptBox["H", "t"],
+    Background->RGBColor[1, 0.5, 0]]}]}]], "Text",
+ CellChangeTimes->{{3.719742674903694*^9, 3.719742703210314*^9}, {
+   3.7197427475488496`*^9, 3.719742768525049*^9}, 3.7203716037881794`*^9}],
+
+Cell["Cheng p .329 - Electromagnetic Boundary Conditions", "Text",
+ CellChangeTimes->{{3.719729864216965*^9, 3.719729895530756*^9}}],
+
+Cell[TextData[{
+ "While the derivations are slightly different, the electromagnetic boundary \
+conditions ",
+ StyleBox["are exactly the same",
+  FontWeight->"Bold"],
+ " as is the static cases."
+}], "Text",
+ CellChangeTimes->{{3.719751936935899*^9, 3.719752028886158*^9}}],
+
+Cell["Time - Harmonic Maxwell' s Equations", "Text",
+ CellChangeTimes->{{3.7197538008175063`*^9, 3.7197538203506236`*^9}}],
+
+Cell["\[Del]\[Cross]E = -i \[Omega] \[Mu] H", "Text",
+ CellChangeTimes->{{3.7197538262269597`*^9, 3.719753859877885*^9}, 
+   3.7203716037881794`*^9}],
+
+Cell["\[Del]\[Cross]H = J + i \[Omega] \[Epsilon] E", "Text",
+ CellChangeTimes->{{3.7197538739636903`*^9, 3.7197538952339067`*^9}, 
+   3.7203716037881794`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Del]", ".", "E"}], "=", 
+  FractionBox["\[Rho]", "\[Epsilon]"]}]], "Text",
+ CellChangeTimes->{{3.7197539034763784`*^9, 3.719753917811198*^9}, 
+   3.7203716037881794`*^9}],
+
+Cell["\[Del].H = 0", "Text",
+ CellChangeTimes->{{3.719753927298741*^9, 3.719753945585787*^9}, 
+   3.7203716037981796`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The concept of impedance", "Title",
+ CellChangeTimes->{{3.719728732317224*^9, 3.7197287532654223`*^9}, {
+  3.7197287964938946`*^9, 3.7197288201962504`*^9}, {3.719729048891331*^9, 
+  3.7197290498363853`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["x- polarized exterior field", "Subsection",
+ CellChangeTimes->{{3.719752636962938*^9, 3.719752669580804*^9}, {
+   3.7197533487966523`*^9, 3.7197533535409236`*^9}, 3.719753507530731*^9, 
+   3.7197539550393276`*^9, 3.7203716037981796`*^9, {3.720412118642475*^9, 
+   3.720412152762827*^9}, {3.721276714821587*^9, 3.721276763218355*^9}, {
+   3.7212769758955193`*^9, 3.721276980708795*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EField", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"E0", " ", 
+     RowBox[{"Exp", "[", 
+      RowBox[{
+       RowBox[{"-", "I"}], " ", 
+       SqrtBox[
+        RowBox[{"\[Epsilon]", " ", "\[Mu]"}]], " ", "z"}], "]"}]}], ",", "0", 
+    ",", "0"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7211103844466677`*^9, 3.7211104077500005`*^9}, {
+  3.721110504933559*^9, 3.7211105463659286`*^9}, {3.7212768288751106`*^9, 
+  3.721276840770791*^9}, {3.7212801780416718`*^9, 3.721280190863405*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "z", " ", 
+      SqrtBox[
+       RowBox[{"\[Epsilon]", " ", "\[Mu]"}]]}]], " ", "E0"}], ",", "0", ",", 
+   "0"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7211104117682304`*^9, 3.721110549371101*^9, 3.7212768440459785`*^9, {
+   3.7212801830219564`*^9, 3.7212801924234943`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CurlE", "=", 
+  RowBox[{"Curl", "[", 
+   RowBox[{"EField", ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7211104142613726`*^9, 3.7211104285931926`*^9}, {
+  3.7212766225723104`*^9, 3.721276634908016*^9}, {3.7212801951186485`*^9, 
+  3.721280222895238*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   RowBox[{
+    RowBox[{"-", "\[ImaginaryI]"}], " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "z", " ", 
+      SqrtBox[
+       RowBox[{"\[Epsilon]", " ", "\[Mu]"}]]}]], " ", "E0", " ", 
+    SqrtBox[
+     RowBox[{"\[Epsilon]", " ", "\[Mu]"}]]}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7211104298732657`*^9, 3.721110560872759*^9, 3.7212766365901127`*^9, 
+   3.7212768567447047`*^9, {3.7212801999919276`*^9, 3.721280224527331*^9}}]
+}, Open  ]],
+
+Cell["\[Del] \[Cross] E = -i \[Omega] \[Mu] H", "Text",
+ CellChangeTimes->{{3.7204119891607513`*^9, 3.720412024511197*^9}, 
+   3.721276660440477*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HAssociated", "=", 
+  RowBox[{
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{
+      RowBox[{"-", "I"}], " ", "\[Omega]", " ", "\[Mu]"}]], "CurlE"}], "//", 
+   "Simplify"}]}]], "Input",
+ CellChangeTimes->{{3.721276669225979*^9, 3.7212766975626*^9}, {
+  3.7212768896965895`*^9, 3.7212768919997215`*^9}, {3.721277030418638*^9, 
+  3.721277034554875*^9}, {3.7212802081153917`*^9, 3.721280235997987*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "z", " ", 
+       SqrtBox[
+        RowBox[{"\[Epsilon]", " ", "\[Mu]"}]]}]], " ", "E0", " ", 
+     "\[Epsilon]"}], 
+    RowBox[{
+     SqrtBox[
+      RowBox[{"\[Epsilon]", " ", "\[Mu]"}]], " ", "\[Omega]"}]], ",", "0"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.7212767014508224`*^9, 3.721276859799879*^9, 3.721276893810825*^9, 
+   3.7212770352799163`*^9, {3.721280232080763*^9, 3.7212802372800603`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Introducing the impedance :", "Subsection",
+ CellChangeTimes->{{3.721276913609957*^9, 3.7212769293388567`*^9}},
+ Background->RGBColor[1, 0.9, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Assuming", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Epsilon]", ">", "0"}], ",", 
+     RowBox[{"\[Eta]", ">", "0"}]}], "}"}], ",", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"HAssociated", "/.", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{
+       SuperscriptBox["\[Eta]", "2"], "\[Epsilon]"}]}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.721276999945895*^9, 3.7212770056592216`*^9}, {
+   3.7212770447934604`*^9, 3.7212770893270073`*^9}, 3.7212793266539755`*^9, {
+   3.7212793732446404`*^9, 3.7212794587725325`*^9}, {3.7212802535999937`*^9, 
+   3.721280273169113*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "z", " ", "\[Epsilon]", " ", 
+       "\[Eta]"}]], " ", "E0"}], 
+    RowBox[{"\[Eta]", " ", "\[Omega]"}]], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.721277092564193*^9, 3.7212793289071045`*^9, {3.721279393276786*^9, 
+   3.72127941066378*^9}, 3.721279460005603*^9, {3.7212802665787363`*^9, 
+   3.7212802748222075`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["The associated magnetic field", "Section",
+ CellChangeTimes->{{3.7204116605664496`*^9, 3.720411688766835*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["The principle of duality", "Section",
+ CellChangeTimes->{{3.719728767855257*^9, 3.7197287728835444`*^9}, 
+   3.719729221405198*^9, {3.719753514027103*^9, 3.7197535208794947`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Let", " ", 
+   RowBox[{"(", 
+    RowBox[{"E", ",", "H"}], ")"}], " ", "be", "  ", "a", " ", "solution", 
+   " ", "for", " ", 
+   RowBox[{"Maxwell", "'"}], "s", " ", "equations", " ", "in", " ", "a", " ", 
+   "simple"}], ",", " ", 
+  RowBox[{
+   RowBox[{"source", "-", 
+    RowBox[{"free", " ", 
+     RowBox[{"medium", ".", " ", "Then"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"E", "'"}], ",", 
+       RowBox[{"H", "'"}]}], ")"}]}]}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Eta]", " ", "H"}], ",", 
+       RowBox[{"-", 
+        FractionBox["E", "\[Eta]"]}]}], ")"}], " ", "is", " ", "also", " ", 
+     "a", " ", "solution", " ", "where", " ", "\[Eta]"}], "=", 
+    RowBox[{
+     SqrtBox[
+      FractionBox["\[Mu]", "\[Epsilon]"]], ".", " "}]}]}]}]], "Text",
+ CellChangeTimes->{{3.719754078567393*^9, 3.7197541789171324`*^9}, 
+   3.719754271078404*^9, {3.7197543213592796`*^9, 3.719754330182784*^9}, 
+   3.7203716037981796`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Proof", "Subsection",
+ CellChangeTimes->{{3.7197542047896123`*^9, 3.7197542103069277`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Del]", "\[Cross]", 
+   RowBox[{"(", 
+    RowBox[{"E", "'"}], ")"}]}], "=", 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     StyleBox["\[Del]",
+      Background->RGBColor[1, 0.85, 0.85]], 
+     StyleBox["\[Cross]",
+      Background->RGBColor[1, 0.85, 0.85]], 
+     StyleBox[
+      RowBox[{
+       StyleBox["(",
+        Background->RGBColor[1, 0.85, 0.85]], 
+       StyleBox[
+        RowBox[{"\[Eta]", " ", "H"}],
+        Background->RGBColor[1, 0.85, 0.85]], ")"}],
+      Background->RGBColor[1, 0.9, 1]]}],
+    FontColor->RGBColor[1, 0, 0]], 
+   StyleBox["=",
+    FontColor->RGBColor[1, 0, 0],
+    Background->RGBColor[1, 0.9, 1]], 
+   RowBox[{
+    StyleBox[
+     RowBox[{"\[Eta]", " ", 
+      RowBox[{"\[Del]", "\[Cross]", "H"}]}],
+     FontColor->RGBColor[1, 0, 0],
+     Background->RGBColor[1, 0.9, 1]], "=", 
+    RowBox[{
+     RowBox[{
+     "\[Eta]", " ", "i", " ", "\[Omega]", " ", "\[Epsilon]", " ", "E"}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", " ", "i"}], " ", "\[Omega]", " ", "\[Epsilon]", " ", 
+       SuperscriptBox["\[Eta]", "2"], 
+       RowBox[{"(", 
+        RowBox[{"-", 
+         FractionBox["E", "\[Eta]"]}], ")"}]}], "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", " ", "i"}], " ", "\[Omega]", " ", "\[Epsilon]", " ", 
+        SuperscriptBox["\[Eta]", "2"], 
+        RowBox[{"H", "'"}]}], "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "i"}], " ", "\[Omega]", " ", "\[Epsilon]", 
+         FractionBox["\[Mu]", "\[Epsilon]"], 
+         RowBox[{"H", "'"}]}], "=", 
+        RowBox[{
+         RowBox[{"-", "i"}], " ", "\[Omega]", " ", "\[Mu]", " ", 
+         RowBox[{"H", "'"}]}]}]}]}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.719754215509226*^9, 3.719754297278902*^9}, {
+   3.719754333319964*^9, 3.7197544702767973`*^9}, {3.719754501570587*^9, 
+   3.7197545082569695`*^9}, {3.7197546446087685`*^9, 
+   3.7197547324987955`*^9}, {3.7197549003083935`*^9, 3.719754925846854*^9}, 
+   3.7203716037981796`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Del]", "\[Cross]", 
+   RowBox[{"(", 
+    RowBox[{"H", "'"}], ")"}]}], "=", 
+  RowBox[{
+   RowBox[{"\[Del]", "\[Cross]", 
+    RowBox[{"(", 
+     RowBox[{"-", 
+      FractionBox["E", "\[Eta]"]}], ")"}]}], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"-", "1"}], "\[Eta]"], 
+     RowBox[{"\[Del]", "\[Cross]", "E"}]}], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       RowBox[{"-", "1"}], "\[Eta]"], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "i"}], " ", "\[Omega]", " ", "\[Mu]", " ", "H"}], 
+       ")"}]}], "=", 
+     RowBox[{
+      RowBox[{"i", " ", "\[Omega]", " ", "\[Mu]", " ", 
+       FractionBox["1", 
+        SuperscriptBox["\[Eta]", "2"]], 
+       RowBox[{"(", 
+        RowBox[{"\[Eta]", " ", "H"}], ")"}]}], "=", 
+      RowBox[{
+       RowBox[{"i", " ", "\[Omega]", " ", "\[Mu]", " ", 
+        FractionBox["\[Epsilon]", "\[Mu]"], 
+        RowBox[{"E", "'"}]}], "=", 
+       RowBox[{"i", " ", "\[Omega]", " ", "\[Epsilon]", " ", 
+        RowBox[{"E", "'"}]}]}]}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.7197629978875484`*^9, 3.7197632061894627`*^9}, 
+   3.72037160380818*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The inhomogeneous case ", "Section",
+ CellChangeTimes->{{3.7197623483343964`*^9, 3.7197623662364206`*^9}, {
+  3.719763743881217*^9, 3.7197637581320324`*^9}, {3.7197671877541957`*^9, 
+  3.7197671890842714`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Del]", "\[Cross]", 
+   RowBox[{"(", 
+    RowBox[{"E", "'"}], ")"}]}], "=", 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     StyleBox["\[Del]",
+      Background->RGBColor[1, 0.85, 0.85]], 
+     StyleBox["\[Cross]",
+      Background->RGBColor[1, 0.85, 0.85]], 
+     RowBox[{
+      StyleBox["(",
+       Background->RGBColor[1, 0.85, 0.85]], 
+      StyleBox[
+       RowBox[{"\[Eta]", " ", "H"}],
+       Background->RGBColor[1, 0.85, 0.85]], 
+      StyleBox[")",
+       Background->RGBColor[1, 0.9, 1]]}]}],
+    FontColor->RGBColor[1, 0, 0]], 
+   StyleBox["=",
+    FontColor->RGBColor[1, 0, 0],
+    Background->RGBColor[1, 0.9, 1]], 
+   RowBox[{
+    StyleBox[
+     RowBox[{
+      RowBox[{"\[Eta]", " ", 
+       RowBox[{"\[Del]", "\[Cross]", "H"}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"\[Del]", "\[Eta]"}], ")"}], "\[Cross]", "H"}]}],
+     FontColor->RGBColor[1, 0, 0],
+     Background->RGBColor[1, 0.9, 1]], 
+    StyleBox["=",
+     FontColor->RGBColor[1, 0, 0],
+     Background->RGBColor[1, 0.9, 1]], 
+    RowBox[{
+     RowBox[{
+      StyleBox[
+       RowBox[{
+        RowBox[{"-", "i"}], " ", "\[Omega]", " ", "\[Mu]", " ", 
+        RowBox[{"H", "'"}]}],
+       FontColor->RGBColor[1, 0, 0],
+       Background->RGBColor[1, 0.9, 1]], 
+      StyleBox["+",
+       FontColor->RGBColor[1, 0, 0],
+       Background->RGBColor[1, 0.9, 1]], 
+      StyleBox[" ",
+       FontColor->RGBColor[1, 0, 0],
+       Background->RGBColor[1, 0.9, 1]], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"\[Del]", "\[Eta]"}], ")"}], "\[Cross]", 
+       RowBox[{"(", 
+        FractionBox[
+         RowBox[{"E", "'"}], "\[Eta]"], ")"}]}]}], "=", 
+     RowBox[{
+      StyleBox[
+       RowBox[{
+        RowBox[{"-", "i"}], " ", "\[Omega]", " ", "\[Mu]", " ", 
+        RowBox[{"H", "'"}]}],
+       FontColor->RGBColor[1, 0, 0],
+       Background->RGBColor[1, 0.9, 1]], 
+      StyleBox[" ",
+       FontColor->RGBColor[1, 0, 0],
+       Background->RGBColor[1, 0.9, 1]], 
+      StyleBox["+",
+       FontColor->RGBColor[1, 0, 0],
+       Background->RGBColor[1, 0.9, 1]], 
+      RowBox[{
+       RowBox[{
+        StyleBox["(",
+         FontColor->RGBColor[1, 0, 0],
+         Background->RGBColor[1, 0.9, 1]], 
+        RowBox[{
+         RowBox[{"\[Del]", "log"}], 
+         RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", 
+       RowBox[{"E", "'"}]}]}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.719762499729056*^9, 3.7197625534711294`*^9}, {
+   3.719762631825611*^9, 3.719762726413021*^9}, {3.71976360458925*^9, 
+   3.7197636862249193`*^9}, 3.72037160380818*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Del]", "\[Cross]", 
+   RowBox[{"(", 
+    RowBox[{"H", "'"}], ")"}]}], "=", 
+  RowBox[{
+   RowBox[{"\[Del]", "\[Cross]", 
+    RowBox[{"(", 
+     RowBox[{"-", 
+      FractionBox["E", "\[Eta]"]}], ")"}]}], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        FractionBox["1", "\[Eta]"], " ", 
+        RowBox[{"\[Del]", "\[Cross]", "E"}]}], "+", 
+       RowBox[{
+        RowBox[{"\[Del]", 
+         RowBox[{"(", 
+          FractionBox["1", "\[Eta]"], ")"}]}], "\[Cross]", "E"}]}], ")"}]}], 
+    "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"i", " ", "\[Omega]", " ", "\[Epsilon]", " ", 
+       RowBox[{"E", "'"}]}], "-", " ", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[Del]", "\[Eta]"}], 
+        SuperscriptBox["\[Eta]", "2"]], "\[Cross]", "E"}]}], " ", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"i", " ", "\[Omega]", " ", "\[Epsilon]", " ", 
+        RowBox[{"E", "'"}]}], "-", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"\[Del]", "\[Eta]"}], 
+         SuperscriptBox["\[Eta]", "2"]], "\[Cross]", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "\[Eta]"}], " ", 
+          RowBox[{"H", "'"}]}], ")"}]}]}], "=", 
+      RowBox[{
+       RowBox[{"i", " ", "\[Omega]", " ", "\[Epsilon]", " ", 
+        RowBox[{"E", "'"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Del]", "log"}], 
+          RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", " ", 
+        RowBox[{"H", "'"}]}]}]}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.7197632403234153`*^9, 3.7197633625714073`*^9}, {
+   3.719763398919486*^9, 3.719763585585163*^9}, {3.7197636613284955`*^9, 
+   3.719763665730747*^9}, 3.7197676718218822`*^9, 3.72037160380818*^9}],
+
+Cell["\<\
+Result - determination on H in terms of E, E in terms of H in an \
+inhomogeneous medium\
+\>", "Text",
+ CellChangeTimes->{{3.719767192884489*^9, 3.71976725654113*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["H to E", "Subsection",
+ CellChangeTimes->{{3.720352233721543*^9, 3.7203522403715525`*^9}},
+ Background->RGBColor[1, 0.925, 0.925]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox["E", "\[Eta]"]}], "=", 
+  RowBox[{
+   RowBox[{"H", "'"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"i", " ", "\[Omega]", " ", "\[Mu]"}]]}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Del]", "\[Cross]", 
+        RowBox[{"(", 
+         RowBox[{"E", "'"}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Del]", "log"}], 
+          RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", 
+        RowBox[{"E", "'"}]}]}], ")"}]}], "=", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"i", " ", "\[Omega]", " ", "\[Mu]"}]]}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Del]", "\[Cross]", 
+        RowBox[{"(", 
+         RowBox[{"\[Eta]", " ", "H"}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Del]", "log"}], 
+          RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", 
+        RowBox[{"(", 
+         RowBox[{"\[Eta]", " ", "H"}], ")"}]}]}], ")"}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.719767280240485*^9, 3.719767324116995*^9}, 
+   3.7197673592750063`*^9, {3.719767411927017*^9, 3.719767478633833*^9}, 
+   3.72037160380818*^9}],
+
+Cell["Hence ", "Text",
+ CellChangeTimes->{{3.719767508185523*^9, 3.7197675096606073`*^9}, 
+   3.72037160380818*^9}],
+
+Cell[BoxData[
+ RowBox[{"E", "=", 
+  RowBox[{
+   FractionBox["\[Eta]", 
+    RowBox[{"i", " ", "\[Omega]", " ", "\[Mu]"}]], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"\[Del]", "\[Cross]", 
+      RowBox[{"(", 
+       RowBox[{"\[Eta]", " ", "H"}], ")"}]}], "-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Del]", "log"}], 
+        RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", 
+      RowBox[{"(", 
+       RowBox[{"\[Eta]", " ", "H"}], ")"}]}]}], ")"}]}]}]], "Text",
+ CellChangeTimes->{{3.7197675154439383`*^9, 3.719767532632921*^9}, {
+   3.7203505877557993`*^9, 3.720350590945804*^9}, {3.720350637305869*^9, 
+   3.7203506384958706`*^9}, {3.7203506912459445`*^9, 3.720350698055954*^9}, 
+   3.72037160380818*^9}],
+
+Cell["or", "Text",
+ CellChangeTimes->{{3.7203507047559633`*^9, 3.720350705335964*^9}, 
+   3.72037160380818*^9}],
+
+Cell[BoxData[
+ RowBox[{"E", "=", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"i", " ", "\[Omega]", " ", 
+     SqrtBox[
+      RowBox[{"\[Epsilon]", " ", "\[Mu]"}]]}]], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"\[Del]", "\[Cross]", 
+      RowBox[{"(", 
+       RowBox[{"\[Eta]", " ", "H"}], ")"}]}], "-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Del]", "log"}], 
+        RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", 
+      RowBox[{"(", 
+       RowBox[{"\[Eta]", " ", "H"}], ")"}]}]}], ")"}]}]}]], "Text",
+ CellChangeTimes->{{3.7203507170059805`*^9, 3.720350751296028*^9}, 
+   3.72037160380818*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["E to H", "Subsection",
+ CellChangeTimes->{{3.7203522570915756`*^9, 3.7203522640215855`*^9}},
+ Background->RGBColor[1, 0.925, 0.925]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Eta]", " ", "H"}], " ", "=", 
+  RowBox[{
+   RowBox[{"E", "'"}], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"i", " ", "\[Omega]", " ", "\[Epsilon]"}]], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Del]", "\[Cross]", 
+        RowBox[{"(", 
+         RowBox[{"H", "'"}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Del]", "log"}], 
+          RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", " ", 
+        RowBox[{"H", "'"}]}]}], ")"}]}], "=", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"i", " ", "\[Omega]", " ", "\[Epsilon]"}]], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Del]", "\[Cross]", 
+        RowBox[{"(", 
+         RowBox[{"-", 
+          FractionBox["E", "\[Eta]"]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Del]", "log"}], 
+          RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", " ", 
+        RowBox[{"(", 
+         RowBox[{"-", 
+          FractionBox["E", "\[Eta]"]}], ")"}]}]}], ")"}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.7197675974286275`*^9, 3.719767608923285*^9}, {
+   3.7197676567970233`*^9, 3.719767708268967*^9}, {3.719767741164849*^9, 
+   3.719767749666335*^9}, 3.72037160380818*^9}],
+
+Cell["Hence", "Text",
+ CellChangeTimes->{{3.7197677924557824`*^9, 3.719767793692853*^9}, 
+   3.7203716038181796`*^9}],
+
+Cell[BoxData[
+ RowBox[{"H", "=", 
+  RowBox[{
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"i", " ", "\[Omega]", " ", "\[Epsilon]", " ", "\[Eta]"}]], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"\[Del]", "\[Cross]", 
+        RowBox[{"(", 
+         FractionBox["E", "\[Eta]"], ")"}]}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[Del]", "log"}], 
+         RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", " ", 
+       RowBox[{"(", 
+        FractionBox["E", "\[Eta]"], ")"}]}]}], ")"}]}], "=", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"i", " ", "\[Omega]", " ", "\[Epsilon]", " ", 
+      SqrtBox[
+       FractionBox["\[Mu]", "\[Epsilon]"]]}]], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"\[Del]", "\[Cross]", 
+        RowBox[{"(", 
+         FractionBox["E", "\[Eta]"], ")"}]}]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[Del]", "log"}], 
+         RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", " ", 
+       RowBox[{"(", 
+        FractionBox["E", "\[Eta]"], ")"}]}]}], ")"}]}]}]}]], "Text",
+ CellChangeTimes->{{3.719767796872035*^9, 3.7197678937095737`*^9}, 
+   3.7203716038181796`*^9}],
+
+Cell["or", "Text",
+ CellChangeTimes->{{3.71976792494036*^9, 3.719767925313381*^9}, 
+   3.7203716038181796`*^9}],
+
+Cell[BoxData[
+ RowBox[{"H", "=", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"i", " ", "\[Omega]", "  ", 
+     SqrtBox[
+      RowBox[{"\[Epsilon]", " ", "\[Mu]"}]]}]], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"\[Del]", "\[Cross]", 
+       RowBox[{"(", 
+        FractionBox["E", "\[Eta]"], ")"}]}]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Del]", "log"}], 
+        RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", " ", 
+      RowBox[{"(", 
+       FractionBox["E", "\[Eta]"], ")"}]}]}], ")"}]}]}]], "Text",
+ CellChangeTimes->{{3.7197679417823234`*^9, 3.7197679498397846`*^9}, {
+   3.7203508493861656`*^9, 3.720350853076171*^9}, 3.7203716038181796`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Normal incidence at a plane dielectric boundary", "Title",
+ CellChangeTimes->{{3.7197292959274607`*^9, 3.7197293611541915`*^9}, {
+  3.719764570652506*^9, 3.719764586424408*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["General case for sourceless medium", "Section",
+ CellChangeTimes->{{3.719770498968586*^9, 3.7197705414390154`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["E", "i"], 
+    RowBox[{"(", "z", ")"}]}], "+", 
+   RowBox[{
+    SubscriptBox["E", "r"], 
+    RowBox[{"(", "z", ")"}]}]}], "=", 
+  RowBox[{
+   SubscriptBox["E", "t"], 
+   RowBox[{"(", "z", ")"}]}]}]], "Text",
+ CellChangeTimes->{{3.719765964631237*^9, 3.7197659971430964`*^9}, {
+   3.719770427404493*^9, 3.719770452429924*^9}, 3.7203716038181796`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["H", "i"], 
+    RowBox[{"(", "z", ")"}]}], "+", 
+   RowBox[{
+    SubscriptBox["H", "r"], 
+    RowBox[{"(", "z", ")"}]}]}], "=", 
+  RowBox[{
+   SubscriptBox["H", "t"], 
+   RowBox[{"(", "z", ")"}]}]}]], "Text",
+ CellChangeTimes->{{3.719766011342909*^9, 3.719766028166871*^9}, {
+   3.7197704745411887`*^9, 3.7197704934482703`*^9}, 3.7203716038181796`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["The x-polarized wave in inhomogeneous media", "Subsection",
+ CellChangeTimes->{{3.7197705503905272`*^9, 3.7197705610801387`*^9}, {
+  3.720355062685052*^9, 3.7203550862544003`*^9}, {3.720411471366537*^9, 
+  3.720411494484317*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["E", 
+    RowBox[{"i", ",", "x"}]], "+", 
+   SubscriptBox["E", 
+    RowBox[{"r", ",", "x"}]]}], "=", 
+  RowBox[{
+   SubscriptBox["E", 
+    RowBox[{"int", ",", "x"}]], "[", 
+   RowBox[{"-", "L"}], "]"}]}]], "Text",
+ CellChangeTimes->{{3.7197705645253353`*^9, 3.719770577165059*^9}, {
+   3.719770608710863*^9, 3.719770667953252*^9}, {3.719770704332332*^9, 
+   3.7197707231004057`*^9}, {3.7197710358892965`*^9, 3.719771063548878*^9}, {
+   3.7197713074268274`*^9, 3.719771312423113*^9}, {3.7197714452607107`*^9, 
+   3.719771451470066*^9}, {3.720354974225992*^9, 3.720354978049211*^9}, 
+   3.7203716038281794`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    SubscriptBox["E", 
+     RowBox[{"i", ",", "x"}]], "-", 
+    SubscriptBox["E", 
+     RowBox[{"r", ",", "x"}]]}], 
+   SubscriptBox["\[Eta]", "ext"]], "==", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"i", " ", "\[Omega]", "  ", 
+        SqrtBox[
+         RowBox[{
+          RowBox[{"\[Epsilon]", "[", "z", "]"}], " ", "\[Mu]"}]]}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"\[Del]", "\[Cross]", 
+            RowBox[{"(", 
+             FractionBox[
+              RowBox[{
+               SubscriptBox["E", 
+                RowBox[{"int", ",", "x"}]], "[", "z", "]"}], 
+              RowBox[{"\[Eta]", "[", "z", "]"}]], ")"}]}]}], "/.", 
+          RowBox[{"z", "\[Rule]", 
+           RowBox[{"-", "L"}]}]}], ")"}], "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"\[Del]", "log"}], 
+           RowBox[{"(", 
+            RowBox[{"\[Eta]", "[", "z", "]"}], ")"}]}], ")"}], "\[Cross]", 
+         " ", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             SubscriptBox["E", 
+              RowBox[{"int", ",", "x"}]], "[", "z", "]"}], 
+            RowBox[{"\[Eta]", "[", "z", "]"}]], ",", "0", ",", "0"}], 
+          "}"}]}]}], ")"}]}], "/.", 
+     RowBox[{"z", "\[Rule]", 
+      RowBox[{"-", "L"}]}]}], ")"}], ".", 
+   SubscriptBox["a", "y"]}]}]], "Text",
+ CellChangeTimes->{{3.7197710079686995`*^9, 3.719771019067334*^9}, 
+   3.7197710926155405`*^9, {3.7197711273645287`*^9, 3.7197711303667*^9}, {
+   3.7197711642726393`*^9, 3.7197711886470337`*^9}, {3.7197712696796684`*^9, 
+   3.719771276790075*^9}, {3.71977137409564*^9, 3.7197713745116644`*^9}, {
+   3.7197715316436515`*^9, 3.719771534525817*^9}, {3.719771599766548*^9, 
+   3.7197716057598906`*^9}, {3.7203508423561563`*^9, 
+   3.7203508464361615`*^9}, {3.720354984780596*^9, 3.7203550326893363`*^9}, {
+   3.7203555232323933`*^9, 3.720355569779056*^9}, {3.720355852602233*^9, 
+   3.72035585325427*^9}, {3.720356040259966*^9, 3.7203560417380505`*^9}, {
+   3.7203566513859205`*^9, 3.7203566546211057`*^9}, {3.7203567840555086`*^9, 
+   3.720356882423135*^9}, 3.7203572290585747`*^9, 3.7203716038281794`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["RHS", "Subsubsection",
+ CellChangeTimes->{{3.720355768052397*^9, 3.720355775820841*^9}},
+ Background->RGBColor[1, 0.925, 0.925]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{
+    RowBox[{"\[Del]", "\[Cross]", 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{
+        SubscriptBox["E", 
+         RowBox[{"int", ",", "x"}]], "[", "z", "]"}], "\[Eta]"], ")"}]}], ".", 
+    SubscriptBox["a", "y"]}]}], "=", 
+  RowBox[{
+   RowBox[{"-", 
+    RowBox[{
+     RowBox[{"Det", "[", GridBox[{
+        {
+         SubscriptBox["a", "x"], 
+         SubscriptBox["a", "y"], 
+         SubscriptBox["a", "z"]},
+        {
+         SubscriptBox["\[PartialD]", "x"], 
+         SubscriptBox["\[PartialD]", "y"], 
+         SubscriptBox["\[PartialD]", "z"]},
+        {
+         FractionBox[
+          RowBox[{
+           SubscriptBox["E", 
+            RowBox[{"int", ",", "x"}]], "[", "z", "]"}], 
+          RowBox[{"\[Eta]", "[", "z", "]"}]], "0", "0"}
+       }], "]"}], ".", 
+     SubscriptBox["a", "y"]}]}], "=", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"-", "1"}], ")"}], "3"], 
+     RowBox[{
+      SubscriptBox["\[PartialD]", "z"], 
+      RowBox[{"(", 
+       FractionBox[
+        RowBox[{
+         SubscriptBox["E", 
+          RowBox[{"int", ",", "x"}]], "[", "z", "]"}], 
+        RowBox[{"\[Eta]", "[", "z", "]"}]], ")"}]}]}], "=", 
+    RowBox[{"-", 
+     RowBox[{
+      SubscriptBox["\[PartialD]", "z"], 
+      RowBox[{"(", 
+       FractionBox[
+        RowBox[{
+         SubscriptBox["E", 
+          RowBox[{"int", ",", "x"}]], "[", "z", "]"}], 
+        RowBox[{"\[Eta]", "[", "z", "]"}]], ")"}]}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.720355124698599*^9, 3.7203551415755644`*^9}, {
+   3.7203551898643265`*^9, 3.7203553481303787`*^9}, {3.720355849502055*^9, 
+   3.720355873379421*^9}, {3.7203561043876343`*^9, 3.7203561514273243`*^9}, {
+   3.720357006277219*^9, 3.7203570208710537`*^9}, {3.7203572978095074`*^9, 
+   3.720357313329395*^9}, 3.7203716038281794`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Del]", "log"}], 
+   RowBox[{"(", 
+    RowBox[{"\[Eta]", "[", "z", "]"}], ")"}]}], "=", 
+  RowBox[{"{", 
+   RowBox[{"0", ",", "0", ",", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"\[Eta]", "'"}], "[", "z", "]"}], 
+     RowBox[{"\[Eta]", "[", "z", "]"}]]}], "}"}]}]], "Text",
+ CellChangeTimes->{{3.720355378357107*^9, 3.7203554548534827`*^9}, {
+   3.720356356656063*^9, 3.720356361724353*^9}, {3.7203573214658604`*^9, 
+   3.720357322198902*^9}, 3.7203716038281794`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[Del]", "log"}], 
+      RowBox[{"(", "\[Eta]", ")"}]}], ")"}], "\[Cross]", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        SubscriptBox["E", 
+         RowBox[{"int", ",", "x"}]], "[", 
+        RowBox[{"-", "L"}], "]"}], 
+       RowBox[{"\[Eta]", "[", "z", "]"}]], ",", "0", ",", "0"}], "}"}]}], ".", 
+   SubscriptBox["a", "y"]}], "=", 
+  RowBox[{
+   RowBox[{"Det", "[", GridBox[{
+      {
+       SubscriptBox["a", "x"], 
+       SubscriptBox["a", "y"], 
+       SubscriptBox["a", "z"]},
+      {"0", "0", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"\[Eta]", "'"}], "[", "z", "]"}], 
+        RowBox[{"\[Eta]", "[", "z", "]"}]]},
+      {
+       FractionBox[
+        RowBox[{
+         SubscriptBox["E", 
+          RowBox[{"int", ",", "x"}]], "[", "z", "]"}], 
+        RowBox[{"\[Eta]", "[", "z", "]"}]], "0", "0"}
+     }], "]"}], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{
+      SubscriptBox["a", "y"], ".", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"\[Eta]", "'"}], "[", "z", "]"}], 
+          SuperscriptBox[
+           RowBox[{"\[Eta]", "[", "z", "]"}], "2"]]}], 
+        RowBox[{
+         SubscriptBox["E", 
+          RowBox[{"int", ",", "x"}]], "[", "z", "]"}]}], ")"}], ".", 
+      SubscriptBox["a", "y"]}]}], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[PartialD]", "z"], 
+      RowBox[{"[", 
+       FractionBox["1", 
+        RowBox[{"\[Eta]", "[", "z", "]"}]], "]"}]}], 
+     RowBox[{
+      SubscriptBox["E", 
+       RowBox[{"int", ",", "x"}]], "[", "z", "]"}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.720355592460353*^9, 3.7203557273140664`*^9}, {
+   3.7203561732825747`*^9, 3.7203561739586134`*^9}, {3.720356212908841*^9, 
+   3.7203562193252077`*^9}, {3.7203562546332273`*^9, 3.720356295895588*^9}, {
+   3.7203570617813935`*^9, 3.7203571145812416`*^9}, 3.7203716038281794`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generalized impedance matching equation", "Subsubsection",
+ CellChangeTimes->{{3.7203571779086494`*^9, 3.7203572149027653`*^9}},
+ Background->RGBColor[1, 0.9, 1]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     SubscriptBox["E", 
+      RowBox[{"i", ",", "x"}]], "-", 
+     SubscriptBox["E", 
+      RowBox[{"r", ",", "x"}]]}], 
+    SubscriptBox["\[Eta]", "ext"]], "==", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"i", " ", "\[Omega]", "  ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"\[Epsilon]", "[", 
+         RowBox[{"-", "L"}], "]"}], " ", "\[Mu]"}]]}]], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{
+        SubscriptBox["\[PartialD]", "z"], 
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{
+           SubscriptBox["E", 
+            RowBox[{"int", ",", "x"}]], "[", "z", "]"}], 
+          RowBox[{"\[Eta]", "[", "z", "]"}]], ")"}]}]}], "+", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[PartialD]", "z"], 
+        RowBox[{"[", 
+         FractionBox["1", 
+          RowBox[{"\[Eta]", "[", "z", "]"}]], "]"}]}], 
+       RowBox[{
+        SubscriptBox["E", 
+         RowBox[{"int", ",", "x"}]], "[", "z", "]"}]}]}], ")"}]}]}], "/.", 
+  RowBox[{"z", "\[Rule]", 
+   RowBox[{"-", "L"}]}]}]], "Text",
+ CellChangeTimes->{{3.720357239619179*^9, 3.720357274309163*^9}, {
+   3.7203573581639595`*^9, 3.7203573715377245`*^9}, 3.7203716038381796`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inhomogeneous Medium - direct  approach", "Title",
+ CellChangeTimes->{{3.720842387616207*^9, 3.720842420276394*^9}, {
+  3.7208424896842937`*^9, 3.7208425199169703`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Del]", " ", "\[Cross]", " ", "E"}], "+", 
+   RowBox[{"i", " ", "\[Omega]", " ", "\[Mu]", " ", "H"}]}], "=", 
+  "0"}]], "Input",
+ CellChangeTimes->{{3.7208425650369854`*^9, 3.7208426066572227`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Del]", " ", "\[Cross]", " ", "H"}], "-", 
+   RowBox[{"i", " ", "\[Omega]", " ", "\[Epsilon]", " ", "E"}]}], "=", 
+  "0"}]], "Input",
+ CellChangeTimes->{{3.7208426525776863`*^9, 3.720842674152814*^9}}],
+
+Cell[BoxData[
+ RowBox[{"H", "=", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"-", "1"}], 
+    RowBox[{"i", " ", "\[Omega]", " ", "\[Mu]"}]], 
+   RowBox[{"\[Del]", " ", "\[Cross]", " ", "E"}]}]}]], "Input",
+ CellChangeTimes->{{3.7208427124180317`*^9, 3.720842751968264*^9}, 
+   3.7208430841180983`*^9}],
+
+Cell[BoxData[
+ RowBox[{"E", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"ExInt", "[", "z", "]"}], ",", "0", ",", "0"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.720842825358671*^9, 3.7208428592388754`*^9}, {
+  3.7208429107567687`*^9, 3.720842914376795*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DelCrossE", "=", 
+  RowBox[{"Curl", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"ExInt", "[", "z", "]"}], ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7208428833140574`*^9, 3.72084293885448*^9}, {
+  3.720843028097666*^9, 3.7208430335877113`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   RowBox[{
+    SuperscriptBox["ExInt", "\[Prime]",
+     MultilineFunction->None], "[", "z", "]"}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.7208429424295073`*^9, 3.7208430356452274`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hint", "=", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"-", "1"}], 
+    RowBox[{"I", " ", "\[Omega]", " ", "\[Mu]"}]], "DelCrossE"}]}]], "Input",
+ CellChangeTimes->{{3.720843040370262*^9, 3.720843051872853*^9}, {
+  3.7208430929556637`*^9, 3.72084310574076*^9}, {3.720843175318782*^9, 
+  3.7208431835263476`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   FractionBox[
+    RowBox[{"\[ImaginaryI]", " ", 
+     RowBox[{
+      SuperscriptBox["ExInt", "\[Prime]",
+       MultilineFunction->None], "[", "z", "]"}]}], 
+    RowBox[{"\[Mu]", " ", "\[Omega]"}]], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.720843187648878*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7208432466967516`*^9, 3.7208432560443077`*^9}, {
+  3.720843355989833*^9, 3.7208433578723435`*^9}}],
+
+Cell[BoxData["EMFieldExt1"], "Input",
+ CellChangeTimes->{{3.722674298080274*^9, 3.722674307572817*^9}, {
+  3.7226744437596064`*^9, 3.7226744970766563`*^9}}],
+
+Cell[BoxData["EMFieldInt"], "Input",
+ CellChangeTimes->{{3.722674500427848*^9, 3.7226745055521407`*^9}}],
+
+Cell[BoxData["EMFieldExt2"], "Input",
+ CellChangeTimes->{{3.7226745077562666`*^9, 3.7226745229431353`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Normal", " ", "components", " ", "vanish", " ", "as", " ", "long", 
+  " ", "as", " ", "there", " ", "is", " ", "no", " ", "excitation", " ", 
+  "and", " ", "no", " ", "sources", " ", "on", " ", "the", " ", 
+  RowBox[{"boundary", "."}]}]], "Input",
+ CellChangeTimes->{{3.7226750296321163`*^9, 3.7226751352011547`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"E", " ", "Tangent", " ", "componets", " ", "continuous", " ", 
+  "always", 
+  RowBox[{"??", " ", 
+   RowBox[{
+    RowBox[{
+    "In", " ", "the", " ", "electrostatic", " ", "case", " ", "E", " ", "is", 
+     " ", 
+     RowBox[{"conservative", ".", "But"}], " ", "in", " ", "electrodynamics", 
+     " ", 
+     RowBox[{"\[Del]", "\[Cross]", "E"}]}], "=", 
+    FractionBox[
+     RowBox[{"\[PartialD]", "B"}], 
+     RowBox[{"\[PartialD]", "t"}]], " "}]}]}]], "Input",
+ CellChangeTimes->{{3.7226751109667683`*^9, 3.7226751398164186`*^9}, {
+  3.722675171243216*^9, 3.7226751730763206`*^9}, {3.722675231338653*^9, 
+  3.722675286664818*^9}, {3.722677053836894*^9, 3.7226770551669703`*^9}, {
+  3.722677203211438*^9, 3.722677223859619*^9}}]
+}, Open  ]]
+},
+WindowSize->{1920, 980},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification->2.,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 147, 2, 179, "Title"],
+Cell[CellGroupData[{
+Cell[752, 28, 102, 1, 127, "Section"],
+Cell[857, 31, 332, 7, 132, "Text"],
+Cell[1192, 40, 159, 2, 60, "Text"],
+Cell[1354, 44, 133, 2, 60, "Text"],
+Cell[1490, 48, 621, 15, 114, "Text"],
+Cell[2114, 65, 117, 1, 60, "Text"],
+Cell[CellGroupData[{
+Cell[2256, 70, 360, 6, 118, "Subsection"],
+Cell[2619, 78, 362, 6, 60, "Text"],
+Cell[2984, 86, 182, 4, 64, "Text"],
+Cell[3169, 92, 1419, 42, 114, "Text"],
+Cell[4591, 136, 611, 18, 89, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5239, 159, 403, 6, 118, "Subsection"],
+Cell[5645, 167, 287, 5, 60, "Text"],
+Cell[5935, 174, 277, 6, 61, "Text"],
+Cell[6215, 182, 178, 5, 61, "Text"],
+Cell[6396, 189, 883, 26, 114, "Text"],
+Cell[7282, 217, 403, 11, 61, "Text"],
+Cell[7688, 230, 321, 10, 61, "Text"],
+Cell[8012, 242, 1187, 35, 61, "Text"],
+Cell[9202, 279, 141, 1, 60, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9380, 285, 309, 5, 118, "Subsection"],
+Cell[9692, 292, 127, 1, 60, "Text"],
+Cell[9822, 295, 601, 14, 61, "Text"],
+Cell[10426, 311, 654, 19, 61, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11117, 335, 263, 4, 118, "Subsection"],
+Cell[11383, 341, 293, 7, 60, "Text"],
+Cell[11679, 350, 325, 7, 61, "Text"],
+Cell[12007, 359, 684, 19, 114, "Text"],
+Cell[12694, 380, 774, 25, 61, "Text"],
+Cell[13471, 407, 132, 1, 60, "Text"],
+Cell[13606, 410, 271, 7, 61, "Text"],
+Cell[13880, 419, 122, 1, 60, "Text"],
+Cell[14005, 422, 149, 2, 60, "Text"],
+Cell[14157, 426, 159, 2, 60, "Text"],
+Cell[14319, 430, 207, 5, 79, "Text"],
+Cell[14529, 437, 122, 2, 60, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14712, 446, 213, 3, 179, "Title"],
+Cell[CellGroupData[{
+Cell[14950, 453, 427, 6, 117, "Subsection"],
+Cell[CellGroupData[{
+Cell[15402, 463, 524, 13, 79, "Input"],
+Cell[15929, 478, 426, 12, 103, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16392, 495, 346, 8, 61, "Input"],
+Cell[16741, 505, 549, 14, 103, "Output"]
+}, Open  ]],
+Cell[17305, 522, 149, 2, 60, "Text"],
+Cell[CellGroupData[{
+Cell[17479, 528, 423, 10, 95, "Input"],
+Cell[17905, 540, 585, 17, 128, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18539, 563, 151, 2, 117, "Subsection"],
+Cell[CellGroupData[{
+Cell[18715, 569, 627, 16, 66, "Input"],
+Cell[19345, 587, 507, 13, 119, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[19879, 604, 116, 1, 127, "Section"],
+Cell[CellGroupData[{
+Cell[20020, 609, 185, 2, 95, "Section"],
+Cell[20208, 613, 1022, 29, 161, "Text"],
+Cell[CellGroupData[{
+Cell[21255, 646, 97, 1, 85, "Subsection"],
+Cell[21355, 649, 1989, 57, 90, "Text"],
+Cell[23347, 708, 1162, 36, 93, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24558, 750, 216, 3, 127, "Section"],
+Cell[24777, 755, 2582, 81, 90, "Text"],
+Cell[27362, 838, 1778, 53, 93, "Text"],
+Cell[29143, 893, 176, 4, 60, "Text"],
+Cell[CellGroupData[{
+Cell[29344, 901, 136, 2, 117, "Subsection"],
+Cell[29483, 905, 1262, 40, 89, "Text"],
+Cell[30748, 947, 115, 2, 60, "Text"],
+Cell[30866, 951, 739, 20, 83, "Text"],
+Cell[31608, 973, 111, 2, 60, "Text"],
+Cell[31722, 977, 633, 20, 94, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32392, 1002, 138, 2, 117, "Subsection"],
+Cell[32533, 1006, 1298, 39, 90, "Text"],
+Cell[33834, 1047, 117, 2, 60, "Text"],
+Cell[33954, 1051, 1221, 38, 110, "Text"],
+Cell[35178, 1091, 111, 2, 60, "Text"],
+Cell[35292, 1095, 712, 21, 95, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36065, 1123, 183, 2, 286, "Title"],
+Cell[CellGroupData[{
+Cell[36273, 1129, 121, 1, 127, "Section"],
+Cell[36397, 1132, 414, 13, 61, "Text"],
+Cell[36814, 1147, 416, 13, 61, "Text"],
+Cell[CellGroupData[{
+Cell[37255, 1164, 235, 3, 85, "Subsection"],
+Cell[37493, 1169, 660, 16, 63, "Text"],
+Cell[38156, 1187, 2319, 60, 98, "Text"],
+Cell[CellGroupData[{
+Cell[40500, 1251, 134, 2, 99, "Subsubsection"],
+Cell[40637, 1255, 1871, 57, 154, "Text"],
+Cell[42511, 1314, 519, 14, 90, "Text"],
+Cell[43033, 1330, 2013, 63, 169, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45083, 1398, 168, 2, 99, "Subsubsection"],
+Cell[45254, 1402, 1257, 40, 95, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46584, 1450, 175, 2, 179, "Title"],
+Cell[46762, 1454, 246, 6, 61, "Input"],
+Cell[47011, 1462, 249, 6, 61, "Input"],
+Cell[47263, 1470, 297, 8, 95, "Input"],
+Cell[47563, 1480, 259, 6, 61, "Input"],
+Cell[CellGroupData[{
+Cell[47847, 1490, 388, 10, 61, "Input"],
+Cell[48238, 1502, 247, 6, 61, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48522, 1513, 333, 8, 95, "Input"],
+Cell[48858, 1523, 322, 9, 88, "Output"]
+}, Open  ]],
+Cell[49195, 1535, 147, 2, 61, "Input"],
+Cell[49345, 1539, 156, 2, 61, "Input"],
+Cell[49504, 1543, 104, 1, 61, "Input"],
+Cell[49611, 1546, 107, 1, 61, "Input"],
+Cell[49721, 1549, 341, 5, 61, "Input"],
+Cell[50065, 1556, 753, 17, 91, "Input"]
+}, Open  ]]
+}
+]
+*)
+

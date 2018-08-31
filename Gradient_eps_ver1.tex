@@ -1,0 +1,400 @@
+%% Working plan: C:\Users\DELL\Documents\DATA\PhD\Phys-Rev-Letters-paper\2018-09-23-ver1\2018-03-27-Workplan.nb 
+
+%% ****** Start of file apsguide4-1.tex ****** %
+%%
+%%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%%   Version 4.1r of REVTeX, August 2010.
+%%
+%%   Copyright (c) 2009, 2010 The American Physical Society.
+%%
+%%   See the REVTeX 4.1 README file for restrictions and more information.
+%%
+\documentclass[twocolumn,secnumarabic,amssymb, nobibnotes, aps, prd]{revtex4-1}
+%\usepackage{acrofont}%NOTE: Comment out this line for the release version!
+\newcommand{\revtex}{REV\TeX\ }
+\newcommand{\classoption}[1]{\texttt{#1}}
+\newcommand{\macro}[1]{\texttt{\textbackslash#1}}
+\newcommand{\m}[1]{\macro{#1}}
+\newcommand{\env}[1]{\texttt{#1}}
+\setlength{\textheight}{9.5in}
+\usepackage{amsmath}
+%\usepackage[square,numbers]{natbib}
+%\usepackage[]{natbib}
+
+
+\begin{document}
+
+\title{Title - to be filled}%
+
+\author{Ehud Hahamy, Nir Sochen}%
+\email{ehud_hahamy@yahoo.com}
+\email{sochen@post.tau.ac.il}
+\affiliation{Raymond and Beverly Sackler school of mathematics, Department of applied mathematics, Tel Aviv university}
+\date{\today}%
+\begin{abstract}
+We introduce a framework for the study of 3-D electromagnetic wave propagation in smoothly-varying inhomogeneous, time-independent,linear media. Variation in dielectric permittivity and magnetic permeability  are assumed to take place in the $z$ direction only.
+ 
+The framework is consists of a system of three scalar, damped linear wave equations of variable coefficients. Scalar form is obtained by  careful expansion of Maxwell's equations full curl-curl form.  
+Full uncoupling of the system is achieved, and assumptions applied to acquire a more traceable 1-D variation - governed model are stated.\\
+Profile-dependent dimensional analysis of the non-transverse field component equation allows qualitative analysis of solution's spatial behaviour in the time-harmonic form of the equations .
+Dimensional grouping yields valid comparisons of parameter magnitudes. Numerical simulations demonstrate variation of solution features corresponding to different asymptotic assumptions. \\
+Localized qualitative change in spatial solution behaviour occur and can be tracked by the governing PDE signature. While sigmoidal dielectric profiles exhibit behaviour approximated by a limiting step-function profiles, Gaussian profiles may change the  governing equation's signature, yielding abrupt change in the solution characterizing properties.  
+
+%This template can be used to prepare a research article for submission to OSA’s journals \emph{Applied Optics}, \emph{Advances in Optics and Photonics}, JOSA A, JOSA B, and \emph{Optics Letters}. Note that this template can be run from your own \TeX\ system or within the cloud-based \href{https://www.overleaf.com}{Overleaf} system (formerly writeLaTeX). Use the shortarticle/true option for \emph{Optics Letters}.
+\end{abstract}
+\maketitle
+%\tableofcontents
+
+\section{Introduction}
+%The problem of electromagnetic waves propagation in inhomogeneous media is a the subject of a vast variety of books, research monographs and papers. In its most basic form, the problem is treated in basic electrodynamics textbooks EHUD \cite{Jackson, Cheng} in the context of plane wave propagation in a medium having one or more jump discontinuities in its dielectric permittivity or its magnetic permeability. The classical problem resolution is based on applying electromagnetic boundary conditions to stitch phasor-formed solution for Maxwell's equations generated at either side of the jump discontinuity. A peer into the literature shows that this is the dominant point of view taken in more advanced studies as well. Typically, material inhomogeneity is approximated by a stratified media of many l 
+%\\
+%Peering into the appeal of this  
+%Consider an optical configuration consisting of a source illuminating a face of a large dielectric slab, parallel to the $x-y$ plane, in a right angle of incidence.\\
+%The slab's dielectric permittivity and magnetic permeability are assumed to vary in the $z$ direction only. The $x$,$y$-independent dielectric and magnetic profiles are required to have a closed-form, complex-valued functional form of $C^2$-smoothness at least, with a positive real part.  \\
+%The profiles effect on the electromagnetic wave propagation is best understood qualitatively if Maxwell's equations in matter are transformed into second order, uncoupled wave equation. \\
+%If no assumption is made regarding the dielectric and magnetic $x,y,z$ dependency, the curl-curl formulation commonly applied to Maxwell's equation yields coupled wave equations \cite{goodman2005introduction}. 
+%We shall show that our assumption of strict profile $z$-dependency is sufficient for full uncoupling of the equations in a non-trivial way. In this sense,  we get an analogy to the homogeneous medium case. 
+
+%the slab is modelled by careful derivation of scalar, damped wave equations directly from Maxwell's equations. 
+ 
+%attached to a slab of smoothly-varying dielectric permittivity and magnetic permeability. The waveguide's cross section sides are assumed large enough to allow  
+%The only assumption explicitly made in this work regarding typical system parameter magnitudes is   
+%with its rectangular cross section sides $a$ and $b$ large enough to have The $E_z$ field 
+%ROUGH WRITING:\\
+%Typical studies of the effect of heterogeneity in material properties on the spatial vave pattern appear in interferometry, metamaterial science.\\
+%Typical assumptions - piecewise-constant dielectric permeability
+
+%Cites: 
+%\cite{latexcompanion}
+%\cite{landau2013course}
+%Landau electrodynamics of continuous media - modelling the frequency dependence of the refractive index\\
+%Dressel-Gruner - Electrodynamics of solids - wave eqn  in inhomogeneous media - saptial variations\\
+%\cite{dressel2005electrodynamics}
+%Antonov-Harmon-Yaresko\\
+%Frederick Wooten chap 2 - wave eqn for absorbing medium\\
+%Marcuse chap. 7 - Light propagation in square law media - graded in dex optics in the case of axially-symmetric materials, chap 8 %(Maxwell's equns in inhomogeneous media) - `imperfection' is z-variation in the medium. Since `hard' to cope, approximation by step functions is recommended.
+%Bass - Handbook of optics - vol 2. inside: Duncan T Moore - gradient index optics. Axial gradients - correction of aberrations. Referring to Sands: any aspheric surface can be converted to a graded index profile. Difference - dependence of the refractive index in frequency. Thus the convertion can be  applied only in the monochromatic case.\\
+
+
+
+
+
+\section{Scalar form of the generalized wave equations in smoothly varying media}
+\subsection{Constructing the generalized scalar wave equations}
+
+Let $\overrightarrow{E}(x,y,z,\omega) = \hat{E}(x,y,z)e^{i \omega t}$, $\overrightarrow{H}(x,y,z,\omega) = \hat{H}(x,y,z)e^{i \omega t}$ be time-harmonic electric and magnetic fields, respectively, satisfying Maxwell's equations
+\begin{subequations}
+
+	\begin{align}
+        \nabla \times \overrightarrow{H}-i \omega \overrightarrow{D} &= \overrightarrow{J}  \label{eqns:CurlH_Maxwell}	\\	
+        \nabla \times \overrightarrow{E} + i \omega \overrightarrow{B} &= 0  \label{eqns:CurlE_Maxwell} \\
+		\nabla \cdot \overrightarrow{D} &=  \rho	 \label{eqns:DivD_Maxwell}\\		
+		\nabla \cdot \overrightarrow{B} &= 0	
+	\end{align}
+\end{subequations}
+ 
+Assume a linear, isotropic material, so that the flux density vectors satisfy $\overrightarrow{D}=\epsilon \overrightarrow{E}$, and $\overrightarrow{B} =\mu \overrightarrow{H}$. We allow material inhomogeneity: $\mu=\mu(x,y,z)$, $\epsilon = \epsilon(x,y,z)$, where $\epsilon$ and $\mu$ are smooth functions of $x,y,z$.\\ 
+For convenience we define $\mathcal{M} = \log(\mu)$, $\mathcal{E} = \log(\epsilon)$. \\
+Maxwell's equations for inhomogeneous medium in vector form (compare \cite{goodman2005introduction}, chap. 3) 
+\begin{equation}
+\label{eqns:Generalized_wave_vector}
+\nabla (\nabla \cdot \overrightarrow{E})-\nabla(\mathcal{M}) \times \left(\nabla \times \overrightarrow{E} \right) - \nabla^2 \overrightarrow{E} -\epsilon \mu \omega^2 \overrightarrow{E} + i \omega \mu \overrightarrow{J} = 0
+\end{equation}
+are derived directly from Maxwell's equations using the curl-curl formulation. The first and second terms at the left hand side satisfy
+
+\begin{equation}
+\nabla \left( \nabla \cdot \overrightarrow{E} \right)_{x_j} = \frac{\partial}{\partial x_j}\left( \frac{\rho}{\epsilon}\right) - \left(\frac{\partial \overrightarrow{E}}{\partial x_j} \cdot \nabla \mathcal{E} + \overrightarrow{E} \cdot \frac{\partial}{\partial x_j} \nabla \mathcal{E} \right)
+\label{eqns:E_Wave_extra_term_Grad_Div_E} 
+\end{equation}
+
+\begin{equation}
+\left(\nabla \mathcal{M} \times \left(\nabla \times \overrightarrow{E} \right) \right)_{x_j} = 
+\nabla \mathcal{M} \cdot \left( \frac{\partial \overrightarrow{E}}{\partial x_j}- \nabla E_{x_j} \right)
+\label{eqns:E_Wave_extra_term_log_mu}
+\end{equation}
+
+where $x_j = x,y,z$ for $j=1,2,3$, respectively. Identity (\ref{eqns:E_Wave_extra_term_Grad_Div_E}) is derived using the constitutive relation
+$\nabla \cdot \overrightarrow{D} = \rho$. \\
+Identity (\ref{eqns:E_Wave_extra_term_log_mu}) is a non-trivial result of the Levi-Civita symbol calculus.\\
+Note that if $\epsilon$ and $\mu$ are constant, equation (\ref{eqns:Generalized_wave_vector}) is the well-known system of uncouples standard wave equations.
+
+
+\subsection{System uncoupling for x,y - independent medium}
+Assume that $\mu, \epsilon$ are $x,y$-independent. As in the constant $\epsilon$, $\mu$ case, the system (\ref{eqns:Generalized_wave_vector}) can be uncoupled in the following sense: the $E_z$  equation is
+\begin{equation}
+\mathcal{E}''{E_z} +\mathcal{E}' E_z' + \nabla^2 {E_z} +\epsilon  \mu \omega^2 E_z = \left( \frac{\rho}{\epsilon}\right)' + i \omega \mu J_z
+\label{eqns:Generalized_wave_z_coeffs_Eq3}
+\end{equation}
+where the primes denote $z$ derivatives. Note that term (\ref{eqns:E_Wave_extra_term_log_mu}) contribution cancels due to $\mu$ strict $z$-dependency. \\ In such case, the $z$-component equation is a scalar PDE in $E_z$. Hence, if $\mu, \epsilon,\rho,\frac{\partial J_z}{\partial t}$ are known, (\ref{eqns:Generalized_wave_z_coeffs_Eq3}) is decoupled from the system (\ref{eqns:Generalized_wave_vector}) and can be solved in a stand-alone manner.\\ 
+For $x_1=x$, $x_2=y$, we get the  equations  
+\begin{equation}
+\mathcal{M}'\left( \frac{\partial E_{x_j}}{\partial z} - \frac{\partial E_z}{\partial {x_j}}\right)+\mathcal{E}'\frac{\partial E_z}{\partial {x_j}}+\nabla^2 E_{x_j} +\epsilon \mu \omega^2 E_{x_j} = i \omega \mu J_{x_j}
+\label{eqns:Generalized_wave_z_coeffs_Eq1_2}
+\end{equation}
+Equations (\ref{eqns:Generalized_wave_z_coeffs_Eq1_2}) are coupled with the $E_z$ equation but not among themselves. Thus, once $E_z$ is obtained, it can be substituted into equations  (\ref{eqns:Generalized_wave_z_coeffs_Eq1_2}), each becoming a stand-alone scalar PDE in $E_{x_j}$, achieving total uncoupling of (\ref{eqns:Generalized_wave_vector}).
+
+\section{Assumptions yielding reduction of PDEs to ODEs}
+From now on we shall address the monochromatic case. Since $\epsilon$ and $\mu$ are time independent, $\partial_t \rightarrow i \omega$, $\partial_{tt} \rightarrow -\omega^2$, $E_{x_j} \rightarrow \hat{E}_{x_j}$, $J_{x_j} \rightarrow \hat{J}_{x_j}$\\
+Assume an $x,y$ spatially coherent source incident to an infinite slab $-L \leq z \leq L$, $-\infty <x,y<\infty$, at $z=-L$. The profiles $\epsilon = \epsilon(z) \in C^{2}(-L,L), \mu=\mu(z)\in C^1(-L,L)$ are assumed to have strictly positive real parts. We shall also assume sufficiently differentiable, $x,y$-independent $\rho, \overrightarrow{J}$.\\
+
+Spatial coherence and $x,y$ independence of both equation (\ref{eqns:Generalized_wave_z_coeffs_Eq3}) coefficients and inhomogeneous terms yield $x,y$ invariance, causing the $x,y$ derivatives in the PDE  to vanish. The PDE is thus reduced to the ODE
+\begin{equation}
+\hat{E}_z'' + \mathcal{E}' \hat{E}_z' + \left( \mathcal{E}'' + \epsilon \mu \omega^2 \right)\hat{E}_z   = \left( \frac{\rho}{\epsilon}\right)' + i \omega \mu J_z
+\label{eqns:ODE_z_inhom}
+\end{equation}
+
+PDE (\ref{eqns:Generalized_wave_z_coeffs_Eq1_2})  turns into an even simpler form, since $\hat{E}_z$ is $x,y$ independent, and therefore  $\frac{\partial \hat{E}_z}{\partial {x_j}}=0$. Thus the  PDE is mapped to the ODE  
+\begin{equation}
+ \hat{E}_{x_j}''+\mathcal{M}' \hat{E}_{x_j}'  +\epsilon \mu \omega^2 \hat{E}_{x_j} = i \omega\mu J_{x_j}
+\label{eqns:ODE_xy_inhom}
+\end{equation}
+having no explicit $\hat{E}_z$ dependency.
+
+
+
+\section{Dimensional analysis in a for a structured, z-dependent inhomogeneous layer} 
+The formulations (\ref{eqns:Generalized_wave_vector}) is general enough to allows any twice-differentiable dielectric profile. Yet,  to get qualitative insight about the solution behaviour using asymptotic analysis, dimensional analysis must be performed for a given profile. In this sense, strict meaning can be attached to 'large' and 'small' parameters statements, allowing correct selection of asymptotic analysis technique.  
+\subsection{Construction of a Sigmoid dielectric Profile}
+\label{sec:sigmoid_profile}
+As commonly assumed in optics, we consider a source-free (i.e. $\rho=0, \overrightarrow{J}=0$) layer $-L \leq z \leq L, -\infty < x,y < \infty$, in  which $\mu$ is constant. The dielectric profile $\epsilon(z)$ interpolates smoothly and monotonically two values of the dielectric profile so that $\epsilon(-L)=\epsilon_1$ and $\epsilon(L)=\epsilon_2$. The sigmoid is a non-linear function, hence should have a dimensionless argument. To do so, we take some sigmoid-like function $c( \cdot )$ and normalize its argument  by  a constant $M$, yielding $c\left( \frac{z}{M}\right)$. The interpolating function is
+
+\begin{align}
+\epsilon(z)=\frac{(\epsilon_2 - \epsilon_1)c(z/M)+\epsilon_1 c(L/M)-\epsilon_2 c(-L/M)}{c(L/M)-c(-L/M)}
+\label{eqns:eps_z_dim_profile}
+\end{align}
+which can be substituted into (\ref{eqns:ODE_z_inhom}), (\ref{eqns:ODE_xy_inhom}). The resulting equations coefficients turn out to be cumbersome and not suggestive to interpretation. A more compact and meaningful form will now be presented next.
+
+  
+
+\subsection{Dimensional Analysis for a Sigmoidal Profile}
+Defining the dimensionless quantities 
+\begin{subequations}
+\begin{align}
+s &= z/M \label{eqns:def_nd_sigmoid_s} \\
+a &= L/M \label{eqns:def_nd_sigmoid_a} \\
+r &= (\epsilon_2 - \epsilon_1)/\epsilon_1 \label{eqns:def_nd_sigmoid_r} \\
+\Omega &= M \omega \sqrt{\epsilon_1 \mu} \label{eqns:def_nd_sigmoid_W} 
+\end{align}
+\end{subequations}
+In these terms, letting
+\begin{align}
+q(s) = rc(s)+c(a)-(r+1)c(-a)
+\label{eqns:eps_simp}
+\end{align}
+yields
+\begin{align*}
+\frac{d}{dz} &\rightarrow \frac{1}{M}\dfrac{d}{ds} \\
+\frac{d^2}{dz^2} &\rightarrow \frac{1}{M^2}\dfrac{d^2}{ds^2} \\
+\mathcal{E}' &\rightarrow \frac{r c'(s)}{M q(s)}	\\
+\mathcal{E}'' &\rightarrow \frac{r c''(s)}{M^2 q(s)} - \left( \frac{r c'(s)}{M q(s)}\right)^2 \\
+\epsilon \mu \omega^2 &\rightarrow \frac{q(s) \Omega ^2}{M^2 (c(a)-c(-a))}
+\end{align*}
+The scaling of the $z$ coordinate by $M$ factors it out in the  homogeneous case. Equation (\ref{eqns:ODE_z_inhom}) is thus transformed into 
+\begin{align}
+\label{eqns:ODE_Ez_DimGroup}
+\frac{d^2 \hat{E}_z}{ds^2} & + k_1(s) \frac{d \hat{E}_z}{ds} + k_0(s) \hat{E}_z = 0 \\
+k_1(s) &= \frac{r c'(s)}{q(s)} \notag \\
+k_0(s) &=   \frac{r c''(s)}{q(s)} - \left( \frac{r c'(s)}{ q(s)}\right)^2 + \frac{q(s) \Omega ^2}{c(a)-c(-a)}   \notag
+\end{align}
+and equation (\ref{eqns:ODE_xy_inhom}) becomes
+
+\begin{align}
+\label{eqns:ODE_Ex_DimGroup}
+\frac{d^2 \hat{E}_{x_j}}{ds^2} + \frac{q(s) \Omega ^2}{c(a)-c(-a)}\hat{E}_{x_j} = 0
+\end{align}
+
+
+\subsection{Construction of the Gaussian Profile}We demonstrate complex solution behaviour patterns, inspired by linear, second order ODE theory with constant coefficients. To do so, a dielectric profile altering equation (\ref{eqns:ODE_z_inhom}) coefficients signs in the is presented. \\
+
+We consider again a source-free layer defined as in section \ref{sec:sigmoid_profile}, with $\mu$ constant. This time we consider a Gaussian-shaped profile
+\begin{align}
+\epsilon(z) = C e^{-(\frac{z-m}{\sigma})^2}
+\label{eqns:Gauss_Profile}
+\end{align}
+
+Assume that the parameters $C$, $m$ are chosen to fit $\epsilon(-L)=\epsilon_1$, $\epsilon(L)=\epsilon_2$. Clearly, $C$ is positive.\\
+For simplicity, we shall keep the profile in its current form, remembering that $\sigma$ is considered a tunable parameter. 
+
+\subsection{Temporal Frequency-Dependent Spatial Solution behaviour}
+Consider ODE (\ref{eqns:ODE_z_inhom}). Since constant $\mu$ and source-free layer are assumed, it has the form
+
+\begin{equation}
+ \hat{E}_z'' -\frac{2 (z-m)}{\sigma^2} \hat{E}_z' + \left( C \mu  \omega ^2 e^{-\frac{(z-m)^2}{\sigma
+   ^2}}-\frac{2}{\sigma ^2}\right) \hat{E}_z = 0
+\label{eqns:source_free_Gaussian_ODE_z}
+\end{equation}n
+Tuning $\sigma$ and $\omega$,  The $\hat{E}_z$ coefficient $c_0(z)$ can be tuned to be uniformly positive or negative in the interval $-L < z < L$, or alter sign there. One should expect that the local solution behaviour would be determined by the equation's characteristic root, computed for a fixed value of $z$. This resulting qualitative behaviour should hold for neighbouring $z$ values due to the $\epsilon$ profile smoothness. Thus, the well-known repertoire of exponential / sinusoidal combinations would dominate the local solution shape.     
+
+
+\section{Reflection-Transmission formulation for an inhomogeneous layer}
+ 
+
+\subsection{Field components matching at the boundaries}
+
+Let the incidence wave be normal to the boundary surface $z=-L$. The  media to the  left and right of the layer $-L \leq z \leq L$ have constant dielectric profile $\epsilon_{1}$, $\epsilon_2$ respectively. The layer's $z$-dependent dielectric profile is simply $\epsilon$. The electric and magnetic fields are denoted $\overrightarrow{E}_1$, $\overrightarrow{H}_1$, $\overrightarrow{E}$, $\overrightarrow{H}$, $\overrightarrow{E}_2$, $\overrightarrow{H}_2$ at $z<-L$, $-L<z<L$, $z>L$, respectively.\\ 
+As long as analytic methods only are applied for solution assessment, no artificial boundary conditions are required to model `free space interface'.\\
+Boundary conditions at the interfaces $z= \pm L$ are determined classically, as their derivation is local in space. Further, by assumption, no net charge is accumulated on the boundary surfaces and no current flows along them. Thus
+\begin{itemize}
+\item  the $\overrightarrow{E}$ tangential component is continuous across the interfaces. For simplicity, we discuss (from now on ) the $x$-polarized case,
+\begin{subequations}
+\begin{align}
+E_{1x}\vert_{z=-L^{-}} &= E_x \vert_{z=-L^+} \\
+E_x \vert_{z=-L^-} &= E_{2x}\vert_{z=-L^+}
+\end{align}
+\end{subequations}
+
+\item The $\overrightarrow{E}$ normal component satisfies
+\begin{subequations}
+\begin{align}
+\epsilon_1 E_{1z}\vert_{z=-L^-} &= \epsilon_{z=-L^+} E_z \vert_{z=-L^+}\\
+\epsilon_{z=L^-} E_z \vert_{z=L^-} &= \epsilon_2 E_z \vert_{z=L^+}
+\end{align}
+\end{subequations} 
+
+\item The $\overrightarrow{H}$ tangential component is continuous (as the current $J_s=0$)
+\begin{subequations}
+\begin{align}
+H_{1y} \vert_{z=-L^-} &= H_{1y} \vert_{z=-L^+} \\
+H_{1y} \vert_{z=L^-} &= H_{1y} \vert_{z=L^+}
+\end{align}
+\end{subequations}
+
+\item The $\overrightarrow{H}$ normal components satisfies, in the general case, 
+\begin{subequations}
+\begin{align}
+\mu_1 H_{1z}\vert_{z=-L^-} &= \mu_{z=-L^+} H_z \vert_{z=-L^+}\\
+\mu_{z=L^-} H_z \vert_{z=L^-} &= \mu_2 H_{2z} \vert_{z=L^+}
+\end{align}
+\end{subequations} 
+Since $\mu(z)$ is assumed constant in the profiles studied in this work , these relations reduce to continuity.
+
+\end{itemize} 
+
+\subsection{The Boundary Value Problem Setting}
+Consider equation (\ref{eqns:ODE_xy_inhom}) for a tangentially-polarized wave, for which equation (\ref{eqns:ODE_Ex_DimGroup}) is a dimensionally-grouped special case. Assume that the exists an analytic expression, exact or approximate, for left and right travelling wave solutions within the layer.\\
+If a monochromatic source of frequency $\omega$ is located at $z \rightarrow -\infty$ and no sources exist for $z>L$, we have the decomposition
+\begin{align}
+E_{1x} = E_{i}e^{-i \phi_1 z} + E_{r}e^{i \phi_1 z}
+\end{align}
+where $E_i e^{-i \phi_1}$ and $E_r e^{i \phi_1}$ are phasor forms of the incidence and reflected waves respectively, with $\phi_1 = \omega \sqrt{\mu \epsilon_1}$;
+
+\begin{align}
+E_x(z) = E_L W_L(z) + E_R W_R(z)
+\end{align}
+where $W_L(z)$, $W_R(z)$ are independent, left and right travelling wave solutions for the Helmholtz equation in the layer, and 
+\begin{align}
+E_{2x} = E_t e^{-i \phi_2 z}
+\end{align}
+is the transmitted, pure right - travelling wave, with $\phi_2 = \omega \sqrt{\mu \epsilon_2}$.\\
+The incidence wave constant multiplier $E_i$ is known. The rest of the constants: $E_r$, $E_L$, $E_R$, $E_t$ are complex values to be  determined. Thus four equations are should be derived from the boundary conditions. \\ 
+As in the classical theory, two equations are derived directly from the electric field tangent component boundary conditions at $z=\pm L$.  Two extra equations are derived by converting the electric into magnetic field using Maxwell's equation (\ref{eqns:CurlE_Maxwell}),  and casting the corresponding boundary conditions. We get the system of equations
+
+
+Since 
+  
+%We wish to isolate the effects of wave propagation originated in the layer structure. While proper determination of a boundary condition at $z \rightarrow-\infty$ is sufficient for an analytic formulation of such a problem, we want to have numerical simulation ability well. A numerical artefact of reflection from the artificially-defined numerical boundary is avoided by defining a one-sided, right travelling wave at $z=L$.
+
+\section{Numerical Solver the physical setup }
+\subsection{Absorbing Boundary Condition at the right boundary}
+ A first order PDE formulation for the boundary condition is
+\begin{align}
+\label{eqns:1_D-temporal-traveling-wave-bc}
+\left[\dfrac{\partial E_{x_j}}{\partial t} +  \dfrac{1}{\sqrt{\epsilon \mu}}\dfrac{\partial E_{x_j}}{\partial z} \right ]_{z=L} = 0, \quad j=1,2,3
+\end{align}
+Note that $\epsilon=\epsilon(L)$, $\mu = \mu(L)$. For monochromatic waves
+\begin{align}
+\label{eqns:1_D-mc-traveling-wave-bc}
+\left [ i \omega \hat{E}_{x_j} +  \frac{1}{\sqrt{\epsilon \mu}} \frac{\partial \hat{E}_{x_j}}{\partial z} \right ]_{z=L} = 0, \quad j=1,2,3
+\end{align}
+
+
+\subsection{Reflection-Transmission relations at the left boundary}
+The observed (or total) electric and magnetic fields  are defined at the exterior region $z<-L$ as the sum of an incident fields and reflected fields
+\begin{subequations}
+\begin{align}
+\overrightarrow{E}_{\text{ext}} = \overrightarrow{E}_i + \overrightarrow{E}_r \\
+\overrightarrow{H}_{\text{ext}} = \overrightarrow{H}_i + \overrightarrow{H}_r
+\end{align} 
+\end{subequations}
+where $\overrightarrow{E}_i,\overrightarrow{H}_i$ are right right travelling waves and $\overrightarrow{E}_r,\overrightarrow{H}_r$ are left travelling. The transmitted fields $\overrightarrow{E}_{t},\overrightarrow{H}_t$ defined at $z>-L$ are right travelling, and due to the assumptions made previously, there are no left travelling contributions to the interior fields. As the reflected and transmitted terms are unknown, two degrees of freedom need to be met for them to be determined.\\
+Correspondingly, in order to solve the interior second-order ODE, two degrees of freedom have to eliminated, so that two side conditions need to be met. At the right boundary, no such conditions are imposed, so that they should both be defined at the left boundary. Thus, the classical reflection-transmission theory for a single interface \cite{cheng2006fieldAndWave} remains valid. Indeed, the electrodynamic boundary conditions derivations use infinitely thin pillboxes (for Gauss's law) and loops (for the Stokes theorem), hence they hold also for the differentiable $\epsilon$ and $\mu$ profiles.\\
+For all spatial components, the analytical treatment of the  left boundary condition is similar. The classical tangent/normal component boundary condition is applied to impose relations between the electric and magnetic $x_j$ interior and exterior components. Yet, classical impedance matching cannot be applied to convert the magnetic field into electric in inhomogeneous media. A generalization of impedance matching is developed in section \ref{sec:Impedance}. \\ 
+Since the medium is source-free, either continuity or a linear relation exist between the exterior and interior electromagnetic field components. Importantly, any analytic treatment of the problem, be it exact or approximate, should be explicit about the left and right travelling waves structure of the incident, reflected and transmitted fields.\\
+  
+A final note about the physical setting is in order. In a plane wave excitation situation, the incident wave $z$-component vanishes; Thus the interior $z$-component also vanishes. Note, though, that other settings where the incident wave $z$-component may not vanish may be considered. For example, this is the case if the incident wave is carried by a wave guide.\\    
+
+\subsection{Impedance Generalized}
+\label{sec:Impedance}
+In order to convert the magnetic field into electric  field in inhomogeneous media, we mimic the development of the principle of duality \cite{cheng2006fieldAndWave} stating that if $(\overrightarrow{E}, \overrightarrow{H})$ is a solution for Maxwell's equations in a simple, source-free medium, then so is $(\overrightarrow{E}', \overrightarrow{H}') = \left(\eta \overrightarrow{H}, -\frac{\overrightarrow{E} }{\eta} \right)$ , where $\eta = \sqrt{\frac{\mu}{\epsilon}}$. Defining 
+\begin{align}
+\eta(z) = \sqrt{\frac{ \mu(z) }{ \epsilon(z) }}
+\label{eqns:Inpedance1}
+\end{align}
+we plug $(\overrightarrow{E}', \overrightarrow{H}')$ into equation (\ref{eqns:CurlH_Maxwell}). Using the curl product rule, equation (\ref{eqns:CurlE_Maxwell}) we get, after rearrangement 
+
+\begin{align}
+\hat{H} = \frac{1}{i \omega  \sqrt{ \epsilon \mu}} \left( -\nabla \times \left( \frac{\hat{E}}{\eta} \right) + (\nabla \log(\eta)) 
+\times  \left( \frac{\hat{E}}{\eta} \right) \right)
+\end{align}
+which is a mapping of the electric field to magnetic field, valid for inhomogeneous media. Applied to $z>-L$, we get a generalized impedance matching formula. For example, consider the $x$-polarized incident wave case. The electric field continuity yields equality of $\hat{E}_{\text{ext},x}$ and $\hat{E_{t,x}}$. 
+For the $y$-polarized magnetic field, we have the generalized impedance matching equation. Summarizing, we get the system
+
+\begin{align}
+\label{eqns:GenImpedanceMatch}
+\hat{E}_{i,x} + \hat{E}_{r,x} &= \hat{E}_{t,x} \\
+\frac{\hat{E}_{i,x}-\hat{E}_{r,x}}{\eta_{\text{ext}}} &= \frac{1}{i \omega \sqrt{\epsilon \mu}}\left(\frac{d}{dz}\left(\frac{1}{\eta} \right)\hat{E}_{t,x}-\frac{d}{dz}\left(\frac{\hat{E}_{t,x}}{\eta} \right)  \right)_{z=-L^+}
+\end{align}
+  
+ 
+
+\section{Asymptotic approximation for the solutions in the Sigmoid case}
+
+\subsection{Small effective Jump r}
+
+\subsection{Narrow Effective Width a}
+
+\section{Asymptotic approximation for the solutions in the Gaussian case}
+
+\section{Uniqueness of the ODE boundary value solution}
+
+
+\section{Agreement with the Classical Theory in the Narrow effective Width Limit}
+
+
+%\bibliography{phys-rev-letters-ver0Notes}
+
+%BIBLIOGRAPHY ENVIRONMENT SHOULD BE REPLACED BY NATBIB
+\begin{thebibliography}{2d}
+
+\bibitem{goodman2005introduction}
+Goodman, Joseph W. Introduction to Fourier optics. Roberts and Company Publishers, 2005.
+
+\bibitem{cheng2006fieldAndWave} %
+Cheng, David K. Field and Wave Electromagnetics. 2nd Ed. Tsinghua University Press, 2006.
+
+
+
+  
+
+
+\end{thebibliography}
+
+
+%\bibliographystyle{plain}	
+%\bibliographystyle{unsrtnat}
+%\bibliographystyle{unsrt}
+%\bibliography{sample}
+
+%\bibliography{phys-rev-letters-ver0Notes}
+%\vspace{-6.5mm}
+%\bibliographystyle{unsrtnat}
+%\bibliography{sample}
+
+
+
+
+
+
+
+\end{document}
+

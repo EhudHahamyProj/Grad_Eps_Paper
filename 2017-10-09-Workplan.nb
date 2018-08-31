@@ -1,0 +1,684 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23461,        676]
+NotebookOptionsPosition[     20132,        562]
+NotebookOutlinePosition[     20499,        578]
+CellTagsIndexPosition[     20456,        575]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Maxwell to ode", "Section",
+ CellChangeTimes->{{3.7119645008506217`*^9, 3.7119645194466853`*^9}}],
+
+Cell["\<\
+Generation of the Generalized Wave Equations under x - y Independence \
+Assumption\
+\>", "Subsection",
+ CellChangeTimes->{{3.7119645263030777`*^9, 3.7119645290522346`*^9}, {
+  3.7119646359233475`*^9, 3.7119647036262197`*^9}}],
+
+Cell["Uncoupling of the x,y,z E-Components Equations ", "Subsection",
+ CellChangeTimes->{{3.7119647059303513`*^9, 3.7119647625205884`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Assumptions yielding reduction of PDEs to ODEs", "Subsection",
+ CellChangeTimes->{{3.715562761947441*^9, 3.7155627807565165`*^9}}],
+
+Cell["\<\
+Spatial Coherence of incident plane wave - right angle hitting\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7119648111923723`*^9, 3.711964950061315*^9}, {
+  3.7151830218180356`*^9, 3.715183021948036*^9}, {3.715562752105878*^9, 
+  3.71556275266291*^9}, {3.7155627896320243`*^9, 3.7155628705056505`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["z - Dependent Medium", "Subsubsection",
+ CellChangeTimes->{{3.7164558683052616`*^9, 3.716455868599262*^9}, {
+  3.71645589934232*^9, 3.7164559100403414`*^9}, {3.716455986421487*^9, 
+  3.716455996149506*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-05-Steve_\
+Project\\\\2017-10-08-ODE-Reduction.nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.716455999085511*^9, 3.716456084689678*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-05-\
+Steve_Project\\\\2017-10-08-ODE-Reduction.nb\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-\
+05-Steve_Project\\\\2017-10-08-ODE-Reduction.nb\"\>", "HyperlinkActive"]}, 
+    Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-10-\
+08-ODE-Reduction.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-10-\
+08-ODE-Reduction.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-10-\
+08-ODE-Reduction.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.7164560877966833`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Shift Invariance
+Source - free medium\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7155628028817825`*^9, 3.715562809624168*^9}, 
+   3.716455854331238*^9, 3.716455895685314*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dimensional Analysis in the Layer ", "Section",
+ CellChangeTimes->{{3.711964542001975*^9, 3.7119645526815863`*^9}, {
+  3.7119654983676767`*^9, 3.711965503308959*^9}, {3.7151808036236224`*^9, 
+  3.715180845083994*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Construction of the Sigmoidal Profile", "Subsection",
+ CellChangeTimes->{{3.711964973624663*^9, 3.711965003947397*^9}, {
+  3.7119650566494117`*^9, 3.7119651809885235`*^9}, {3.711965686331427*^9, 
+  3.711965689580613*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpolation", " ", 
+   FormBox[
+    SubscriptBox["\[Epsilon]", "1"],
+    TraditionalForm]}], ",", " ", 
+  FormBox[
+   SubscriptBox["\[Epsilon]", "2"],
+   TraditionalForm]}]], "Subsubsection",
+ CellChangeTimes->{{3.7119651842667108`*^9, 3.711965192192164*^9}, {
+  3.711965339016562*^9, 3.7119653653440676`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Dimensionless argument of nonlinear interpolator - the  parameter M \
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7119653734155293`*^9, 3.7119653885723963`*^9}, {
+  3.7119654415074244`*^9, 3.711965452711065*^9}, {3.7169930164403076`*^9, 
+  3.7169930272999287`*^9}, {3.717495285733898*^9, 3.717495301487799*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2017-10-14-Sigmoid-Eps-Profile.nb\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7169930298980775`*^9, 3.716993072305503*^9}, {
+   3.716993109983658*^9, 3.716993113827878*^9}, 3.7169932543359146`*^9, {
+   3.7174952071924057`*^9, 3.717495242804443*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-10-14-Sigmoid-Eps-Profile.nb\"\>", 
+    True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-10-14-Sigmoid-Eps-Profile.nb\"\>", 
+     "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-10-14-Sigmoid-Eps-Profile.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-10-14-Sigmoid-Eps-Profile.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2017-10-14-Sigmoid-Eps-Profile.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.71749532230799*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dimensional Analysis for a Sigmoidal Profile", "Subsection",
+ CellChangeTimes->{{3.7119650062645297`*^9, 3.711965026250673*^9}}],
+
+Cell["\<\
+Dimensional Grouping  Transformation: Effective Jump r,  Effective Half-Width \
+a, Normalized Wave Number \[CapitalOmega], M-scaled z-coordinate s \
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7119654701740637`*^9, 3.7119654831118035`*^9}, {
+  3.717495488635504*^9, 3.7174955828828945`*^9}, {3.717521008240075*^9, 
+  3.7175210103351946`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Dimensionally Grouped ODE coefficients for Ez", "Subsubsection",
+ CellChangeTimes->{{3.717495356832965*^9, 3.7174953921089826`*^9}, 
+   3.717495561535673*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2017-10-20-Non-Dim-ODE-Ez.nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{3.7174954164803762`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-10-20-Non-Dim-ODE-Ez.nb\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-10-20-Non-Dim-ODE-Ez.nb\"\>", 
+     "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-10-20-Non-Dim-ODE-Ez.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-10-20-Non-Dim-ODE-Ez.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2017-10-20-Non-Dim-ODE-Ez.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.7174954819331203`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Dimensional Analysis of the Gaussian Profile", "Subsubsection",
+ CellChangeTimes->{{3.71196592555711*^9, 3.711965961538168*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Derivation of EM Boundary Conditions", "Section",
+ CellChangeTimes->{{3.711965618419543*^9, 3.7119656390647235`*^9}, {
+  3.7347761780911226`*^9, 3.7347762018364806`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\EM-Boundary-Conditions-and-Impedance.nb\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7197709002265368`*^9, 3.719770914395347*^9}, {
+   3.7197709497883716`*^9, 3.7197709762948875`*^9}, 3.7347736148415127`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  TagBox[
+   ButtonBox[
+    PaneSelectorBox[{
+     False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\EM-Boundary-Conditions-and-Impedance.nb\"\
+\>", True->
+     StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-\
+Rev-Letters-paper\\\\2017-09-23-ver1\\\\EM-Boundary-Conditions-and-Impedance.\
+nb\"\>", "HyperlinkActive"]}, Dynamic[
+      CurrentValue["MouseOver"]],
+     BaseStyle->{"Hyperlink"},
+     FrameMargins->0,
+     ImageSize->Automatic],
+    BaseStyle->"Hyperlink",
+    ButtonData:>{
+     "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\EM-Boundary-Conditions-and-Impedance.nb", None},
+    ButtonNote->
+     "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\EM-Boundary-Conditions-and-Impedance.nb"],
+   Annotation[#, 
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\EM-Boundary-Conditions-and-Impedance.nb", "Hyperlink"]& ], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.73477620689677*^9, 3.734776223657729*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Reflection - Transmission Relations For an Inhomogeneous Layer\
+\>", "Section",
+ CellChangeTimes->{{3.711964582230276*^9, 3.7119646038945155`*^9}, {
+  3.734776281932062*^9, 3.734776298667019*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["WKB ", "Section",
+ CellChangeTimes->{{3.7347763208262863`*^9, 3.734776330340831*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Einc", "=", 
+  RowBox[{"Ei0", " ", 
+   SuperscriptBox["E", 
+    RowBox[{"I", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[CapitalOmega]"}], " ", "s"}], "+", " ", "\[Phi]I"}], 
+      ")"}]}]]}]}]], "Input",
+ CellChangeTimes->{{3.7129866738662553`*^9, 3.71298672040632*^9}, {
+   3.7129868069464417`*^9, 3.7129868083664436`*^9}, {3.7129875287541*^9, 
+   3.712987570508159*^9}, 3.7129876333882484`*^9, {3.712988061948857*^9, 
+   3.712988065618862*^9}, {3.7129980564594297`*^9, 3.7129980568714533`*^9}, {
+   3.7129981600723557`*^9, 3.712998172715079*^9}, {3.7130750226083364`*^9, 
+   3.7130750484128127`*^9}, {3.7130760700862494`*^9, 3.713076085216114*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"\[ImaginaryI]", " ", 
+    RowBox[{"(", 
+     RowBox[{"\[Phi]I", "-", 
+      RowBox[{"s", " ", "\[CapitalOmega]"}]}], ")"}]}]], " ", 
+  "Ei0"}]], "Output",
+ CellChangeTimes->{3.71298757811817*^9, 3.712987635788252*^9, 
+  3.712988069198867*^9, 3.7129980594055977`*^9, 3.7129981744521785`*^9, 
+  3.713076095256689*^9, 3.7130820993071775`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eref", "=", 
+  RowBox[{"Er0", " ", 
+   SuperscriptBox["E", 
+    RowBox[{"I", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[CapitalOmega]", " ", "s"}], "+", " ", "\[Phi]R"}], 
+      ")"}]}]]}]}]], "Input",
+ CellChangeTimes->{{3.712987580968174*^9, 3.7129876249982367`*^9}, {
+  3.7129880786448803`*^9, 3.712988082814886*^9}, {3.7129980653779397`*^9, 
+  3.7129980655069466`*^9}, {3.7129981852427955`*^9, 3.712998186583872*^9}, {
+  3.7130820927308016`*^9, 3.7130820955079603`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"\[ImaginaryI]", " ", 
+    RowBox[{"(", 
+     RowBox[{"\[Phi]R", "+", 
+      RowBox[{"s", " ", "\[CapitalOmega]"}]}], ")"}]}]], " ", 
+  "Er0"}]], "Output",
+ CellChangeTimes->{3.712987666588296*^9, 3.71298808554889*^9, 
+  3.712998067537063*^9, 3.7129981893640313`*^9, 3.713076102425099*^9, 
+  3.7130821104268136`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WKBphase", " ", "=", " ", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    SqrtBox[
+     RowBox[{"Q", "[", "\[Xi]", "]"}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Xi]", ",", "0", ",", "s"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7130736532780156`*^9, 3.7130737210388913`*^9}, {
+  3.7130742500441484`*^9, 3.713074251360224*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SubsuperscriptBox["\[Integral]", "0", "s"], 
+  RowBox[{
+   SqrtBox[
+    RowBox[{"Q", "[", "\[Xi]", "]"}]], 
+   RowBox[{"\[DifferentialD]", "\[Xi]"}]}]}]], "Output",
+ CellChangeTimes->{3.7130736923482504`*^9, 3.7130737254951463`*^9, 
+  3.7130742549214277`*^9, 3.713076108409441*^9, 3.7130821210734224`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Etrans", "=", 
+  RowBox[{"Et0", "  ", 
+   SuperscriptBox[
+    RowBox[{"Q", "[", "s", "]"}], 
+    RowBox[{
+     RowBox[{"-", "1"}], "/", "4"}]], 
+   SuperscriptBox["E", 
+    RowBox[{
+     RowBox[{"-", "I"}], " ", "\[CapitalOmega]", " ", 
+     "WKBphase"}]]}]}]], "Input",
+ CellChangeTimes->{{3.7129876684582977`*^9, 3.7129877018483458`*^9}, {
+   3.712988098048908*^9, 3.712988102538914*^9}, {3.7129980712332745`*^9, 
+   3.712998072276334*^9}, {3.712998207948094*^9, 3.7129982605271015`*^9}, {
+   3.7130716694535475`*^9, 3.7130716752018757`*^9}, {3.713073455467702*^9, 
+   3.713073459055907*^9}, {3.7130737459033136`*^9, 3.713073751037607*^9}, {
+   3.71307425899166*^9, 3.713074287211274*^9}, 3.713074330192733*^9}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], " ", "\[CapitalOmega]", " ", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", "0", "s"], 
+      RowBox[{
+       SqrtBox[
+        RowBox[{"Q", "[", "\[Xi]", "]"}]], 
+       RowBox[{"\[DifferentialD]", "\[Xi]"}]}]}]}]], " ", "Et0"}], 
+  SuperscriptBox[
+   RowBox[{"Q", "[", "s", "]"}], 
+   RowBox[{"1", "/", "4"}]]]], "Output",
+ CellChangeTimes->{
+  3.71307167578991*^9, 3.713073460759004*^9, 3.713073752228675*^9, {
+   3.713074262433857*^9, 3.713074288668358*^9}, 3.713074335094013*^9, 
+   3.713076116106881*^9, 3.7130821248336377`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Unknowns : Er0,Et0 - positive reals,  \[Phi]R - real. total of 3.  Et0 can \
+be assumed real because \[Phi]R takes care of phase matching. Effectively we \
+can define the phase at s=-a to be zero and \[Phi]R would be relative to it. ",
+ StyleBox["Question - is it valid?",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.7130740148196945`*^9, 3.7130741200477133`*^9}, {
+  3.713074354206106*^9, 3.7130743930763297`*^9}, {3.7130768889050827`*^9, 
+  3.7130768988946543`*^9}, {3.7130816147024593`*^9, 3.7130816522196054`*^9}, {
+  3.713081720219495*^9, 3.713081726720867*^9}}],
+
+Cell["\<\
+The total field  is Einc + Eref for s < -a and Etrans for s > -a. \
+Numerically, an absorbing boundary condition should be implemented somewhere \
+(say s = a ) to the right of s = -a. A physical rationale is the assumption \
+that no reflections come from +\[Infinity].\
+\>", "Text",
+ CellChangeTimes->{{3.7130805985853415`*^9, 3.7130807536672115`*^9}, {
+  3.7130807909253426`*^9, 3.713080826212361*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Source at the Boundary - Matching Conditions", "Subsection",
+ CellChangeTimes->{{3.711966019392477*^9, 3.7119660508532767`*^9}, 
+   3.7130809018136845`*^9}],
+
+Cell["\<\
+Continuity of the electric field across the boundary - source free? always?\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7129868179164567`*^9, 3.712986823206464*^9}, {
+  3.7129881626889997`*^9, 3.712988199265052*^9}, {3.7151731836407843`*^9, 
+  3.715173191293222*^9}, {3.7151732372128487`*^9, 3.7151732479824643`*^9}}],
+
+Cell["\<\
+Continuity of the magnetic field across the boundary - source free? always?\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7129868905565586`*^9, 3.712986946456637*^9}, {
+  3.7129989325355377`*^9, 3.712998987901705*^9}, {3.7151732010537806`*^9, 
+  3.715173261997266*^9}}]
+}, Open  ]],
+
+Cell["Absorbing Boundary Condition", "Subsection",
+ CellChangeTimes->{{3.711965983717437*^9, 3.711966002573515*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Asymptotic Solutions in the Layer", "Section",
+ CellChangeTimes->{{3.7119645575698657`*^9, 3.711964577330996*^9}}],
+
+Cell["Small effective Jump r", "Subsection",
+ CellChangeTimes->{{3.7119661914193163`*^9, 3.7119662182898536`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Narrow Effective Width a", "Subsection",
+ CellChangeTimes->{{3.7119662247922254`*^9, 3.7119662439753227`*^9}, {
+  3.7151733276450205`*^9, 3.715173336036501*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-05-Steve_\
+Project\\\\2017-08-13-Joined_length_freq_scale.nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7151733411377926`*^9, 3.7151734016472535`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-05-\
+Steve_Project\\\\2017-08-13-Joined_length_freq_scale.nb\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-\
+05-Steve_Project\\\\2017-08-13-Joined_length_freq_scale.nb\"\>", 
+     "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-08-\
+13-Joined_length_freq_scale.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-08-\
+13-Joined_length_freq_scale.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-08-\
+13-Joined_length_freq_scale.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.715173406376524*^9}]
+}, Open  ]],
+
+Cell["Joined Scale of a,\[CapitalOmega]", "Subsubsection",
+ CellChangeTimes->{{3.71196625144875*^9, 3.711966292272085*^9}}],
+
+Cell["Critical Scale", "Subsubsection",
+ CellChangeTimes->{{3.711966298041415*^9, 3.711966312324232*^9}}],
+
+Cell["WKB Solution for a Scale Narrow Compared with \[CapitalOmega] ", \
+"Subsubsection",
+ CellChangeTimes->{{3.7119663185245867`*^9, 3.711966359475929*^9}, {
+  3.7119664040564785`*^9, 3.711966420058394*^9}}],
+
+Cell[TextData[{
+ "Regular Perturbation Solution For a scale Compared  with \[CapitalOmega]\n\
+The ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", 
+    RowBox[{"z", " "}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " equation: Bender-Orszag, pp.556-559."
+}], "Subsubsection",
+ CellChangeTimes->{{3.711966361698056*^9, 3.711966423644599*^9}, {
+  3.715576027777433*^9, 3.7155760648105016`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Alteration of the Equation' s Signature", "Section",
+ CellChangeTimes->{{3.711965751889177*^9, 3.7119657787207117`*^9}, {
+  3.7151808658511815`*^9, 3.715180865882183*^9}}],
+
+Cell["\<\
+Helmholtz - Like Equations - Oscillatory Solution, Sturm Theory\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7119657829409533`*^9, 3.7119658303136625`*^9}}],
+
+Cell["Poisson - Like Equations - The Maximum Principle", "Subsubsection",
+ CellChangeTimes->{{3.711965845491531*^9, 3.7119658897900643`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Agreement with the Classical Theory in the Limit", "Section",
+ CellChangeTimes->{{3.711964611913974*^9, 3.7119646284919224`*^9}, {
+  3.711964786416955*^9, 3.711964791083222*^9}, {3.711966409011762*^9, 
+  3.711966410865868*^9}}],
+
+Cell["Classical Boundary Condition - \[Epsilon] Jump ", "Subsection",
+ CellChangeTimes->{{3.7119664467329197`*^9, 3.711966498127859*^9}}],
+
+Cell["Agreement in the case of Small Effective Width", "Subsection",
+ CellChangeTimes->{{3.711966501741066*^9, 3.711966506618345*^9}, {
+  3.711966565288701*^9, 3.711966595103406*^9}}]
+}, Open  ]]
+},
+WindowSize->{1914, 980},
+WindowMargins->{{0, Automatic}, {14, Automatic}},
+Magnification->1.5,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 103, 1, 93, "Section"],
+Cell[686, 25, 235, 5, 65, "Subsection"],
+Cell[924, 32, 139, 1, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[1088, 37, 136, 1, 51, "Subsection"],
+Cell[1227, 40, 312, 5, 51, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[1564, 49, 212, 3, 40, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[1801, 56, 246, 4, 45, "Input"],
+Cell[2050, 62, 935, 23, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[3012, 89, 186, 5, 86, "Subsubsection"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3247, 100, 223, 3, 93, "Section"],
+Cell[CellGroupData[{
+Cell[3495, 107, 227, 3, 65, "Subsection"],
+Cell[3725, 112, 347, 10, 52, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[4097, 126, 321, 5, 40, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[4443, 135, 400, 7, 45, "Input"],
+Cell[4846, 144, 1047, 24, 45, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5954, 175, 134, 1, 65, "Subsection"],
+Cell[6091, 178, 352, 6, 51, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[6468, 188, 164, 2, 40, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[6657, 194, 242, 4, 45, "Input"],
+Cell[6902, 200, 1020, 23, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[7949, 227, 134, 1, 51, "Subsubsection"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8132, 234, 176, 2, 93, "Section"],
+Cell[8311, 238, 358, 6, 45, "Input"],
+Cell[8672, 246, 1147, 26, 75, InheritFromParent]
+}, Open  ]],
+Cell[9834, 275, 206, 4, 93, "Section"],
+Cell[CellGroupData[{
+Cell[10065, 283, 91, 1, 70, "Section"],
+Cell[CellGroupData[{
+Cell[10181, 288, 706, 15, 47, "Input"],
+Cell[10890, 305, 412, 10, 47, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11339, 320, 508, 12, 47, "Input"],
+Cell[11850, 334, 388, 10, 47, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12275, 349, 361, 9, 53, "Input"],
+Cell[12639, 360, 331, 8, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13007, 373, 737, 16, 47, "Input"],
+Cell[13747, 391, 667, 18, 83, "Output"]
+}, Open  ]],
+Cell[14429, 412, 597, 10, 74, "Text"],
+Cell[15029, 424, 413, 7, 74, "Text"],
+Cell[CellGroupData[{
+Cell[15467, 435, 162, 2, 65, "Subsection"],
+Cell[15632, 439, 328, 5, 51, "Subsubsection"],
+Cell[15963, 446, 278, 5, 40, "Subsubsection"]
+}, Open  ]],
+Cell[16256, 454, 116, 1, 65, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16409, 460, 120, 1, 93, "Section"],
+Cell[16532, 463, 114, 1, 65, "Subsection"],
+Cell[CellGroupData[{
+Cell[16671, 468, 167, 2, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[16863, 474, 261, 4, 45, "Input"],
+Cell[17127, 480, 989, 23, 45, "Output"]
+}, Open  ]],
+Cell[18131, 506, 123, 1, 51, "Subsubsection"],
+Cell[18257, 509, 105, 1, 40, "Subsubsection"],
+Cell[18365, 512, 208, 3, 40, "Subsubsection"],
+Cell[18576, 517, 405, 11, 77, "Subsubsection"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19030, 534, 177, 2, 93, "Section"],
+Cell[19210, 538, 166, 3, 256, "Subsubsection"],
+Cell[19379, 543, 141, 1, 202, "Subsubsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19557, 549, 233, 3, 468, "Section"],
+Cell[19793, 554, 137, 1, 325, "Subsection"],
+Cell[19933, 557, 183, 2, 256, "Subsection"]
+}, Open  ]]
+}
+]
+*)
+

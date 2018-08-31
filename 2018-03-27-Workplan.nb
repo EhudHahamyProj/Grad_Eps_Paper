@@ -1,0 +1,963 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33115,        955]
+NotebookOptionsPosition[     28477,        787]
+NotebookOutlinePosition[     28843,        803]
+CellTagsIndexPosition[     28800,        800]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7354590243859262`*^9, 3.735459030852296*^9}}],
+
+Cell["Physical Setup", "Subsection",
+ CellChangeTimes->{{3.735461339513344*^9, 3.7354613488128757`*^9}}],
+
+Cell["Applications", "Subsection",
+ CellChangeTimes->{{3.7354613545272026`*^9, 3.735461361351593*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Sources", "Subsection",
+ CellChangeTimes->{{3.734929575686372*^9, 3.7349295899774995`*^9}, {
+  3.7354590382967215`*^9, 3.7354590403358383`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Wave Scattering Course", "Subsubsection",
+ CellChangeTimes->{{3.735990724569312*^9, 3.7359907353589296`*^9}}],
+
+Cell["\<\
+C : \\Users\\DELL\\Documents\\DATA\\PhD\\2017 - 08 - 05 - \
+Steve_Project\\Literature\\Rath - Spivack - Classical - Wave - Scattering - \
+Course - 2007. pdf\
+\>", "Text",
+ CellChangeTimes->{{3.735990740633231*^9, 3.7359907432593813`*^9}, {
+  3.735990776364275*^9, 3.735990781487568*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+PhD thesis on dielectric profile recovery from Microwave measurements\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.734929624901677*^9, 3.7349296623268747`*^9}}],
+
+Cell["\<\
+C : \\Users\\DELL\\Documents\\DATA\\PhD\\2017 - 08 - 05 - \
+Steve_Project\\Literature\\Meyer-2005-microwave maging of high contrast \
+objects PhD thesis.pdf\
+\>", "Text",
+ CellChangeTimes->{{3.73492961330762*^9, 3.734929620069631*^9}, {
+  3.734929666040883*^9, 3.7349296959967074`*^9}}]
+}, Open  ]],
+
+Cell["Inverse Scattering Books", "Subsubsection",
+ CellChangeTimes->{{3.7349298227415404`*^9, 3.7349298363798046`*^9}, 
+   3.7353597335781975`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["WKB in waveguides", "Subsubsection",
+ CellChangeTimes->{{3.7353595085038548`*^9, 3.735359520543949*^9}}],
+
+Cell["\<\
+E : \\MyDocs\\My eBooks\\Yuval' s - e - books\\Scattering Theory\\Felsen - \
+Marcuvitz - Radiation and scattering of waves (2003).djvu, Chapter 3.5\
+\>", "Text",
+ CellChangeTimes->{{3.735359446424512*^9, 3.735359466838625*^9}, {
+  3.7353595425351152`*^9, 3.7353595525361667`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Plane Wave incidence to inhomogeneous layer", "Subsubsection",
+ CellChangeTimes->{{3.735359605746483*^9, 3.7353596389086657`*^9}, {
+  3.735359701256998*^9, 3.7353597275381627`*^9}}],
+
+Cell["\<\
+Brekhovskikh - Waves in Layered Media (hard copy) : WKB, Bremmer series.\
+\>", "Text",
+ CellChangeTimes->{{3.7353597046370153`*^9, 3.7353597171081047`*^9}, {
+  3.735359763108364*^9, 3.7353598044095893`*^9}}],
+
+Cell["\<\
+E : \\MyDocs\\My eBooks\\Yuval' s - e - books\\Scattering Theory\\Ishimaru - \
+Electromagnetic wave propagation, radiation, and scattering (1991).djvu, with \
+chapter about Bremmer Series, pp.62-72\
+\>", "Text",
+ CellChangeTimes->{{3.735364906133788*^9, 3.735364925744889*^9}, {
+   3.735364973820203*^9, 3.7353649824782505`*^9}, 3.7359907875379143`*^9, {
+   3.7380613149433565`*^9, 3.7380613224077835`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Perturbation Methods (Born,Rytov) applied to direct propagation problem\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7349308777480183`*^9, 3.7349309752313976`*^9}}],
+
+Cell["\<\
+C : \\Users\\DELL\\Documents\\DATA\\PhD\\2017 - 08 - 05 - \
+Steve_Project\\Literature\\Potvin - 2015 - General - Rytov - \
+Approximations.pdf\
+\>", "Text",
+ CellChangeTimes->{{3.7349309408003473`*^9, 3.7349309581473722`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Maxwell' s Equations in a smoothly - varying dielectric permittivity and \
+magnetic permeability profiles \
+\>", "Section",
+ CellChangeTimes->{{3.7354587855812674`*^9, 3.7354588593594866`*^9}}],
+
+Cell["Uncoupling of the x,y,z E-Components Equations ", "Subsection",
+ CellChangeTimes->{{3.7119647059303513`*^9, 3.7119647625205884`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Maxwell to ode", "Section",
+ CellChangeTimes->{{3.7119645008506217`*^9, 3.7119645194466853`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Assumptions yielding reduction of PDEs to ODEs", "Subsection",
+ CellChangeTimes->{{3.715562761947441*^9, 3.7155627807565165`*^9}}],
+
+Cell["\<\
+Spatial Coherence of incident plane wave - right angle hitting\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7119648111923723`*^9, 3.711964950061315*^9}, {
+  3.7151830218180356`*^9, 3.715183021948036*^9}, {3.715562752105878*^9, 
+  3.71556275266291*^9}, {3.7155627896320243`*^9, 3.7155628705056505`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["z - Dependent Medium", "Subsubsection",
+ CellChangeTimes->{{3.7164558683052616`*^9, 3.716455868599262*^9}, {
+  3.71645589934232*^9, 3.7164559100403414`*^9}, {3.716455986421487*^9, 
+  3.716455996149506*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-05-Steve_\
+Project\\\\2017-10-08-ODE-Reduction.nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.716455999085511*^9, 3.716456084689678*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-05-\
+Steve_Project\\\\2017-10-08-ODE-Reduction.nb\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-\
+05-Steve_Project\\\\2017-10-08-ODE-Reduction.nb\"\>", "HyperlinkActive"]}, 
+    Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-10-\
+08-ODE-Reduction.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-10-\
+08-ODE-Reduction.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-10-\
+08-ODE-Reduction.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.7164560877966833`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Shift Invariance
+Source - free medium\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7155628028817825`*^9, 3.715562809624168*^9}, 
+   3.716455854331238*^9, 3.716455895685314*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Reflection - Transmission Relations For an Inhomogeneous Layer\
+\>", "Section",
+ CellChangeTimes->{{3.711964582230276*^9, 3.7119646038945155`*^9}, {
+  3.734776281932062*^9, 3.734776298667019*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Simple case: Piecewise - Constant \[Epsilon] ", "Subsection",
+ CellChangeTimes->{{3.7311384716192093`*^9, 3.731138501059893*^9}, {
+  3.7347783036376967`*^9, 3.7347783053457947`*^9}, {3.7347813686170034`*^9, 
+  3.7347813744383364`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<E:\\\\MyDocs\\\\My \
+eBooks\\\\Physics\\\\ElectroMagnetism\\\\Electrodynamics\\\\Cheng \
+Examples\\\\Cheng-Plane-EM-Waves-Main.nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7347782208289604`*^9, 3.7347782598341913`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"E:\\\\MyDocs\\\\My \
+eBooks\\\\Physics\\\\ElectroMagnetism\\\\Electrodynamics\\\\Cheng \
+Examples\\\\Cheng-Plane-EM-Waves-Main.nb\"\>", True->
+    StyleBox["\<\"E:\\\\MyDocs\\\\My \
+eBooks\\\\Physics\\\\ElectroMagnetism\\\\Electrodynamics\\\\Cheng \
+Examples\\\\Cheng-Plane-EM-Waves-Main.nb\"\>", "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "E:\\MyDocs\\My eBooks\\Physics\\ElectroMagnetism\\Electrodynamics\\Cheng \
+Examples\\Cheng-Plane-EM-Waves-Main.nb", None},
+   ButtonNote->
+    "E:\\MyDocs\\My eBooks\\Physics\\ElectroMagnetism\\Electrodynamics\\Cheng \
+Examples\\Cheng-Plane-EM-Waves-Main.nb"],
+  Annotation[#, 
+   "E:\\MyDocs\\My eBooks\\Physics\\ElectroMagnetism\\Electrodynamics\\Cheng \
+Examples\\Cheng-Plane-EM-Waves-Main.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.7347782610672617`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OBSOLETE? Total Field - Scatter Field Formulation for ode", "Subsection",
+ CellChangeTimes->{{3.711965618419543*^9, 3.7119656390647235`*^9}, {
+  3.7354605908275213`*^9, 3.7354605937516885`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2017-11-15-Total_Field-Scattered_Field.nb\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7197709002265368`*^9, 3.719770914395347*^9}, {
+  3.7197709497883716`*^9, 3.7197709762948875`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-11-15-Total_Field-Scattered_Field.nb\
+\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-11-15-Total_Field-Scattered_Field.nb\
+\"\>", "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-11-15-Total_Field-Scattered_Field.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-11-15-Total_Field-Scattered_Field.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2017-11-15-Total_Field-Scattered_Field.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.735386904512732*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inhomogeneous Layer", "Subsection",
+ CellChangeTimes->{{3.735458681885336*^9, 3.7354586948330765`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2018-05-08-Reflection-Transmission-Relations-for-\
+an-Inhomogeneous-Layer.nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.734781389271185*^9, 3.734781391934337*^9}, {
+  3.7347814359938574`*^9, 3.7347814725059457`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-08-Reflection-Transmission-\
+Relations-for-an-Inhomogeneous-Layer.nb\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-08-Reflection-Transmission-\
+Relations-for-an-Inhomogeneous-Layer.nb\"\>", "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-08-Reflection-Transmission-Relations-for-an-Inhomogeneous-\
+Layer.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-08-Reflection-Transmission-Relations-for-an-Inhomogeneous-\
+Layer.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2018-05-08-Reflection-Transmission-Relations-for-an-Inhomogeneous-Layer.\
+nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.7347814735310044`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dimensional Analysis in the Layer ", "Section",
+ CellChangeTimes->{{3.711964542001975*^9, 3.7119645526815863`*^9}, {
+  3.7119654983676767`*^9, 3.711965503308959*^9}, {3.7151808036236224`*^9, 
+  3.715180845083994*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Construction of the Sigmoidal Profile", "Subsection",
+ CellChangeTimes->{{3.711964973624663*^9, 3.711965003947397*^9}, {
+  3.7119650566494117`*^9, 3.7119651809885235`*^9}, {3.711965686331427*^9, 
+  3.711965689580613*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OBSOLETE: Dimensionless argument of nonlinear interpolator - the  parameter M \
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7119653734155293`*^9, 3.7119653885723963`*^9}, {
+  3.7119654415074244`*^9, 3.711965452711065*^9}, {3.7169930164403076`*^9, 
+  3.7169930272999287`*^9}, {3.717495285733898*^9, 3.717495301487799*^9}, {
+  3.735460297675754*^9, 3.7354603012149563`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2017-10-14-Sigmoid-Eps-Profile.nb\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7169930298980775`*^9, 3.716993072305503*^9}, {
+   3.716993109983658*^9, 3.716993113827878*^9}, 3.7169932543359146`*^9, {
+   3.7174952071924057`*^9, 3.717495242804443*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-10-14-Sigmoid-Eps-Profile.nb\"\>", 
+    True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-10-14-Sigmoid-Eps-Profile.nb\"\>", 
+     "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-10-14-Sigmoid-Eps-Profile.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-10-14-Sigmoid-Eps-Profile.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2017-10-14-Sigmoid-Eps-Profile.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.71749532230799*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dimensional Analysis for a Sigmoidal Profile", "Subsection",
+ CellChangeTimes->{{3.7119650062645297`*^9, 3.711965026250673*^9}}],
+
+Cell["\<\
+Dimensional Grouping  Transformation: Effective Jump r,  Effective Half-Width \
+a, Normalized Wave Number \[CapitalOmega], M-scaled z-coordinate s \
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7119654701740637`*^9, 3.7119654831118035`*^9}, {
+  3.717495488635504*^9, 3.7174955828828945`*^9}, {3.717521008240075*^9, 
+  3.7175210103351946`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Dimensionally Grouped ODE coefficients for Ez", "Subsubsection",
+ CellChangeTimes->{{3.717495356832965*^9, 3.7174953921089826`*^9}, 
+   3.717495561535673*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2017-10-20-Non-Dim-ODE-Ez.nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{3.7174954164803762`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-10-20-Non-Dim-ODE-Ez.nb\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2017-10-20-Non-Dim-ODE-Ez.nb\"\>", 
+     "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-10-20-Non-Dim-ODE-Ez.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2017-10-20-Non-Dim-ODE-Ez.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2017-10-20-Non-Dim-ODE-Ez.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.7174954819331203`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Dimensional Analysis of the Gaussian Profile", "Subsubsection",
+ CellChangeTimes->{{3.71196592555711*^9, 3.711965961538168*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Asymptotic Approximations for solutions in the Layer", "Section",
+ CellChangeTimes->{{3.7119645575698657`*^9, 3.711964577330996*^9}, {
+  3.7354604055509243`*^9, 3.735460412510322*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Constructing ODE for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "x"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " with Sigmoidal Dielectric Profile -  RETURN AFTER WKB THEORY"
+}], "Subsection",
+ CellChangeTimes->{{3.735359109486538*^9, 3.7353591429467225`*^9}, {
+  3.735359329000839*^9, 3.7353593509379573`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2018-05-13-WKB-solution-in-Slab.nb\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7353592538174105`*^9, 3.7353593019706817`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-13-WKB-solution-in-Slab.nb\"\>", 
+    True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-13-WKB-solution-in-Slab.nb\"\>", 
+     "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-13-WKB-solution-in-Slab.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-13-WKB-solution-in-Slab.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2018-05-13-WKB-solution-in-Slab.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.735359303900689*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Thin Sigmoidal Layer: Narrow Effective Width a", "Subsection",
+ CellChangeTimes->{{3.7119662247922254`*^9, 3.7119662439753227`*^9}, {
+  3.7151733276450205`*^9, 3.715173336036501*^9}, {3.7366721864652042`*^9, 
+  3.7366721905624385`*^9}, {3.7366733991105633`*^9, 3.7366734013336906`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-05-Steve_\
+Project\\\\2017-08-13-Joined_length_freq_scale.nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7151733411377926`*^9, 3.7151734016472535`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-05-\
+Steve_Project\\\\2017-08-13-Joined_length_freq_scale.nb\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\2017-08-\
+05-Steve_Project\\\\2017-08-13-Joined_length_freq_scale.nb\"\>", 
+     "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-08-\
+13-Joined_length_freq_scale.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-08-\
+13-Joined_length_freq_scale.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\2017-08-05-Steve_Project\\2017-08-\
+13-Joined_length_freq_scale.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.715173406376524*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2018-05-30-Thin-Layer-Joined-Scales-Sigmoid.nb\>\"\
+", "]"}]], "Input",
+ CellChangeTimes->{{3.7366723266412215`*^9, 3.736672331826518*^9}, {
+  3.736672414952273*^9, 3.736672423529763*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-30-Thin-Layer-Joined-Scales-\
+Sigmoid.nb\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-30-Thin-Layer-Joined-Scales-\
+Sigmoid.nb\"\>", "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-30-Thin-Layer-Joined-Scales-Sigmoid.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-30-Thin-Layer-Joined-Scales-Sigmoid.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2018-05-30-Thin-Layer-Joined-Scales-Sigmoid.nb", 
+   "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.7366724244968185`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Thick Sigmoidal Layer : Large Effective Width a", "Subsection",
+ CellChangeTimes->{{3.73667335900727*^9, 3.7366733873548913`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2018-05-31-Thick-Phase-Integral.nb\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.737198729622203*^9, 3.737198799594302*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-31-Thick-Phase-Integral.nb\"\>", 
+    True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-31-Thick-Phase-Integral.nb\"\>", 
+     "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-31-Thick-Phase-Integral.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-31-Thick-Phase-Integral.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2018-05-31-Thick-Phase-Integral.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.7371988047743096`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Alteration of the Equation' s Signature", "Subsection",
+ CellChangeTimes->{{3.711965751889177*^9, 3.7119657787207117`*^9}, {
+  3.7151808658511815`*^9, 3.715180865882183*^9}}],
+
+Cell["\<\
+Helmholtz - Like Equations - Oscillatory Solution, Sturm Theory\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7119657829409533`*^9, 3.7119658303136625`*^9}}],
+
+Cell["Poisson - Like Equations - The Maximum Principle", "Subsubsection",
+ CellChangeTimes->{{3.711965845491531*^9, 3.7119658897900643`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Numerical Solver for 1 - D Maxwell' s equations", "Section",
+ CellChangeTimes->{{3.7354606979366474`*^9, 3.7354607202399235`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Numerical Scheme for waves a compounded [\[Epsilon]1, \[Epsilon] (z), \
+\[Epsilon]2] medium solver for Helmholtz equation with total field - \
+scattered field formulation and no + \[Infinity] source\
+\>", "Subsection",
+ CellChangeTimes->{{3.7354609231375284`*^9, 3.7354611168086057`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\2018-05-17-Time-Harmonic-Maxwell-Equations-1D-\
+Numerical-Solver.nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.735527777423464*^9, 3.735527786689994*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-17-Time-Harmonic-Maxwell-\
+Equations-1D-Numerical-Solver.nb\"\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\2018-05-17-Time-Harmonic-Maxwell-\
+Equations-1D-Numerical-Solver.nb\"\>", "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-17-Time-Harmonic-Maxwell-Equations-1D-Numerical-Solver.nb", 
+     None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\2018-05-17-Time-Harmonic-Maxwell-Equations-1D-Numerical-Solver.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\2018-05-17-Time-Harmonic-Maxwell-Equations-1D-Numerical-Solver.nb", 
+   "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.73552778907413*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Absorbing Boundary Condition: analytical and numerical formulation \
+\>", "Subsection",
+ CellChangeTimes->{{3.711965983717437*^9, 3.711966002573515*^9}, {
+  3.735461133404555*^9, 3.7354611613781548`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Agreement with the Classical Theory in the Limit", "Section",
+ CellChangeTimes->{{3.711964611913974*^9, 3.7119646284919224`*^9}, {
+  3.711964786416955*^9, 3.711964791083222*^9}, {3.711966409011762*^9, 
+  3.711966410865868*^9}}],
+
+Cell["Classical Boundary Condition - \[Epsilon] Jump ", "Subsection",
+ CellChangeTimes->{{3.7119664467329197`*^9, 3.711966498127859*^9}}],
+
+Cell["Agreement in the case of Small Effective Width", "Subsection",
+ CellChangeTimes->{{3.711966501741066*^9, 3.711966506618345*^9}, {
+  3.711966565288701*^9, 3.711966595103406*^9}}],
+
+Cell["\<\
+What is the meaning of WKB requirement of slowly varying medium?\
+\>", "Subsection",
+ CellChangeTimes->{{3.735461208308839*^9, 3.735461243793869*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Derivation of EM Boundary Conditions (not in the paper)", "Section",
+ CellChangeTimes->{{3.734777596892273*^9, 3.734777602692605*^9}, {
+  3.7354587127391005`*^9, 3.7354587183874235`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-Letters-\
+paper\\\\2017-09-23-ver1\\\\EM-Boundary-Conditions-and-Impedance.nb\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7197709002265368`*^9, 3.719770914395347*^9}, {
+   3.7197709497883716`*^9, 3.7197709762948875`*^9}, 3.7347736148415127`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{
+    False->"\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\EM-Boundary-Conditions-and-Impedance.nb\"\
+\>", True->
+    StyleBox["\<\"C:\\\\Users\\\\DELL\\\\Documents\\\\DATA\\\\PhD\\\\Phys-Rev-\
+Letters-paper\\\\2017-09-23-ver1\\\\EM-Boundary-Conditions-and-Impedance.nb\"\
+\>", "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData:>{
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\EM-Boundary-Conditions-and-Impedance.nb", None},
+   ButtonNote->
+    "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-\
+23-ver1\\EM-Boundary-Conditions-and-Impedance.nb"],
+  Annotation[#, 
+   "C:\\Users\\DELL\\Documents\\DATA\\PhD\\Phys-Rev-Letters-paper\\2017-09-23-\
+ver1\\EM-Boundary-Conditions-and-Impedance.nb", "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{3.7347776134292192`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1662, 962},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification->1.5,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 99, 1, 93, "Section"],
+Cell[682, 25, 104, 1, 65, "Subsection"],
+Cell[789, 28, 102, 1, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[916, 33, 150, 2, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[1091, 39, 115, 1, 51, "Subsubsection"],
+Cell[1209, 42, 297, 6, 45, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1543, 53, 170, 3, 51, "Subsubsection"],
+Cell[1716, 58, 296, 6, 45, "Text"]
+}, Open  ]],
+Cell[2027, 67, 147, 2, 51, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[2199, 73, 110, 1, 40, "Subsubsection"],
+Cell[2312, 76, 290, 5, 45, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2639, 86, 187, 2, 51, "Subsubsection"],
+Cell[2829, 90, 217, 4, 45, "Text"],
+Cell[3049, 96, 417, 7, 74, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3503, 108, 174, 3, 51, "Subsubsection"],
+Cell[3680, 113, 235, 5, 45, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3976, 125, 203, 4, 143, "Section"],
+Cell[4182, 131, 139, 1, 65, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4358, 137, 103, 1, 93, "Section"],
+Cell[CellGroupData[{
+Cell[4486, 142, 136, 1, 65, "Subsection"],
+Cell[4625, 145, 312, 5, 51, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[4962, 154, 212, 3, 40, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[5199, 161, 246, 4, 45, "Input"],
+Cell[5448, 167, 935, 23, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[6410, 194, 186, 5, 86, "Subsubsection"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6645, 205, 206, 4, 93, "Section"],
+Cell[CellGroupData[{
+Cell[6876, 213, 241, 3, 65, "Subsection"],
+Cell[CellGroupData[{
+Cell[7142, 220, 271, 5, 45, "Input"],
+Cell[7416, 227, 1029, 24, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8494, 257, 200, 2, 65, "Subsection"],
+Cell[CellGroupData[{
+Cell[8719, 263, 335, 6, 45, "Input"],
+Cell[9057, 271, 1081, 24, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10187, 301, 109, 1, 65, "Subsection"],
+Cell[CellGroupData[{
+Cell[10321, 306, 365, 6, 104, "Input"],
+Cell[10689, 314, 1254, 27, 75, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12004, 348, 223, 3, 93, "Section"],
+Cell[CellGroupData[{
+Cell[12252, 355, 227, 3, 65, "Subsection"],
+Cell[CellGroupData[{
+Cell[12504, 362, 382, 6, 51, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[12911, 372, 400, 7, 45, "Input"],
+Cell[13314, 381, 1047, 24, 45, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14422, 412, 134, 1, 65, "Subsection"],
+Cell[14559, 415, 352, 6, 86, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[14936, 425, 164, 2, 40, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[15125, 431, 242, 4, 45, "Input"],
+Cell[15370, 437, 1020, 23, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[16417, 464, 134, 1, 51, "Subsubsection"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16600, 471, 190, 2, 93, "Section"],
+Cell[CellGroupData[{
+Cell[16815, 477, 349, 9, 65, "Subsection"],
+Cell[CellGroupData[{
+Cell[17189, 490, 277, 5, 45, "Input"],
+Cell[17469, 497, 1053, 24, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18571, 527, 292, 3, 65, "Subsection"],
+Cell[CellGroupData[{
+Cell[18888, 534, 261, 4, 45, "Input"],
+Cell[19152, 540, 989, 23, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20178, 568, 335, 6, 75, "Input"],
+Cell[20516, 576, 1112, 25, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21677, 607, 136, 1, 65, "Subsection"],
+Cell[CellGroupData[{
+Cell[21838, 612, 273, 5, 45, "Input"],
+Cell[22114, 619, 1055, 24, 78, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23218, 649, 180, 2, 65, "Subsection"],
+Cell[23401, 653, 166, 3, 51, "Subsubsection"],
+Cell[23570, 658, 141, 1, 40, "Subsubsection"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23760, 665, 136, 1, 93, "Section"],
+Cell[CellGroupData[{
+Cell[23921, 670, 298, 5, 102, "Subsection"],
+Cell[CellGroupData[{
+Cell[24244, 679, 303, 5, 75, "Input"],
+Cell[24550, 686, 1210, 26, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[25787, 716, 214, 4, 65, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26038, 725, 233, 3, 93, "Section"],
+Cell[26274, 730, 137, 1, 65, "Subsection"],
+Cell[26414, 733, 183, 2, 51, "Subsection"],
+Cell[26600, 737, 160, 3, 51, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26797, 745, 193, 2, 93, "Section"],
+Cell[CellGroupData[{
+Cell[27015, 751, 358, 6, 45, "Input"],
+Cell[27376, 759, 1073, 24, 45, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
