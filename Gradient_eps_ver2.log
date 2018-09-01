@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  1 SEP 2018 17:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  1 SEP 2018 21:17
 entering extended mode
 **Gradient_eps_ver2.tex
 (Gradient_eps_ver2.tex
@@ -261,10 +261,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 376--378
 No file Gradient_eps_ver2.bbl.
 [5] (Gradient_eps_ver2.aux) ) 
 Here is how much of TeX's memory you used:
- 3170 strings out of 493673
- 39747 string characters out of 3141532
- 137059 words of memory out of 3000000
- 6525 multiletter control sequences out of 15000+200000
+ 3166 strings out of 493673
+ 39633 string characters out of 3141532
+ 127059 words of memory out of 3000000
+ 6521 multiletter control sequences out of 15000+200000
  11242 words of font info for 44 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  33i,20n,28p,832b,226s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -285,7 +285,7 @@ m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on Gradient_eps_ver2.pdf (5 pages, 244631 bytes).
+Output written on Gradient_eps_ver2.pdf (5 pages, 240218 bytes).
 PDF statistics:
  86 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

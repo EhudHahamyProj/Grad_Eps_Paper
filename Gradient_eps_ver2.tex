@@ -428,7 +428,7 @@ W_R(z) &= e^{-i \omega  \sqrt{\epsilon_L \mu}}
 Differentiating $W_L(z)$, $W_R(z)$ and substituting into (\ref{eqns:BC_mat_sys}) and solving the system yields $E_r$,$E_L$,$E_R$,$E_t$.\\
 Further improvement of the layer solution accuracy is achieved by solving equation (\ref{eqns:ExPer1}) and its successive $n \geq 2$ ones, each contributing a uniform $O(r^{n+1})$ accuracy.
 
-\subsubsection{Formal WKB expansion: high frequency, slowly varying medium}
+\subsection{Formal WKB expansion: high frequency, slowly varying medium}
 Assume that the term $Q(s)$ in (\ref{eqns:Q_Sigmoid_Thin}) does not vary abruptly, and that $\Omega$ is large. We shall later demonstrate ways to measure the amount of allowed variation, and give meaning to the statement 'large $\Omega$'. \\*
 In such case, the physical optics approximations 
 \begin{align}
@@ -439,27 +439,8 @@ are uniform approximations for the left and right travelling waves $W_L(s)$, $W_
 
 
 
-\subsection{Thick Layer - Large Effective Width}
-
-\section{Asymptotic approximation for the solutions in the Gaussian case}
-
-\section{Numerical Solver the physical setup }
-\subsection{Absorbing Boundary Condition at the right boundary}
- A first order PDE formulation for the boundary condition is
-\begin{align}
-\label{eqns:1_D-temporal-traveling-wave-bc}
-\left[\dfrac{\partial E_{x_j}}{\partial t} +  \dfrac{1}{\sqrt{\epsilon \mu}}\dfrac{\partial E_{x_j}}{\partial z} \right ]_{z=L} = 0, \quad j=1,2,3
-\end{align}
-Note that $\epsilon=\epsilon(L)$, $\mu = \mu(L)$. For monochromatic waves
-\begin{align}
-\label{eqns:1_D-mc-traveling-wave-bc}
-\left [ i \omega \hat{E}_{x_j} +  \frac{1}{\sqrt{\epsilon \mu}} \frac{\partial \hat{E}_{x_j}}{\partial z} \right ]_{z=L} = 0, \quad j=1,2,3
-\end{align}
-
-\section{Uniqueness of the ODE boundary value solution}
 
 
-\section{Agreement with the Classical Theory in the Narrow effective Width Limit}
 
 
 %\bibliography{phys-rev-letters-ver0Notes}
