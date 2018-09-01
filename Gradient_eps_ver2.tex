@@ -328,6 +328,48 @@ and equation (\ref{eqns:ODE_xy_inhom}) becomes
 
 %A final note about the physical setting is in order. In a plane wave excitation situation, the incident wave $z$-component vanishes; Thus the interior $z$-component also vanishes. Note, though, that other settings where the incident wave $z$-component may not vanish may be considered. For example, this is the case if the incident wave is carried by a wave guide.\\       
 
+\subsection{Parameter Magnitude Characterization - a Joined Scales Analysis }
+
+
+In order to select an appropriate asymptotic  approximation method, a measure of terms magnitude. Since the parameters $r$,$a$, $\Omega$ are dimensionless, it is legitimate to let 
+\begin{subequations}
+\begin{align}
+r = \delta^\alpha \\
+a = \delta^\beta \\
+\Omega = \delta^\gamma
+\end{align}
+\end{subequations}
+
+where $\delta$ is a small real number.Here we assume $r>0$. The case $r<0$ can be treated similarly.
+Since $-a \leq s \leq a$, we define also
+\begin{align}
+s = \delta^\beta \xi
+\end{align}
+Equation (\ref{eqns:ODE_Ex_DimGroup}) is transformed into
+
+\begin{align}
+\dfrac{d^2 E_x}{d \xi^2}+ \left(\left(\frac{\xi }{2}+\frac{1}{2}\right) \delta ^{\alpha
+   }+1\right) \delta ^{2 (\beta +\gamma )}E_x=0
+\end{align}
+Regular perturbation holds when $\beta+\gamma \geq 0$, and  $a>0$, namely $a \Omega =O(1)$, and $r \ll 1$.\\
+
+The WKB method requires a factored $E_x$ coefficient of the form $Q(s) \Omega^2$, where $Q(s)$ is slowly varying and $\Omega^2$ is large. Clearly, these conditions are satisfied for $\beta+\gamma<0$, $\alpha >0$, yet better insight can be obtained using by connecting $\alpha$ to $\beta$ and $\gamma$ through the WKB relative error term      
+\cite{BenderOrszag1999}. Letting 
+\begin{align}
+S_2(\xi) = \dfrac{\frac{d^2 Q}{d \xi^2}}{8 Q^{3/2}} - \dfrac{5\left( \frac{d Q}{d \xi} \right)^2}{32 Q^{5/2}}
+\end{align}
+the uniform relative error bound is 
+\begin{align}
+\label{eqns:WKBErrXi}
+\exp \left(\dfrac{S_2(\xi)}{\Omega} \right) \approx 1+\dfrac{S_2(\xi)}{\Omega}, \qquad \Omega \gg 1 
+\end{align}
+Hence in order to verify that the WKB approximation holds, we should show that $\left \vert \frac{S_2}{\Omega} \right \vert \ll 1$ uniformly in the interval. \\
+For $Q(\xi)$ being the $E_x(\xi)$ from equation   
+\begin{align}
+\dfrac{S_2}{\Omega} = \dfrac{5 \delta ^{\alpha +\gamma }}{24 \sqrt{2} \left((\xi  +1)\delta ^{\alpha}+2\right)^{3/2}}
+\end{align}
+Hence further restriction, $\alpha + \gamma >0$, is required for the WKB approximation to hold.
+
 
 
 \section{Asymptotic approximation for the solution in a Sigmoidal Dielectric Profile}
@@ -394,47 +436,6 @@ E_x(s) &\sim Q(s)^{-1/4}\exp \left( \pm i \Omega \int \sqrt{Q(s)}ds\right) \nota
 are uniform approximations for the left and right travelling waves $W_L(s)$, $W_R(s)$ within the layer. As in the regular perturbations case, differentiating with respect to $z$, substituting in (\ref{eqns:BC_mat_sys}) and solving the linear system of equations yield the required constants $E_r$,$E_L$,$E_R$,$E_t$.   
 
 
-\subsubsection{Parameter Magnitude Characterization - a Joined Scales Analysis }
-
-
-In order to select an appropriate asymptotic  approximation method, a measure of terms magnitude. Since the parameters $r$,$a$, $\Omega$ are dimensionless, it is legitimate to let 
-\begin{subequations}
-\begin{align}
-r = \delta^\alpha \\
-a = \delta^\beta \\
-\Omega = \delta^\gamma
-\end{align}
-\end{subequations}
-
-where $\delta$ is a small real number.Here we assume $r>0$. The case $r<0$ can be treated similarly.
-Since $-a \leq s \leq a$, we define also
-\begin{align}
-s = \delta^\beta \xi
-\end{align}
-Equation (\ref{eqns:ODE_Ex_DimGroup}) is transformed into
-
-\begin{align}
-\dfrac{d^2 E_x}{d \xi^2}+ \left(\left(\frac{\xi }{2}+\frac{1}{2}\right) \delta ^{\alpha
-   }+1\right) \delta ^{2 (\beta +\gamma )}E_x=0
-\end{align}
-Regular perturbation holds when $\beta+\gamma \geq 0$, and  $a>0$, namely $a \Omega =O(1)$, and $r \ll 1$.\\
-
-The WKB method requires a factored $E_x$ coefficient of the form $Q(s) \Omega^2$, where $Q(s)$ is slowly varying and $\Omega^2$ is large. Clearly, these conditions are satisfied for $\beta+\gamma<0$, $\alpha >0$, yet better insight can be obtained using by connecting $\alpha$ to $\beta$ and $\gamma$ through the WKB relative error term      
-\cite{BenderOrszag1999}. Letting 
-\begin{align}
-S_2(\xi) = \dfrac{\frac{d^2 Q}{d \xi^2}}{8 Q^{3/2}} - \dfrac{5\left( \frac{d Q}{d \xi} \right)^2}{32 Q^{5/2}}
-\end{align}
-the uniform relative error bound is 
-\begin{align}
-\label{eqns:WKBErrXi}
-\exp \left(\dfrac{S_2(\xi)}{\Omega} \right) \approx 1+\dfrac{S_2(\xi)}{\Omega}, \qquad \Omega \gg 1 
-\end{align}
-Hence in order to verify that the WKB approximation holds, we should show that $\left \vert \frac{S_2}{\Omega} \right \vert \ll 1$ uniformly in the interval. \\
-For $Q(\xi)$ being the $E_x(\xi)$ from equation   
-\begin{align}
-\dfrac{S_2}{\Omega} = \dfrac{5 \delta ^{\alpha +\gamma }}{24 \sqrt{2} \left((\xi  +1)\delta ^{\alpha}+2\right)^{3/2}}
-\end{align}
-Hence further restriction, $\alpha + \gamma >0$, is required for the WKB approximation to hold.
 
 \subsection{Thick Layer - Large Effective Width}
 
