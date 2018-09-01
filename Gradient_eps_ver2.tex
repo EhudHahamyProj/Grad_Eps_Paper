@@ -156,87 +156,6 @@ PDE (\ref{eqns:Generalized_wave_z_coeffs_Eq1_2})  turns into an even simpler for
 \end{equation}
 having no explicit $\hat{E}_z$ dependency.
 
-
-
-\section{Dimensional analysis in a for a structured, z-dependent inhomogeneous layer} 
-The formulations (\ref{eqns:Generalized_wave_vector}) is general enough to allows any twice-differentiable dielectric profile. Yet,  to get qualitative insight about the solution behaviour using asymptotic analysis, dimensional analysis must be performed for a given profile. In this sense, strict meaning can be attached to 'large' and 'small' parameters statements, allowing correct selection of asymptotic analysis technique.  
-\subsection{Construction of a Sigmoid dielectric Profile}
-\label{sec:sigmoid_profile}
-As commonly assumed in optics, we consider a source-free (i.e. $\rho=0, \overrightarrow{J}=0$) layer $-L \leq z \leq L, -\infty < x,y < \infty$, in  which $\mu$ is constant. The dielectric profile $\epsilon(z)$ interpolates smoothly and monotonically two values of the dielectric profile so that $\epsilon(-L)=\epsilon_1$ and $\epsilon(L)=\epsilon_2$. The sigmoid is a non-linear function, hence should have a dimensionless argument. To do so, we take some sigmoid-like function $c( \cdot )$ and normalize its argument  by  a constant $M$, yielding $c\left( \frac{z}{M}\right)$. The interpolating function is
-
-
-\begin{align}
-\epsilon(z) = \frac{\epsilon_L \text{c}\left(\frac{L}{M}\right)-\epsilon_R \text{c}\left(-\frac{L}{M}\right)+(\epsilon_R-\epsilon_L)
-   \text{c}\left(\frac{z}{M}\right)}{\text{c}\left(\frac{L}{M}\right)-\text{c}\left(-\frac{L}{M}\right)
-   }
-\label{eqns:eps_z_dim_profile}
-\end{align}
-which can be substituted into (\ref{eqns:ODE_z_inhom}), (\ref{eqns:ODE_xy_inhom}). The resulting equations coefficients turn out to be cumbersome and not suggestive to interpretation. A more compact and meaningful form will now be presented next.
-
-  
-
-\subsection{Dimensional Analysis for a Sigmoidal Profile}
-Defining the dimensionless quantities 
-\begin{subequations}
-\begin{align}
-s &= z/M \label{eqns:def_nd_sigmoid_s} \\
-a &= L/M \label{eqns:def_nd_sigmoid_a} \\
-r &= (\epsilon_R - \epsilon_L)/\epsilon_L \label{eqns:def_nd_sigmoid_r} \\
-\Omega &= M \omega \sqrt{\epsilon_L \mu} \label{eqns:def_nd_sigmoid_W} 
-\end{align}
-\end{subequations}
-In these terms, letting
-\begin{align}
-q(s) = rc(s)+c(a)-(r+1)c(-a)
-\label{eqns:eps_simp}
-\end{align}
-yields
-\begin{align*}
-\frac{d}{dz} &\rightarrow \frac{1}{M}\dfrac{d}{ds} \\
-\frac{d^2}{dz^2} &\rightarrow \frac{1}{M^2}\dfrac{d^2}{ds^2} \\
-\mathcal{E}' &\rightarrow \frac{r c'(s)}{M q(s)}	\\
-\mathcal{E}'' &\rightarrow \frac{r c''(s)}{M^2 q(s)} - \left( \frac{r c'(s)}{M q(s)}\right)^2 \\
-\epsilon \mu \omega^2 &\rightarrow \frac{q(s) \Omega ^2}{M^2 (c(a)-c(-a))}
-\end{align*}
-The scaling of the $z$ coordinate by $M$ factors it out in the  homogeneous case. Equation (\ref{eqns:ODE_z_inhom}) is thus transformed into 
-\begin{align}
-\label{eqns:ODE_Ez_DimGroup}
-\frac{d^2 \hat{E}_z}{ds^2} & + P(s) \frac{d \hat{E}_z}{ds} + Q(s) \hat{E}_z = 0 \\
-P(s) &= \frac{r c'(s)}{q(s)} \notag \\
-Q(s) &=   \frac{r c''(s)}{q(s)} - \left( \frac{r c'(s)}{ q(s)}\right)^2 + \frac{q(s) \Omega ^2}{c(a)-c(-a)}   \notag
-\end{align}
-and equation (\ref{eqns:ODE_xy_inhom}) becomes
-
-\begin{align}
-\label{eqns:ODE_Ex_DimGroup}
-\frac{d^2 \hat{E}_{x_j}}{ds^2} + \frac{q(s) \Omega ^2}{c(a)-c(-a)}\hat{E}_{x_j} = 0
-\end{align}
-
-
-\subsection{Construction of the Gaussian Profile}We demonstrate complex solution behaviour patterns, inspired by linear, second order ODE theory with constant coefficients. To do so, a dielectric profile altering equation (\ref{eqns:ODE_z_inhom}) coefficients signs in the is presented. \\
-
-We consider again a source-free layer defined as in section \ref{sec:sigmoid_profile}, with $\mu$ constant. This time we consider a Gaussian-shaped profile
-\begin{align}
-\epsilon(z) = C e^{-(\frac{z-m}{\sigma})^2}
-\label{eqns:Gauss_Profile}
-\end{align}
-
-Assume that the parameters $C$, $m$ are chosen to fit $\epsilon(-L)=\epsilon_1$, $\epsilon(L)=\epsilon_2$. Clearly, $C$ is positive.\\
-For simplicity, we shall keep the profile in its current form, remembering that $\sigma$ is considered a tunable parameter. 
-
-\subsection{Temporal Frequency-Dependent Spatial Solution behaviour}
-Consider ODE (\ref{eqns:ODE_z_inhom}). Since constant $\mu$ and source-free layer are assumed, it has the form
-
-\begin{equation}
- \hat{E}_z'' -\frac{2 (z-m)}{\sigma^2} \hat{E}_z' + \left( C \mu  \omega ^2 e^{-\frac{(z-m)^2}{\sigma
-   ^2}}-\frac{2}{\sigma ^2}\right) \hat{E}_z = 0
-\label{eqns:source_free_Gaussian_ODE_z}
-\end{equation}n
-Tuning $\sigma$ and $\omega$,  The $\hat{E}_z$ coefficient $c_0(z)$ can be tuned to be uniformly positive or negative in the interval $-L < z < L$, or alter sign there. One should expect that the local solution behaviour would be determined by the equation's characteristic root, computed for a fixed value of $z$. This resulting qualitative behaviour should hold for neighbouring $z$ values due to the $\epsilon$ profile smoothness. Thus, the well-known repertoire of exponential / sinusoidal combinations would dominate the local solution shape.  
-
-A final note about the physical setting is in order. In a plane wave excitation situation, the incident wave $z$-component vanishes; Thus the interior $z$-component also vanishes. Note, though, that other settings where the incident wave $z$-component may not vanish may be considered. For example, this is the case if the incident wave is carried by a wave guide.\\       
-
-
 \section{Reflection-Transmission formulation for an inhomogeneous layer}
  
 
@@ -320,6 +239,87 @@ e^{i L k_1} E_i \\ k_1 e^{i L k_1} E_i \\ 0 \\ 0
 From the matrix structure in system (\ref{eqns:BC_mat_sys}) we can deduce that the  inner-layer solution must be written as a superposition of two independent solutions. Writing the solution as a sum of left and right travelling waves makes the physical meaning of the solution more tractable. As we shall see next, the approximation methods applied in this work - regular perturbations and WKB - have both properties.\\
 Further, both the matrix and the input vector are complex valued. Hence we shall typically have a complex-valued solution vector. The computed components $E_r$, $E_L$, $E_R$, $E_t$ therefore yield both amplitude and phase information.   
   
+
+
+\section{Dimensional analysis in a for a structured, z-dependent inhomogeneous layer} 
+The formulations (\ref{eqns:Generalized_wave_vector}) is general enough to allows any twice-differentiable dielectric profile. Yet,  to get qualitative insight about the solution behaviour using asymptotic analysis, dimensional analysis must be performed for a given profile. In this sense, strict meaning can be attached to 'large' and 'small' parameters statements, allowing correct selection of asymptotic analysis technique.  
+\subsection{Construction of a Sigmoid dielectric Profile}
+\label{sec:sigmoid_profile}
+As commonly assumed in optics, we consider a source-free (i.e. $\rho=0, \overrightarrow{J}=0$) layer $-L \leq z \leq L, -\infty < x,y < \infty$, in  which $\mu$ is constant. The dielectric profile $\epsilon(z)$ interpolates smoothly and monotonically two values of the dielectric profile so that $\epsilon(-L)=\epsilon_1$ and $\epsilon(L)=\epsilon_2$. The sigmoid is a non-linear function, hence should have a dimensionless argument. To do so, we take some sigmoid-like function $c( \cdot )$ and normalize its argument  by  a constant $M$, yielding $c\left( \frac{z}{M}\right)$. The interpolating function is
+
+
+\begin{align}
+\epsilon(z) = \frac{\epsilon_L \text{c}\left(\frac{L}{M}\right)-\epsilon_R \text{c}\left(-\frac{L}{M}\right)+(\epsilon_R-\epsilon_L)
+   \text{c}\left(\frac{z}{M}\right)}{\text{c}\left(\frac{L}{M}\right)-\text{c}\left(-\frac{L}{M}\right)
+   }
+\label{eqns:eps_z_dim_profile}
+\end{align}
+which can be substituted into (\ref{eqns:ODE_z_inhom}), (\ref{eqns:ODE_xy_inhom}). The resulting equations coefficients turn out to be cumbersome and not suggestive to interpretation. A more compact and meaningful form will now be presented next.
+
+  
+
+\subsection{Dimensional Analysis for a Sigmoidal Profile}
+Defining the dimensionless quantities 
+\begin{subequations}
+\begin{align}
+s &= z/M \label{eqns:def_nd_sigmoid_s} \\
+a &= L/M \label{eqns:def_nd_sigmoid_a} \\
+r &= (\epsilon_R - \epsilon_L)/\epsilon_L \label{eqns:def_nd_sigmoid_r} \\
+\Omega &= M \omega \sqrt{\epsilon_L \mu} \label{eqns:def_nd_sigmoid_W} 
+\end{align}
+\end{subequations}
+In these terms, letting
+\begin{align}
+q(s) = rc(s)+c(a)-(r+1)c(-a)
+\label{eqns:eps_simp}
+\end{align}
+yields
+\begin{align*}
+\frac{d}{dz} &\rightarrow \frac{1}{M}\dfrac{d}{ds} \\
+\frac{d^2}{dz^2} &\rightarrow \frac{1}{M^2}\dfrac{d^2}{ds^2} \\
+\mathcal{E}' &\rightarrow \frac{r c'(s)}{M q(s)}	\\
+\mathcal{E}'' &\rightarrow \frac{r c''(s)}{M^2 q(s)} - \left( \frac{r c'(s)}{M q(s)}\right)^2 \\
+\epsilon \mu \omega^2 &\rightarrow \frac{q(s) \Omega ^2}{M^2 (c(a)-c(-a))}
+\end{align*}
+The scaling of the $z$ coordinate by $M$ factors it out in the  homogeneous case. Equation (\ref{eqns:ODE_z_inhom}) is thus transformed into 
+\begin{align}
+\label{eqns:ODE_Ez_DimGroup}
+\frac{d^2 \hat{E}_z}{ds^2} & + P(s) \frac{d \hat{E}_z}{ds} + Q(s) \hat{E}_z = 0 \\
+P(s) &= \frac{r c'(s)}{q(s)} \notag \\
+Q(s) &=   \frac{r c''(s)}{q(s)} - \left( \frac{r c'(s)}{ q(s)}\right)^2 + \frac{q(s) \Omega ^2}{c(a)-c(-a)}   \notag
+\end{align}
+and equation (\ref{eqns:ODE_xy_inhom}) becomes
+
+\begin{align}
+\label{eqns:ODE_Ex_DimGroup}
+\frac{d^2 \hat{E}_{x_j}}{ds^2} + \frac{q(s) \Omega ^2}{c(a)-c(-a)}\hat{E}_{x_j} = 0
+\end{align}
+
+
+\subsection{Construction of the Gaussian Profile}We demonstrate complex solution behaviour patterns, inspired by linear, second order ODE theory with constant coefficients. To do so, a dielectric profile altering equation (\ref{eqns:ODE_z_inhom}) coefficients signs in the is presented. \\
+
+We consider again a source-free layer defined as in section \ref{sec:sigmoid_profile}, with $\mu$ constant. This time we consider a Gaussian-shaped profile
+\begin{align}
+\epsilon(z) = C e^{-(\frac{z-m}{\sigma})^2}
+\label{eqns:Gauss_Profile}
+\end{align}
+
+Assume that the parameters $C$, $m$ are chosen to fit $\epsilon(-L)=\epsilon_1$, $\epsilon(L)=\epsilon_2$. Clearly, $C$ is positive.\\
+For simplicity, we shall keep the profile in its current form, remembering that $\sigma$ is considered a tunable parameter. 
+
+\subsection{Temporal Frequency-Dependent Spatial Solution behaviour}
+Consider ODE (\ref{eqns:ODE_z_inhom}). Since constant $\mu$ and source-free layer are assumed, it has the form
+
+\begin{equation}
+ \hat{E}_z'' -\frac{2 (z-m)}{\sigma^2} \hat{E}_z' + \left( C \mu  \omega ^2 e^{-\frac{(z-m)^2}{\sigma
+   ^2}}-\frac{2}{\sigma ^2}\right) \hat{E}_z = 0
+\label{eqns:source_free_Gaussian_ODE_z}
+\end{equation}n
+Tuning $\sigma$ and $\omega$,  The $\hat{E}_z$ coefficient $c_0(z)$ can be tuned to be uniformly positive or negative in the interval $-L < z < L$, or alter sign there. One should expect that the local solution behaviour would be determined by the equation's characteristic root, computed for a fixed value of $z$. This resulting qualitative behaviour should hold for neighbouring $z$ values due to the $\epsilon$ profile smoothness. Thus, the well-known repertoire of exponential / sinusoidal combinations would dominate the local solution shape.  
+
+A final note about the physical setting is in order. In a plane wave excitation situation, the incident wave $z$-component vanishes; Thus the interior $z$-component also vanishes. Note, though, that other settings where the incident wave $z$-component may not vanish may be considered. For example, this is the case if the incident wave is carried by a wave guide.\\       
+
+
 
 \section{Asymptotic approximation for the solution in a Sigmoidal Dielectric Profile}
 We consider the sigmoid
