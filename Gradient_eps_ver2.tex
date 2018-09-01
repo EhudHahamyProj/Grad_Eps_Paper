@@ -328,6 +328,29 @@ and equation (\ref{eqns:ODE_xy_inhom}) becomes
 
 %A final note about the physical setting is in order. In a plane wave excitation situation, the incident wave $z$-component vanishes; Thus the interior $z$-component also vanishes. Note, though, that other settings where the incident wave $z$-component may not vanish may be considered. For example, this is the case if the incident wave is carried by a wave guide.\\       
 
+
+
+\section{Asymptotic approximation for the solution in a Sigmoidal Dielectric Profile}
+We consider the sigmoid
+\begin{align}
+\label{eqns:Sigmoid}
+c(z) = \dfrac{1}{1+e^{-z}}
+\end{align}
+\subsection{Thin Layer - Small Effective Width }
+A relatively simple case in that of a thin layer, $a \ll 1$.
+$s$ is small as well, since $-a<s<a$. Expanding The $E_{x_j}$ coefficient in equation (\ref{eqns:ODE_Ex_DimGroup}) to series in both $a$, $s$ and dropping terms of order higher than 1, 
+\begin{align}
+\label{eqns:Q_Sigmoid_Thin}
+\dfrac{q(s)}{c(a)-c(-a)} \approx \left( r \left(\frac{s}{2 a}+\frac{1}{2}\right)+1 \right)=Q(s) 
+\end{align}
+
+yielding the approximation equation
+\begin{align}
+\label{eqns:ode_Sigmoid_Thin}
+\dfrac{d^2 E_x}{ds^2}+\left( r \left(\frac{s}{2 a}+\frac{1}{2}\right)+1 \right) \Omega^2 E_x = 0
+\end{align}
+Note that $Q(s)$ in (\ref{eqns:Q_Sigmoid_Thin}) can become arbitrarily large only by increase of $r$. 
+
 \subsection{Parameter Magnitude Characterization - a Joined Scales Analysis }
 
 
@@ -371,27 +394,6 @@ For $Q(\xi)$ being the $E_x(\xi)$ from equation
 Hence further restriction, $\alpha + \gamma >0$, is required for the WKB approximation to hold.
 
 
-
-\section{Asymptotic approximation for the solution in a Sigmoidal Dielectric Profile}
-We consider the sigmoid
-\begin{align}
-\label{eqns:Sigmoid}
-c(z) = \dfrac{1}{1+e^{-z}}
-\end{align}
-\subsection{Thin Layer - Small Effective Width }
-A relatively simple case in that of a thin layer, $a \ll 1$.
-$s$ is small as well, since $-a<s<a$. Expanding The $E_{x_j}$ coefficient in equation (\ref{eqns:ODE_Ex_DimGroup}) to series in both $a$, $s$ and dropping terms higher than 1, 
-\begin{align}
-\label{eqns:Q_Sigmoid_Thin}
-\dfrac{q(s)}{c(a)-c(-a)} \approx \left( r \left(\frac{s}{2 a}+\frac{1}{2}\right)+1 \right)=Q(s) 
-\end{align}
-
-yielding the approximation equation
-\begin{align}
-\label{eqns:ode_Sigmoid_Thin}
-\dfrac{d^2 E_x}{ds^2}+\left( r \left(\frac{s}{2 a}+\frac{1}{2}\right)+1 \right) \Omega^2 E_x = 0
-\end{align}
-Note that $Q(s)$ in (\ref{eqns:Q_Sigmoid_Thin}) can become arbitrarily large only by increase of $r$. 
 
 
 \subsubsection{Formal Regular Perturbation Expansion: low frequency, small effective dielectric dynamic range}
