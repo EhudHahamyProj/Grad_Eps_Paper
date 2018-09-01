@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  1 SEP 2018 10:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  1 SEP 2018 12:25
 entering extended mode
 **Gradient_eps_ver2.tex
 (Gradient_eps_ver2.tex
@@ -247,23 +247,28 @@ Underfull \hbox (badness 1168) in paragraph at lines 204--206
 []\OT1/cmr/m/n/10 Consider equa-tion (8[]) for a tangentially-polarized
  []
 
-[2] [3]
-Underfull \hbox (badness 1436) in paragraph at lines 300--301
+[2]
+Underfull \hbox (badness 1048) in paragraph at lines 241--246
+\OT1/cmr/m/n/10 This idea is clearly not new, as it ap-pears in all
+ []
+
+[3]
+Underfull \hbox (badness 1436) in paragraph at lines 308--309
 []\OT1/cmr/m/n/10 We demon-strate com-plex so-lu-tion be-haviour pat-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 411--413
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
@@ -271,10 +276,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 411--413
 No file Gradient_eps_ver2.bbl.
 [6] (Gradient_eps_ver2.aux) ) 
 Here is how much of TeX's memory you used:
- 3172 strings out of 493673
- 39800 string characters out of 3141532
+ 3171 strings out of 493673
+ 39789 string characters out of 3141532
  125059 words of memory out of 3000000
- 6527 multiletter control sequences out of 15000+200000
+ 6526 multiletter control sequences out of 15000+200000
  11242 words of font info for 44 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  33i,20n,28p,832b,226s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -295,7 +300,7 @@ m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on Gradient_eps_ver2.pdf (6 pages, 251488 bytes).
+Output written on Gradient_eps_ver2.pdf (6 pages, 252198 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
