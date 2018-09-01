@@ -249,8 +249,9 @@ Indeed, we shall see that several classes such approximate solution pairs do exi
   
 
 
-\section{Dimensional analysis in a for a structured, z-dependent inhomogeneous layer} 
-The formulations (\ref{eqns:Generalized_wave_vector}) is general enough to handle any twice-differentiable dielectric profile. Yet,  to get qualitative insight about the solution behaviour using asymptotic analysis, dimensional analysis must be performed for a given profile. In this sense, strict meaning can be attached to 'large' and 'small' parameters statements, allowing correct selection of asymptotic analysis technique.  
+\section{Asymptotic analysis in a for a sigmoidal, z-dependent inhomogeneous layer} 
+The formulations (\ref{eqns:Generalized_wave_vector}) is general enough to handle any twice-differentiable dielectric profile. Yet,  to get qualitative insight about the solution behaviour using asymptotic analysis, dimensional analysis must be performed for a given profile. In this sense, strict meaning can be attached to 'large' and 'small' parameters statements, allowing correct selection of asymptotic analysis technique.  \\
+A sigmoidal structure was selected since analysis results may, for some parameter settings, be compared to the simple single-jump step function case. 
 \subsection{Construction of a Sigmoid dielectric Profile}
 \label{sec:sigmoid_profile}
 As commonly assumed in optics, we consider a source-free (i.e. $\rho=0, \overrightarrow{J}=0$) layer $-L \leq z \leq L, -\infty < x,y < \infty$, in  which $\mu$ is constant. The dielectric profile $\epsilon(z)$ interpolates smoothly and monotonically two values of the dielectric profile so that $\epsilon(-L)=\epsilon_1$ and $\epsilon(L)=\epsilon_2$. The sigmoid is a non-linear function, hence should have a dimensionless argument. To do so, we take some sigmoid-like function $c( \cdot )$ and normalize its argument  by  a constant $M$, yielding $c\left( \frac{z}{M}\right)$. The interpolating function is
@@ -304,28 +305,28 @@ and equation (\ref{eqns:ODE_xy_inhom}) becomes
 \end{align}
 
 
-\subsection{Construction of the Gaussian Profile}We demonstrate complex solution behaviour patterns, inspired by linear, second order ODE theory with constant coefficients. To do so, a dielectric profile altering equation (\ref{eqns:ODE_z_inhom}) coefficients signs in the is presented. \\
+%\subsection{Construction of the Gaussian Profile}We demonstrate complex solution behaviour patterns, inspired by linear, second order ODE theory with constant coefficients. To do so, a dielectric profile altering equation (\ref{eqns:ODE_z_inhom}) coefficients signs in the is presented. \\
 
-We consider again a source-free layer defined as in section \ref{sec:sigmoid_profile}, with $\mu$ constant. This time we consider a Gaussian-shaped profile
-\begin{align}
-\epsilon(z) = C e^{-(\frac{z-m}{\sigma})^2}
-\label{eqns:Gauss_Profile}
-\end{align}
+%We consider again a source-free layer defined as in section \ref{sec:sigmoid_profile}, with $\mu$ constant. This time we consider a Gaussian-shaped profile
+%\begin{align}
+%\epsilon(z) = C e^{-(\frac{z-m}{\sigma})^2}
+%\label{eqns:Gauss_Profile}
+%\end{align}
 
-Assume that the parameters $C$, $m$ are chosen to fit $\epsilon(-L)=\epsilon_1$, $\epsilon(L)=\epsilon_2$. Clearly, $C$ is positive.\\
-For simplicity, we shall keep the profile in its current form, remembering that $\sigma$ is considered a tunable parameter. 
+%Assume that the parameters $C$, $m$ are chosen to fit $\epsilon(-L)=\epsilon_1$, $\epsilon(L)=\epsilon_2$. Clearly, $C$ is positive.\\
+%For simplicity, we shall keep the profile in its current form, remembering that $\sigma$ is considered a tunable parameter. 
 
-\subsection{Temporal Frequency-Dependent Spatial Solution behaviour}
-Consider ODE (\ref{eqns:ODE_z_inhom}). Since constant $\mu$ and source-free layer are assumed, it has the form
+%\subsection{Temporal Frequency-Dependent Spatial Solution behaviour}
+%Consider ODE (\ref{eqns:ODE_z_inhom}). Since constant $\mu$ and source-free layer are assumed, it has the form
 
-\begin{equation}
- \hat{E}_z'' -\frac{2 (z-m)}{\sigma^2} \hat{E}_z' + \left( C \mu  \omega ^2 e^{-\frac{(z-m)^2}{\sigma
-   ^2}}-\frac{2}{\sigma ^2}\right) \hat{E}_z = 0
-\label{eqns:source_free_Gaussian_ODE_z}
-\end{equation}n
-Tuning $\sigma$ and $\omega$,  The $\hat{E}_z$ coefficient $c_0(z)$ can be tuned to be uniformly positive or negative in the interval $-L < z < L$, or alter sign there. One should expect that the local solution behaviour would be determined by the equation's characteristic root, computed for a fixed value of $z$. This resulting qualitative behaviour should hold for neighbouring $z$ values due to the $\epsilon$ profile smoothness. Thus, the well-known repertoire of exponential / sinusoidal combinations would dominate the local solution shape.  
+%\begin{equation}
+% \hat{E}_z'' -\frac{2 (z-m)}{\sigma^2} \hat{E}_z' + \left( C \mu  \omega ^2 e^{-\frac{(z-m)^2}{\sigma
+%   ^2}}-\frac{2}{\sigma ^2}\right) \hat{E}_z = 0
+%\label{eqns:source_free_Gaussian_ODE_z}
+%\end{equation}n
+%Tuning $\sigma$ and $\omega$,  The $\hat{E}_z$ coefficient $c_0(z)$ can be tuned to be uniformly positive or negative in the interval $-L < z < L$, or alter sign there. One should expect that the local solution behaviour would be determined by the equation's characteristic root, computed for a fixed value of $z$. This resulting qualitative behaviour should hold for neighbouring $z$ values due to the $\epsilon$ profile smoothness. Thus, the well-known repertoire of exponential / sinusoidal combinations would dominate the local solution shape.  
 
-A final note about the physical setting is in order. In a plane wave excitation situation, the incident wave $z$-component vanishes; Thus the interior $z$-component also vanishes. Note, though, that other settings where the incident wave $z$-component may not vanish may be considered. For example, this is the case if the incident wave is carried by a wave guide.\\       
+%A final note about the physical setting is in order. In a plane wave excitation situation, the incident wave $z$-component vanishes; Thus the interior $z$-component also vanishes. Note, though, that other settings where the incident wave $z$-component may not vanish may be considered. For example, this is the case if the incident wave is carried by a wave guide.\\       
 
 
 
