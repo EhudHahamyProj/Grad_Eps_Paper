@@ -21,6 +21,14 @@
 %\usepackage[square,numbers]{natbib}
 %\usepackage[]{natbib}
 
+\newtheorem{lem}{Lemma}[subsubsection]
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{cor}{Corollary}[subsubsection]
+\newtheorem{proof}{Proof}[subsubsection]
+\newtheorem{define}{Definition}[subsubsection]
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
 
 \begin{document}
 
@@ -501,6 +509,86 @@ i \omega  \nabla \times \overrightarrow{H} = -\omega^2 \epsilon \overrightarrow{
 
 Substituting (\ref{eqns:CurlProdCurlExpanded}), (\ref{eqns:Curl_H_replaced_E}) into (\ref{eqns:CulCurlMaxwellModified}) and multiplying by  $\mu$ we get the generalized wave equations system (\ref{eqns:Generalized_wave_vector}). 
 
+\section{Component-wise expansion of the term $\left(\mu \nabla \left( \dfrac{1}{\mu}\right) \times \left(\nabla \times \vec{E} \right) \right)$}
+\label{append:GradLogTermComponenetwiseDeriv}
+To handle the repeated cross product we'll use Levi-Civita's permutation symbols $\epsilon_{ijk}$ \cite{ArfkenWeber2005} defined by
+\begin{align}
+\label{eqns:LeviCivitaSymbol}
+\epsilon_{123} = \epsilon_{231} = \epsilon_{312} & = 1	\notag\\
+\epsilon_{132} = \epsilon_{213} = \epsilon_{321} &= -1 \\
+\text{all other } \epsilon_{ijk} &= 0	\notag
+\end{align}
+The following lemma is presented as an exercise in \cite{ArfkenWeber2005}, p. 150.
+\begin{lem}
+\label{lem:LiviCivitaEpsDelta}
+Let $\epsilon_{ijk}$ be defined by (\ref{eqns:LeviCivitaSymbol}). Then
+\begin{align}
+\label{eqns:LiviCivitaEpsilonDelta} 
+\epsilon_{ijk} \epsilon_{pqk} = \delta_{ip} \delta_{jq} - \delta_{iq} \delta_{jp}
+\end{align} 
+where $\delta_{ij}$ is Kronecker's delta.
+\end{lem}
+
+\begin{proof}
+Noticed that each term in the $k$-sum $\epsilon_{ijk} \epsilon_{pqk}$ is non-vanishing only if $i,j,p,q \neq k$, $i \neq j$, $p \neq q$. For example, for the $k=1$ term we need only to examine the possibilities 
+\begin{align*}
+i=2,\quad j=3, \quad p=2, \quad q=3	\\
+i=3,\quad j=2, \quad p=2, \quad q=3	\\
+i=2,\quad j=3, \quad p=3, \quad q=2	\\
+i=3,\quad j=2, \quad p=3, \quad q=2
+\end{align*} 
+Substituting and using (\ref{eqns:LeviCivitaSymbol}) we get that in all cases  $\epsilon_{ij1} \epsilon_{pq1} =  \delta_{ip} \delta_{jq} - \delta_{iq} \delta_{jp}$.\\
+Similar results can be shown for $k=2,3$. Finally, the summation (\ref{eqns:LiviCivitaEpsilonDelta}) holds because $i,j,p,q$ substitutions that yield a non-vanishing for a specific value of $k$ cause the other $k$-terms to vanish.
+\end{proof}
+
+\begin{lem}
+Let $\overrightarrow{a}$ be a vector of $x,y,z$-differentiable entries. Then 
+\begin{align}
+\label{eqns:doubleCrossProdDecomposition}
+\left( \overrightarrow{a} \times (\nabla \times \overrightarrow{E}) \right)_i = \overrightarrow{a} \cdot \left( \dfrac{\partial \overrightarrow{E}}{\partial x_i}- \nabla E_i \right)
+\end{align}
+\end{lem}
+
+\begin{proof}
+Using the Levi-Civita symbol (\ref{eqns:LeviCivitaSymbol}), 
+\begin{align*}
+\left( \overrightarrow{a} \times (\nabla \times \overrightarrow{E}) \right)_i  = \epsilon_{ijk}a_j\left( \epsilon_{kpq}\dfrac{\partial E_q}{\partial x_p} \right) = \epsilon_{ijk} \epsilon_{kpq} a_j \dfrac{\partial E_q}{\partial x_p}
+\end{align*}
+By lemma (\ref{lem:LiviCivitaEpsDelta})
+\begin{align*}
+\left( \overrightarrow{a} \times (\nabla \times \overrightarrow{E}) \right)_i  =  \left( \delta_{ip}\delta{jq} - \delta_{iq}\delta_{jp}\right) a_j \dfrac{\partial E_q}{\partial x_p}
+\end{align*}
+but
+\begin{align*}
+\delta_{ip}\delta_{jq}a_j \dfrac{\partial E_q}{\partial x_p} &= a_j \dfrac{\partial E_j}{\partial x_i} \\
+\delta_{iq}\delta_{jp}a_j \dfrac{\partial E_q}{\partial x_p} &= a_j \dfrac{\partial E_i}{\partial x_j}
+\end{align*}
+Hence
+\begin{align*}
+\left( \overrightarrow{a} \times (\nabla \times \overrightarrow{E}) \right)_i = a_j\left( \dfrac{\partial E_j}{\partial x_i} - \dfrac{\partial E_i}{\partial x_j} \right)
+\end{align*}
+Explicit summation yields
+\begin{equation*}
+\begin{split}
+&\left( \overrightarrow{a} \times (\nabla \times \overrightarrow{E}) \right)_i = \\
+& a_1\left( \dfrac{\partial E_1}{\partial x_i} - \dfrac{\partial E_i}{\partial x_1} \right) + 
+a_2\left( \dfrac{\partial E_2}{\partial x_i} - \dfrac{\partial E_i}{\partial x_2} \right) +\\
+& a_3\left( \dfrac{\partial E_3}{\partial x_i} - \dfrac{\partial E_i}{\partial x_3} \right) =
+\overrightarrow{a} \cdot \left( \dfrac{\partial \overrightarrow{E}}{\partial x_i}- \nabla E_i \right)
+\end{split}
+\end{equation*}
+as required.
+\end{proof}
+
+\begin{cor} Relation (\ref{eqns:E_Wave_extra_term_log_mu}) holds:\\
+Substitute $\overrightarrow{a} = \nabla\mathcal{M}$ into (\ref{eqns:doubleCrossProdDecomposition}). 
+
+\end{cor}
+
+
+
+
+
 
 
 
@@ -522,6 +610,9 @@ Goodman, Joseph W. Introduction to Fourier optics. Roberts and Company Publisher
 
 \bibitem{cheng2006fieldAndWave} %
 Cheng, David K. Field and Wave Electromagnetics. 2nd Ed. Tsinghua University Press, 2006.
+
+\bibitem{ArfkenWeber2005}
+Arfken, GB, Weber HJ,  Harris, FE. Mathematical Methods for Physicists. Elsevier Academic, Boston, MA, 2005
 
 
 

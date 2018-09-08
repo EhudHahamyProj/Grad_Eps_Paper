@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  8 SEP 2018 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  8 SEP 2018 18:44
 entering extended mode
 **Gradient_eps_ver2.tex
 (Gradient_eps_ver2.tex
@@ -174,116 +174,116 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-Class revtex4-1 Info: Patching LaTeX tabular. on input line 25.
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 25.
+\c@lem=\count107
+\c@thm=\count108
+\c@cor=\count109
+\c@proof=\count110
+\c@define=\count111
+Class revtex4-1 Info: Patching LaTeX tabular. on input line 33.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 33.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 25.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 25.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 25.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 33.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 33.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 33.
 
 (Gradient_eps_ver2.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 43.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 43.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{C:/Users/DELL/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (4.64363pt too wide) detected at line 146
+Overfull \hbox (4.64363pt too wide) detected at line 154
 \OMS/cmsy/m/n/10 M[] [] \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 E[][] \OT1/cmr/m/n/1
 0 + \OMS/cmsy/m/n/10 r[]\OML/cmm/m/it/10 E[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10
  ![]E[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 i!J[]
  []
 
 
-Underfull \hbox (badness 8132) in paragraph at lines 151--152
+Underfull \hbox (badness 8132) in paragraph at lines 159--160
 []\OT1/cmr/m/n/10 Assume an $\OML/cmm/m/it/10 x; y$ \OT1/cmr/m/n/10 spa-tially 
 co-her-ent source in-
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 151--152
+Underfull \hbox (badness 6893) in paragraph at lines 159--160
 \OT1/cmr/m/n/10 ci-dent to an in-fi-nite slab $\OMS/cmsy/m/n/10  \OML/cmm/m/it/
 10 L \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 z \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 
 L$\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 151--152
+Underfull \hbox (badness 1430) in paragraph at lines 159--160
 $\OMS/cmsy/m/n/10  1 \OML/cmm/m/it/10 < x; y < \OMS/cmsy/m/n/10 1$\OT1/cmr/m/n/
 10 , at $\OML/cmm/m/it/10 z \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10  \OML/cmm/m/it/1
 0 L$\OT1/cmr/m/n/10 . The pro-files
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 175.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 183.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 183.
 
-Underfull \hbox (badness 1168) in paragraph at lines 211--213
+Underfull \hbox (badness 1168) in paragraph at lines 219--221
 []\OT1/cmr/m/n/10 Consider equa-tion (9[]) for a tangentially-polarized
  []
 
 [2]
-Underfull \hbox (badness 1048) in paragraph at lines 248--253
+Underfull \hbox (badness 1048) in paragraph at lines 256--261
 \OT1/cmr/m/n/10 This idea is clearly not new, as it ap-pears in all
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 383--385
+Underfull \hbox (badness 10000) in paragraph at lines 391--393
 
  []
 
 [4]
-Overfull \hbox (1.22112pt too wide) in paragraph at lines 483--483
+Overfull \hbox (1.22112pt too wide) in paragraph at lines 491--491
 [] 
  []
-
-
-Overfull \vbox (1.6727pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (1.6727pt too high) has occurred while \output is active []
-
 
 [5]
 No file Gradient_eps_ver2.bbl.
 [6] (Gradient_eps_ver2.aux) ) 
 Here is how much of TeX's memory you used:
- 3179 strings out of 493673
- 39916 string characters out of 3141532
- 168100 words of memory out of 3000000
- 6534 multiletter control sequences out of 15000+200000
- 11242 words of font info for 44 fonts, out of 3000000 for 9000
+ 3222 strings out of 493673
+ 40378 string characters out of 3141532
+ 147059 words of memory out of 3000000
+ 6575 multiletter control sequences out of 15000+200000
+ 11896 words of font info for 46 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,21n,28p,832b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,30n,28p,832b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+lic/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cmextra/cmex9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
@@ -296,10 +296,12 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on Gradient_eps_ver2.pdf (6 pages, 242634 bytes).
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on Gradient_eps_ver2.pdf (6 pages, 296871 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
