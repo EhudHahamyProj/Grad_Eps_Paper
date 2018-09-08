@@ -99,7 +99,15 @@ Let $\overrightarrow{E}(x,y,z,\omega) = \hat{E}(x,y,z)e^{i \omega t}$, $\overrig
 	\end{align}
 \end{subequations}
  
-Assume a linear, isotropic material, so that the flux density vectors satisfy $\overrightarrow{D}=\epsilon \overrightarrow{E}$, and $\overrightarrow{B} =\mu \overrightarrow{H}$. We allow material inhomogeneity: $\mu=\mu(x,y,z)$, $\epsilon = \epsilon(x,y,z)$, where $\epsilon$ and $\mu$ are smooth functions of $x,y,z$.\\ 
+Assume a linear, isotropic material, so that the flux density vectors satisfy
+\begin{subequations}
+\begin{align}
+        \overrightarrow{D} = \epsilon \overrightarrow{E} \label{eqns:constitutiveDepsE}\\
+        \overrightarrow{B} = \mu \overrightarrow{H}	\label{eqns:constitutiveBH}        
+\end{align}
+\end{subequations}
+% $\overrightarrow{D}=\epsilon \overrightarrow{E}$, and $\overrightarrow{B} =\mu \overrightarrow{H}$. 
+We allow material inhomogeneity: $\mu=\mu(x,y,z)$, $\epsilon = \epsilon(x,y,z)$, where $\epsilon$ and $\mu$ are smooth functions of $x,y,z$.\\ 
 For convenience we define $\mathcal{M} = \log(\mu)$, $\mathcal{E} = \log(\epsilon)$. \\
 Maxwell's equations for inhomogeneous medium in vector form (compare \cite{goodman2005introduction}, chap. 3) 
 \begin{equation}
@@ -435,7 +443,74 @@ In such case, the physical optics approximations
 E_x(s) &\sim Q(s)^{-1/4}\exp \left( \pm i \Omega \int \sqrt{Q(s)}ds\right) \notag \\
 & \approx \dfrac{\exp \left(\pm i \Omega  \left(\frac{r s^2}{8 a}+\frac{r s}{4}+s\right) \right)}{\sqrt[4]{\frac{r (a+s)}{4 a}+1}}
 \end{align}
-are uniform approximations for the left and right travelling waves $W_L(s)$, $W_R(s)$ within the layer. As in the regular perturbations case, differentiating with respect to $z$, substituting in (\ref{eqns:BC_mat_sys}) and solving the linear system of equations yield the required constants $E_r$,$E_L$,$E_R$,$E_t$.   
+are uniform approximations for the left and right travelling waves $W_L(s)$, $W_R(s)$ within the layer. As in the regular perturbations case, differentiating with respect to $z$, substituting in (\ref{eqns:BC_mat_sys}) and solving the linear system of equations yield the required constants $E_r$,$E_L$,$E_R$,$E_t$. 
+
+\newpage
+
+  
+
+\appendix
+\section{Derivation of the generalized wave equations from Maxwell's equations}
+
+\label{append:GeneralizedWaveDeriv}
+In order to transform Maxwell's equation into a system of wave equations, we need the following set of vector calculus identities:
+\begin{subequations}
+\label{eqns:vectorCalcIDs}
+	\begin{align}
+			\nabla \times (\psi \overrightarrow{a}) = \nabla \psi \times 	
+			\overrightarrow{a} + \psi \nabla \times \overrightarrow{a}  \label{eqns:ProdCurlID}\\
+		\nabla \times \nabla \times \overrightarrow{a} = \nabla ( \nabla
+			 \cdot \overrightarrow{a} ) - \nabla^2\overrightarrow{a} \label{eqns:CurlCurlID}\\
+		\nabla \cdot (\psi \overrightarrow{a}) = \psi \nabla \cdot \overrightarrow{a}
+			 + \overrightarrow{a} \cdot \nabla \psi \label{eqns:DivProdID}
+			\end{align}
+\end{subequations}
+
+We start from equation (\ref{eqns:CurlE_Maxwell})
+\begin{align*}
+\nabla \times \overrightarrow{E} + \dfrac{\partial \overrightarrow{B}}{\partial t}&= 0
+\end{align*}
+Substituting the relation (\ref{eqns:constitutiveBH}) between magnetic fields in conjunction we get
+\begin{align*}
+\nabla \times \overrightarrow{E} + \mu \dfrac{\partial  \overrightarrow{H}}{\partial t}&= 0
+\end{align*}
+For future purposes, let us divide by $\mu$:
+\begin{align*}
+\dfrac{1}{\mu} \nabla \times \overrightarrow{E} + \dfrac{\partial \overrightarrow{H}}{\partial t} = 0
+\end{align*}
+
+Taking the curl of both sides and changing the order of temporal and spatial differentiation
+\begin{align}
+\label{eqns:CulCurlMaxwellModified}
+\nabla \times \left( \dfrac{1}{\mu} \nabla \times \overrightarrow{E} \right)  + \dfrac{\partial (\nabla \times  \overrightarrow{H})}{\partial t} = 0
+\end{align}
+We'll apply thew vector calculus identities (\ref{eqns:vectorCalcIDs}) to decompose the summed terms in (\ref{eqns:CulCurlMaxwellModified}).\\
+Using identity (\ref{eqns:ProdCurlID}) we get
+\begin{align}
+\label{eqns:CurlProdCurlpart}
+\nabla \times \left( \dfrac{1}{\mu} \nabla \times \overrightarrow{E} \right) = \nabla \left( \dfrac{1}{\mu} \right) \times \left(\nabla \times \overrightarrow{E} \right) + \dfrac{1}{\mu} \nabla \times \nabla \times \overrightarrow{E}
+\end{align}
+Now we apply (\ref{eqns:CurlCurlID}) to (\ref{eqns:CurlProdCurlpart}) and get
+\begin{align}
+\label{eqns:CurlProdCurlExpanded}
+\nabla \times \left( \dfrac{1}{\mu} \nabla \times \overrightarrow{E} \right) = \nabla \left( \dfrac{1}{\mu} \right) \times \left(\nabla \times \overrightarrow{E} \right) + \dfrac{1}{\mu} \left( \nabla (\nabla \cdot \overrightarrow{E}) - \nabla^2 \overrightarrow{E}\right)
+\end{align}
+The $\overrightarrow{H}$ - term in (\ref{eqns:CulCurlMaxwellModified}) can be replaced using equation (\ref{eqns:CurlH_Maxwell}):
+\begin{align}
+\label{eqns:Curl_H_replaced_D}
+\dfrac{\partial}{\partial t} \left( \nabla \times \overrightarrow{H}\right) = \dfrac{\partial^2 \overrightarrow{D}}{\partial t^2} + \dfrac{\partial \overrightarrow{J}}{\partial t}
+\end{align}
+
+and using the constitutive relation (\ref{eqns:constitutiveDepsE}), equation (\ref{eqns:Curl_H_replaced_D}) becomes
+\begin{align}
+\label{eqns:Curl_H_replaced_E}
+\dfrac{\partial}{\partial t} \left( \nabla \times \overrightarrow{H}\right) = \epsilon\dfrac{\partial^2 \overrightarrow{E}}{\partial t^2} + \dfrac{\partial \overrightarrow{J}}{\partial t}
+\end{align}
+
+Substituting (\ref{eqns:CurlProdCurlExpanded}), (\ref{eqns:Curl_H_replaced_E}) into (\ref{eqns:CulCurlMaxwellModified}) and multiplying by we get $\mu$ we get the generalized wave equations system (\ref{eqns:E_Wave_full}) stated in sction \ref{sec:TransMaxwellToWave}. 
+\begin{align}
+\mu \nabla \left( \dfrac{1}{\mu} \right) \times \left(\nabla \times \overrightarrow{E} \right) +  \nabla (\nabla \cdot \overrightarrow{E}) - \nabla^2 \overrightarrow{E} + \mu \epsilon\dfrac{\partial^2 \overrightarrow{E}}{\partial t^2} + \mu \dfrac{\partial \overrightarrow{J}}{\partial t} = 0
+\end{align}
 
 
 
