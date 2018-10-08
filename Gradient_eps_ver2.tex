@@ -108,12 +108,25 @@ Books:
 \item The generalized wave equation derived assuming constant magnetic permeability
 \item Error bound for WKB given, but without dimensional analysis.
 \item No treatment of boundary conditions 
-\item Bremmer series: replacing WKB integration constants by $z$-varying functions. Bootstraping process generates series  representation, converging under assumption on wave number variation. Point being: get all the next terms to control error. Contrasting asymptotic theory spirit - optimize performance, even for divergent series.  Further, in real-life physical scenario, high order terms may be compatible in size to noise. 
+\item Bremmer series: replacing WKB integration constants by $z$-varying functions. Bootstrapping process generates series  representation, converging under assumption on wave number variation. Point being: get all the next terms to control error. Contrasting asymptotic theory spirit - optimize performance, even for divergent series.  Further, in real-life physical scenario, high order terms may be compatible in size to noise. 
 \end{enumerate}
-\item Marcuse chap. 7 - Light propagation in square law media - graded in dex optics in the case of axially-symmetric materials, chap 8 (Maxwell's equns in inhomogeneous media) - `imperfection' is z-variation in the medium. Since `hard' to cope, approximation by step functions is recommended.
+\item Chew
+\begin{enumerate}
+\item 2.1 Derivation of the scalar wave equations: Using translation invariance to get ODEs. Varying magnetic permeability considered.\\ 
+To check: 
+\begin{enumerate}
+\item Chew has our $E_x$-component ODE, varying magnetic permeability included, without full derivation.
+\item Chew has also the $H_y$ - component ODE, we did not derive.
+\item Chew has also equations for $E_z$ (we derived), $H_z$ (we didn't) 
+\end{enumerate} 
+\item 2.8 WKB: check error term: different  treatment than ours. 
+\item Asymptotic matching: what for? is it for boundary conditions?
+\item 2.9.3 Reflection from a three-layered medium: matrix form? 
+\item 2.9.4 Reflection from an inhomogeneous slab: using a single solution or layers with propagation matrix? - Our treatment is different.
+\item 8 Rytov approximation + validity: the Rytov approximation is the equivalent of WKB for integral equations, valid for approximately radially-symmetric problems.
+\end{enumerate}
+ 
 \item Frederick Wooten chap 2 - wave eqn for absorbing medium
-\item Landau electrodynamics of continuous media - modelling the frequency dependence of the refractive index
-\item Dressel-Gruner - Electrodynamics of solids - wave eqn  in inhomogeneous media - spatial variations\\
 \item Antonov-Harmon-Yaresko
 \item Felsen - Marcuvitz
 
@@ -121,7 +134,7 @@ Books:
 
 
 
- 
+
 \end{enumerate}
 
 \subsection{Applications}
@@ -133,13 +146,12 @@ Books:
 
 \subsection{Novelty}
 \begin{enumerate}
-\item Full derivation of electric field equations for both z-varying dielectric permittivity and magnetic permeability.  
-\item Uncoupled, scalar PDEs for all both non-constant electric permittivity and magnetic permeability.
+\item Full derivation of electric field equations for both z-varying dielectric permittivity and magnetic permeability (adding to Chew)
 \item Dimensional analysis: strict definition of `slow' and `fast' variation of parameters.
 \item Classification of parameter configurations where certain asymptotic methods are applicable.
 \item Straight-forward definition of reflection-transmission relation into and out of an inhomogeneous layer.
 \item Easily physical interpretation due to approximate phasor, left and right travelling wave solutions.
-\item Characterization of highly complex profiles using a small number of parameters.1
+\item Characterization of highly complex profiles using a small number of parameters.
 
 \end{enumerate}
 
@@ -563,7 +575,9 @@ i \omega  \nabla \times \overrightarrow{H} = -\omega^2 \epsilon \overrightarrow{
 
 Substituting (\ref{eqns:CurlProdCurlExpanded}), (\ref{eqns:Curl_H_replaced_E}) into (\ref{eqns:CulCurlMaxwellModified}) and multiplying by  $\mu$ we get the generalized wave equations system (\ref{eqns:Generalized_wave_vector}). 
 
-\section{Component-wise expansion of the term $\left(\mu \nabla \left( \dfrac{1}{\mu}\right) \times \left(\nabla \times \vec{E} \right) \right)$}
+%\section{Component-wise expansion of the term $\left(\mu \nabla \left( \dfrac{1}{\mu}\right) \times \left(\nabla \times \vec{E} \right) \right)$}
+\section{Component-wise expansion of the term $\nabla \mathcal{M} \times \left(\nabla \times \vec{E} \right) $}
+
 \label{append:GradLogTermComponenetwiseDeriv}
 To handle the repeated cross product we'll use Levi-Civita's permutation symbols $\epsilon_{ijk}$ \cite{ArfkenWeber2005} defined by
 \begin{align}
@@ -669,17 +683,21 @@ Brekhovskikh, Leonid M. Waves in layered media. Academic press, London, 1960
 \bibitem{cheng2006fieldAndWave} %
 Cheng, David K. Field and Wave Electromagnetics. 2nd Ed. Tsinghua University Press, 2006.
 
+\bibitem{chew1995waves}
+Chew, Weng Cho. Waves and fields in inhomogeneous media. IEEE press, 1995.
+
 \bibitem{goodman2005introduction}
 Goodman, Joseph W. Introduction to Fourier optics. Roberts and Company Publishers, 2005.
 
 \bibitem{jackson1999classical}
 Jackson, Jon D. Classical electrodynamics. Wiley, Hoboken NJ, 1999.
 
+\bibitem{wait1970stratified}
+Wait, James R. Electromagnetic waves in stratified media. 2nd Ed. New York, Pergamon Press, 1970
 
 
 
 
-  
 
 
 \end{thebibliography}

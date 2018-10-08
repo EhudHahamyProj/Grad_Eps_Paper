@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  3 OCT 2018 11:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  8 OCT 2018 12:25
 entering extended mode
 **Gradient_eps_ver2.tex
 (Gradient_eps_ver2.tex
@@ -234,92 +234,93 @@ Underfull \hbox (badness 3579) in paragraph at lines 100--101
  []
 
 [1{C:/Users/DELL/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
- 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
  []\OT1/cmr/m/n/10 Straight-forward def-i-ni-tion of reflection-
  []
 
 [2]
-Overfull \hbox (4.64363pt too wide) detected at line 208
+Overfull \hbox (4.64363pt too wide) detected at line 220
 \OMS/cmsy/m/n/10 M[] [] \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 E[][] \OT1/cmr/m/n/1
 0 + \OMS/cmsy/m/n/10 r[]\OML/cmm/m/it/10 E[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10
  ![]E[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 i!J[]
  []
 
 
-Underfull \hbox (badness 8132) in paragraph at lines 213--214
+Underfull \hbox (badness 8132) in paragraph at lines 225--226
 []\OT1/cmr/m/n/10 Assume an $\OML/cmm/m/it/10 x; y$ \OT1/cmr/m/n/10 spa-tially 
 co-her-ent source in-
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 213--214
+Underfull \hbox (badness 6893) in paragraph at lines 225--226
 \OT1/cmr/m/n/10 ci-dent to an in-fi-nite slab $\OMS/cmsy/m/n/10  \OML/cmm/m/it/
 10 L \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 z \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 
 L$\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 213--214
+Underfull \hbox (badness 1430) in paragraph at lines 225--226
 $\OMS/cmsy/m/n/10  1 \OML/cmm/m/it/10 < x; y < \OMS/cmsy/m/n/10 1$\OT1/cmr/m/n/
 10 , at $\OML/cmm/m/it/10 z \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10  \OML/cmm/m/it/1
 0 L$\OT1/cmr/m/n/10 . The pro-files
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 237.
+[3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 249.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 237.
- [3]
-Underfull \hbox (badness 1168) in paragraph at lines 273--275
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
+
+Underfull \hbox (badness 1168) in paragraph at lines 285--287
 []\OT1/cmr/m/n/10 Consider equa-tion (9[]) for a tangentially-polarized
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 310--315
+Underfull \hbox (badness 1048) in paragraph at lines 322--327
 \OT1/cmr/m/n/10 This idea is clearly not new, as it ap-pears in all
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 445--447
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 457--459
 
  []
 
-[5] [6]
-Overfull \hbox (1.22112pt too wide) in paragraph at lines 545--545
+[6]
+Overfull \hbox (1.22112pt too wide) in paragraph at lines 557--557
 [] 
  []
 
 [7]
 No file Gradient_eps_ver2.bbl.
-[8] (Gradient_eps_ver2.aux)
+[8] (Gradient_eps_ver2.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
 
 
  ) 
 Here is how much of TeX's memory you used:
- 3230 strings out of 493673
- 40585 string characters out of 3141532
- 194080 words of memory out of 3000000
- 6583 multiletter control sequences out of 15000+200000
+ 3234 strings out of 493673
+ 40687 string characters out of 3141532
+ 193059 words of memory out of 3000000
+ 6587 multiletter control sequences out of 15000+200000
  11896 words of font info for 46 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  33i,30n,28p,888b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -344,7 +345,7 @@ pe1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmti9.pfb>
-Output written on Gradient_eps_ver2.pdf (8 pages, 303321 bytes).
+Output written on Gradient_eps_ver2.pdf (8 pages, 303249 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
