@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  8 OCT 2018 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.12)  1 NOV 2018 13:57
 entering extended mode
 **Gradient_eps_ver2.tex
 (Gradient_eps_ver2.tex
@@ -214,138 +214,152 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--53
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--66
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 1648) in paragraph at lines 60--64
+\OT1/cmr/m/n/10 left and right trav-el-ling waves and stitch-ing them
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 60--64
+\OT1/cmr/m/n/10 This ap-proach may re-quire the de-ter-mi-na-tion of a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--64
+
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 65--67
+\OT1/cmr/m/n/10 the ef-fect of non-constant di-elec-tric and mag-netic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
+
+ []
+
+[1{C:/Users/DELL/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
  []\OT1/cmr/m/n/10 Terms gen-er-ated by in-ho-mo-gene-ity in
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 100--101
+Underfull \hbox (badness 2253) in paragraph at lines 114--115
  \OT1/cmr/m/n/10 Maxwell's equa-tions ap-pear only for the
  []
 
 
-Underfull \hbox (badness 3579) in paragraph at lines 100--101
+Underfull \hbox (badness 3579) in paragraph at lines 114--115
  \OT1/cmr/m/n/10 terms that ap-pear by vary-ing mag-netic
  []
 
-[1{C:/Users/DELL/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
  []\OT1/cmr/m/n/10 Straight-forward def-i-ni-tion of reflection-
  []
 
-[2]
-Overfull \hbox (4.64363pt too wide) detected at line 220
+[3]
+Overfull \hbox (4.64363pt too wide) detected at line 258
 \OMS/cmsy/m/n/10 M[] [] \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 E[][] \OT1/cmr/m/n/1
 0 + \OMS/cmsy/m/n/10 r[]\OML/cmm/m/it/10 E[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10
  ![]E[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 i!J[]
  []
 
 
-Underfull \hbox (badness 8132) in paragraph at lines 225--226
+Underfull \hbox (badness 8132) in paragraph at lines 263--264
 []\OT1/cmr/m/n/10 Assume an $\OML/cmm/m/it/10 x; y$ \OT1/cmr/m/n/10 spa-tially 
 co-her-ent source in-
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 225--226
+Underfull \hbox (badness 6893) in paragraph at lines 263--264
 \OT1/cmr/m/n/10 ci-dent to an in-fi-nite slab $\OMS/cmsy/m/n/10  \OML/cmm/m/it/
 10 L \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 z \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 
 L$\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 225--226
+Underfull \hbox (badness 1430) in paragraph at lines 263--264
 $\OMS/cmsy/m/n/10  1 \OML/cmm/m/it/10 < x; y < \OMS/cmsy/m/n/10 1$\OT1/cmr/m/n/
 10 , at $\OML/cmm/m/it/10 z \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10  \OML/cmm/m/it/1
 0 L$\OT1/cmr/m/n/10 . The pro-files
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
-[3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 249.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 287.
 
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 287.
 
-Underfull \hbox (badness 1168) in paragraph at lines 285--287
+Underfull \hbox (badness 1168) in paragraph at lines 323--325
 []\OT1/cmr/m/n/10 Consider equa-tion (9[]) for a tangentially-polarized
  []
 
-
-Underfull \hbox (badness 1048) in paragraph at lines 322--327
+[4]
+Underfull \hbox (badness 1048) in paragraph at lines 360--365
 \OT1/cmr/m/n/10 This idea is clearly not new, as it ap-pears in all
  []
 
-[4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 457--459
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 495--497
 
  []
 
 [6]
-Overfull \hbox (1.22112pt too wide) in paragraph at lines 557--557
+Overfull \hbox (1.22112pt too wide) in paragraph at lines 594--594
 [] 
  []
 
 [7]
 No file Gradient_eps_ver2.bbl.
-[8] (Gradient_eps_ver2.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
- ) 
+[8] (Gradient_eps_ver2.aux) ) 
 Here is how much of TeX's memory you used:
- 3234 strings out of 493673
- 40687 string characters out of 3141532
- 193059 words of memory out of 3000000
- 6587 multiletter control sequences out of 15000+200000
+ 3251 strings out of 493673
+ 41123 string characters out of 3141532
+ 146059 words of memory out of 3000000
+ 6604 multiletter control sequences out of 15000+200000
  11896 words of font info for 46 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,30n,28p,888b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmti9.pfb>
-Output written on Gradient_eps_ver2.pdf (8 pages, 303249 bytes).
+ 33i,30n,28p,1098b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cmextra/cmex9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on Gradient_eps_ver2.pdf (8 pages, 307472 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
